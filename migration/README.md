@@ -6,18 +6,18 @@ migration can be re-run or audited without touching the live site.
 
 ## Scripts
 
-| Script                | What it does                                                                                 |
-| --------------------- | ------------------------------------------------------------------------------------------- |
-| `harvest.py`          | Pulls all pages/posts/media/categories/tags from the public WP REST API into `raw/*.json`.  |
-| `download_assets.py`  | Extracts every referenced asset URL, downloads localizable ones into `public/`, classifies. |
+| Script               | What it does                                                                                |
+| -------------------- | ------------------------------------------------------------------------------------------- |
+| `harvest.py`         | Pulls all pages/posts/media/categories/tags from the public WP REST API into `raw/*.json`.  |
+| `download_assets.py` | Extracts every referenced asset URL, downloads localizable ones into `public/`, classifies. |
 
 ## Outputs
 
-| File                    | Contents                                                                              |
-| ----------------------- | ------------------------------------------------------------------------------------- |
-| `raw/*.json`            | Verbatim WP REST responses (pages, posts, media, categories, tags) with `_embed`.     |
-| `asset-map.json`        | `original URL → { local, status, bytes, kind }` for every localized asset.            |
-| `external-report.json`  | Outbound citation hyperlinks & functional embeds that are **not** mirrored (+ reason).|
+| File                   | Contents                                                                               |
+| ---------------------- | -------------------------------------------------------------------------------------- |
+| `raw/*.json`           | Verbatim WP REST responses (pages, posts, media, categories, tags) with `_embed`.      |
+| `asset-map.json`       | `original URL → { local, status, bytes, kind }` for every localized asset.             |
+| `external-report.json` | Outbound citation hyperlinks & functional embeds that are **not** mirrored (+ reason). |
 
 ## Re-running
 

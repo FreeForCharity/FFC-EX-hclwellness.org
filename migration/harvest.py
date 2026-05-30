@@ -2,9 +2,9 @@
 """
 HCL Wellness WordPress -> static repo harvester.
 
-Phase 1: pull ALL content (pages, posts, media metadata, categories, tags,
-comments) from the live WordPress REST API and persist raw JSON so the rest of
-the migration is reproducible and never needs to hit the network again.
+Phase 1: pull ALL content (pages, posts, media metadata, categories, tags) from
+the live WordPress REST API and persist raw JSON so the rest of the migration is
+reproducible and never needs to hit the network again.
 
 Run:  python3 migration/harvest.py
 Output: migration/raw/*.json
