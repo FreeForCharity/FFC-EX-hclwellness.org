@@ -24,6 +24,10 @@ function discoverPublicRoutes(dir: string, prefix = ''): string[] {
     if (entry.isDirectory()) {
       // Skip Next.js conventions that aren't a separate URL segment.
       if (entry.name.startsWith('_') || entry.name.startsWith('.')) continue
+      // Skip dynamic segments ([slug], [...slug]): their concrete URLs come
+      // from data and are enumerated in sitemap() rather than the static
+      // `routes` list this test audits.
+      if (entry.name.startsWith('[')) continue
       // Skip any directory whose name itself is in the not-a-route allowlist.
       if (NOT_A_PUBLIC_ROUTE.has(entry.name)) continue
       out.push(...discoverPublicRoutes(path.join(dir, entry.name), `${prefix}/${entry.name}`))
@@ -53,6 +57,12 @@ describe('sitemap.ts', () => {
       expect(typeof e.url).toBe('string')
       expect(e.url.startsWith(siteConfig.url.replace(/\/$/, ''))).toBe(true)
     }
+  })
+
+  it('includes migrated WordPress pages served by the dynamic route', () => {
+    const urls = sitemap().map((e) => e.url)
+    expect(urls).toContain(siteConfig.url.replace(/\/$/, '') + '/about-us')
+    expect(urls).toContain(siteConfig.url.replace(/\/$/, '') + '/team')
   })
 
   it('uses priority 1.0 for the root route only', () => {

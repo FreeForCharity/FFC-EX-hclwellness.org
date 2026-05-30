@@ -68,6 +68,9 @@ async function checkKebabCaseRoutes() {
     if (!entry.isDirectory()) continue
     if (entry.name.startsWith('(') || entry.name.startsWith('_')) continue
     if (entry.name.startsWith('@')) continue
+    // Next.js dynamic segments ([slug], [...slug], [[...slug]]) are a routing
+    // convention, not a URL slug — the concrete URLs come from data.
+    if (entry.name.startsWith('[')) continue
     if (APP_RESERVED.has(entry.name)) continue
     if (!KEBAB_CASE.test(entry.name)) {
       errors.push(

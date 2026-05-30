@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { siteUrl } from '@/lib/site.config'
+import { getPages } from '@/lib/wordpress'
 
 export const dynamic = 'force-static'
 
@@ -36,10 +37,23 @@ export const routes: readonly SitemapEntry[] = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
-  return routes.map((entry) => ({
+
+  const staticEntries = routes.map((entry) => ({
     url: siteUrl(entry.path),
     lastModified: now,
     changeFrequency: entry.changeFrequency,
     priority: entry.priority,
   }))
+
+  // Migrated WordPress pages are served by the dynamic `src/app/[slug]` route,
+  // so they aren't in the static `routes` list above — enumerate them here from
+  // the same content the route renders.
+  const wpEntries: MetadataRoute.Sitemap = getPages().map((p) => ({
+    url: siteUrl(p.route),
+    lastModified: p.modified ? new Date(p.modified) : now,
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }))
+
+  return [...staticEntries, ...wpEntries]
 }
