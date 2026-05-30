@@ -1,16 +1,6 @@
 {
-  "skip": [
-    "^https://github.com/(?!FreeForCharity/).*",
-    "^https://www.linkedin.com/.*",
-    "^https://twitter.com/.*",
-    "^https://x.com/.*",
-    "^https://www.facebook.com/.*",
-    "^https://forms.monday.com/.*",
-    "^https://www.zeffy.com/.*",
-    "^https://(www\\.)?hclwellness\\.org/.*",
-    "^mailto:.*",
-    "^tel:.*"
-  ],
+  "comment": "Validate the INTERNAL links this site controls. External links are skipped: citation sources (CDC, NCBI, cancer.org, etc.) routinely return 403/406/503 to automated link checkers despite working in a browser — that's noise, not breakage. Audit external link-rot out of band if desired.",
+  "skip": ["^https?://(?!localhost|127\\.0\\.0\\.1)", "^mailto:", "^tel:"],
   "timeout": 10000,
   "retry": true,
   "retryErrors": true,

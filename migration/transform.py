@@ -69,6 +69,24 @@ EXTERNAL_OVERRIDES = {
 # LinkedIn CDN images (403 / expired tokens) -> local placeholder.
 LICDN_PLACEHOLDER = "/external/placeholder.svg"
 
+# Images referenced by content but already 404 on the live WordPress site
+# (nothing to localize) -> local placeholder so no broken <img> remains.
+BROKEN_SOURCE_IMAGES = [
+    "/wp-content/uploads/2024/01/Beets.jpg",
+    "/wp-content/uploads/2024/01/Noah.jpg",
+    "/wp-content/uploads/2024/01/cauliflower.jpg",
+    "/wp-content/uploads/2024/09/halloween2-1.jpg",
+    "/wp-content/uploads/2024/12/image-2.png",
+    "/wp-content/uploads/2024/12/vegs.png",
+    "/wp-content/uploads/2025/05/image-11-1.jpeg",
+]
+
+# Dead WordPress *system* / missing links with no place in a static site
+# (comment threads, reply links, admin area, the REST API, and a removed page).
+DEAD_LINK_RE = re.compile(
+    r"/(?:wp-admin|wp-json)|/comment-page-|[?&]replytocom=|/services-and-resources"
+)
+
 # Broken source links repaired to the localized target.
 LINK_OVERRIDES = [
     (
@@ -87,14 +105,21 @@ def local_asset(url):
     return url
 
 
+def route_for(item, typ):
+    """Local route for an item, with a trailing slash (matches next trailingSlash)."""
+    if typ == "page":
+        return "/" if item["id"] == FRONT_PAGE_ID else "/" + item["slug"] + "/"
+    return "/blog/" + item["slug"] + "/"
+
+
 def build_route_map(pages, posts):
     m = {}  # normalized path -> local route
     for p in pages:
-        route = "/" if p["id"] == FRONT_PAGE_ID else "/" + p["slug"]
+        route = route_for(p, "page")
         m[norm(p["link"])] = route
         m["/" + p["slug"]] = route
     for p in posts:
-        route = "/blog/" + p["slug"]
+        route = route_for(p, "post")
         m[norm(p["link"])] = route
         m["/" + p["slug"]] = route
     return m
@@ -172,6 +197,20 @@ def rewrite_html(raw, route_map, unresolved):
     for pat, repl in LINK_OVERRIDES:
         h = pat.sub(repl, h)
 
+    # 10. images already 404 on the live site -> local placeholder.
+    for img in BROKEN_SOURCE_IMAGES:
+        h = h.replace('src="' + img + '"', 'src="/external/placeholder.svg"')
+        h = re.sub(r'srcset="[^"]*' + re.escape(img.rsplit("/", 1)[-1]) + r'[^"]*"', "", h)
+
+    # 11. unwrap dead WordPress system / missing links, keeping their visible
+    #     text so content still reads normally.
+    h = re.sub(
+        r'<a\b[^>]*href="([^"]*)"[^>]*>(.*?)</a>',
+        lambda m: m.group(2) if DEAD_LINK_RE.search(m.group(1)) else m.group(0),
+        h,
+        flags=re.S,
+    )
+
     return h.strip()
 
 
@@ -180,8 +219,7 @@ def convert(item, typ, route_map, unresolved):
         "type": typ,
         "id": item["id"],
         "slug": item["slug"],
-        "route": ("/" if item["id"] == FRONT_PAGE_ID else "/" + item["slug"]) if typ == "page"
-                 else "/blog/" + item["slug"],
+        "route": route_for(item, typ),
         "title": htmlmod.unescape(item["title"]["rendered"]).strip(),
         "date": item.get("date"),
         "modified": item.get("modified"),
