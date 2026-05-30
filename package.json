@@ -60,7 +60,7 @@
     "linkinator": "^7.6.1",
     "prettier": "^3.8.1",
     "tailwindcss": "^4.1.12",
-    "typescript": "^5"
+    "typescript": "^6"
   },
   "overrides": {
     "qs": ">=6.15.2",
