@@ -60,7 +60,7 @@ test.describe('Google Tag Manager Integration', () => {
     expect(canPushToDataLayer).toBe(true)
   })
 
-  test('should load GTM script after page interaction', async ({ page }) => {
+  test('should expose the GTM script and dataLayer once loaded', async ({ page }) => {
     await gotoAndWaitForGtm(page)
     const gtmScript = await page.evaluate(
       () => document.querySelector('script[id="gtm-script"]') !== null
@@ -81,7 +81,7 @@ test.describe('Google Tag Manager Integration', () => {
     const banner = page.locator('[role="region"][aria-label="Cookie consent notice"]')
     await expect(banner).toBeVisible()
 
-    await page.getByRole('button', { name: 'Accept All' }).click()
+    await page.getByRole('button', { name: testConfig.cookieConsent.buttons.acceptAll }).click()
 
     await page.waitForFunction(
       () => {

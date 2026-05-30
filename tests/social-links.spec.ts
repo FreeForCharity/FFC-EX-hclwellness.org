@@ -27,6 +27,12 @@ test.describe('Footer Social Links', () => {
 
   test('should expose exactly the configured number of social icons', async ({ page }) => {
     await page.goto('/')
+    // The footer omits the social block entirely when no links are configured,
+    // and page.locator('') would throw — handle that case explicitly.
+    if (testConfig.socialLinks.length === 0) {
+      await expect(page.locator('footer [aria-label="LinkedIn"]')).toHaveCount(0)
+      return
+    }
     const selector = testConfig.socialLinks
       .map((l) => `footer a[aria-label="${l.ariaLabel}"]`)
       .join(', ')

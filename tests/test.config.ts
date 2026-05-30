@@ -10,7 +10,13 @@ export const testConfig = {
    * Social media links shown in the footer (mirrors siteConfig.social).
    * Used in: tests/social-links.spec.ts
    */
-  socialLinks: [{ url: 'linkedin.com/in/dr-marianne-infante', ariaLabel: 'LinkedIn' }],
+  socialLinks: [
+    {
+      // Full href, matching siteConfig.social[].href exactly.
+      url: 'https://www.linkedin.com/in/dr-marianne-infante-healthy-community-lifespaces/',
+      ariaLabel: 'LinkedIn',
+    },
+  ],
 
   /**
    * Google Tag Manager configuration.
