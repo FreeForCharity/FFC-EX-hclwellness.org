@@ -1,0 +1,1796 @@
+{
+  "https://block21.oitemplates.org/wp-content/uploads/2023/06/call-1.png": {
+    "local": null,
+    "status": "error:HTTP Error 503: Service Unavailable",
+    "bytes": 0,
+    "kind": "ext-image"
+  },
+  "https://block21.oitemplates.org/wp-content/uploads/2023/06/email-1.png": {
+    "local": null,
+    "status": "error:HTTP Error 503: Service Unavailable",
+    "bytes": 0,
+    "kind": "ext-image"
+  },
+  "https://block21.oitemplates.org/wp-content/uploads/2023/06/location-1.png": {
+    "local": null,
+    "status": "error:HTTP Error 503: Service Unavailable",
+    "bytes": 0,
+    "kind": "ext-image"
+  },
+  "https://hclwellness.org/wp-content/plugins/wpforms/assets/images/submit-spin.svg": {
+    "local": "/wp-content/plugins/wpforms/assets/images/submit-spin.svg",
+    "status": "ok",
+    "bytes": 509,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2021/08/HCL1-400x269.png": {
+    "local": "/wp-content/uploads/2021/08/HCL1-400x269.png",
+    "status": "ok",
+    "bytes": 77919,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2021/08/HCL1-768x517.png": {
+    "local": "/wp-content/uploads/2021/08/HCL1-768x517.png",
+    "status": "ok",
+    "bytes": 204427,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2021/08/HCL1.png": {
+    "local": "/wp-content/uploads/2021/08/HCL1.png",
+    "status": "ok",
+    "bytes": 102585,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2021/08/image-21-400x178.png": {
+    "local": "/wp-content/uploads/2021/08/image-21-400x178.png",
+    "status": "ok",
+    "bytes": 90166,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2021/08/image-21.png": {
+    "local": "/wp-content/uploads/2021/08/image-21.png",
+    "status": "ok",
+    "bytes": 219794,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/Aman-Negassi-BS-241x300.png": {
+    "local": "/wp-content/uploads/2023/08/Aman-Negassi-BS-241x300.png",
+    "status": "ok",
+    "bytes": 97838,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/Aman-Negassi-BS.png": {
+    "local": "/wp-content/uploads/2023/08/Aman-Negassi-BS.png",
+    "status": "ok",
+    "bytes": 447789,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/Anett-Ume-150x150.png": {
+    "local": "/wp-content/uploads/2023/08/Anett-Ume-150x150.png",
+    "status": "ok",
+    "bytes": 45367,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/Anett-Ume-301x300.png": {
+    "local": "/wp-content/uploads/2023/08/Anett-Ume-301x300.png",
+    "status": "ok",
+    "bytes": 157895,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/Anett-Ume.png": {
+    "local": "/wp-content/uploads/2023/08/Anett-Ume.png",
+    "status": "ok",
+    "bytes": 284869,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/Dr.-Jody-Stanislaw-200x300.png": {
+    "local": "/wp-content/uploads/2023/08/Dr.-Jody-Stanislaw-200x300.png",
+    "status": "ok",
+    "bytes": 55157,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/Dr.-Jody-Stanislaw.png": {
+    "local": "/wp-content/uploads/2023/08/Dr.-Jody-Stanislaw.png",
+    "status": "ok",
+    "bytes": 146862,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/Dr.-Marianne-Infante-231x300.png": {
+    "local": "/wp-content/uploads/2023/08/Dr.-Marianne-Infante-231x300.png",
+    "status": "ok",
+    "bytes": 80919,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/Dr.-Marianne-Infante.png": {
+    "local": "/wp-content/uploads/2023/08/Dr.-Marianne-Infante.png",
+    "status": "ok",
+    "bytes": 144890,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/Dr.-Morton-Axelrod-233x300.png": {
+    "local": "/wp-content/uploads/2023/08/Dr.-Morton-Axelrod-233x300.png",
+    "status": "ok",
+    "bytes": 99531,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/Dr.-Morton-Axelrod.png": {
+    "local": "/wp-content/uploads/2023/08/Dr.-Morton-Axelrod.png",
+    "status": "ok",
+    "bytes": 222738,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/Lisa-Vigilante-1-229x300.png": {
+    "local": "/wp-content/uploads/2023/08/Lisa-Vigilante-1-229x300.png",
+    "status": "ok",
+    "bytes": 129505,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/Lisa-Vigilante-1.png": {
+    "local": "/wp-content/uploads/2023/08/Lisa-Vigilante-1.png",
+    "status": "ok",
+    "bytes": 528030,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/Screenshot-2023-08-01-202835-227x300.png": {
+    "local": "/wp-content/uploads/2023/08/Screenshot-2023-08-01-202835-227x300.png",
+    "status": "ok",
+    "bytes": 92373,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/Screenshot-2023-08-01-202835-607x800.png": {
+    "local": "/wp-content/uploads/2023/08/Screenshot-2023-08-01-202835-607x800.png",
+    "status": "ok",
+    "bytes": 448703,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/Screenshot-2023-08-01-202835.png": {
+    "local": "/wp-content/uploads/2023/08/Screenshot-2023-08-01-202835.png",
+    "status": "ok",
+    "bytes": 539834,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/actor-150x150.png": {
+    "local": "/wp-content/uploads/2023/08/actor-150x150.png",
+    "status": "ok",
+    "bytes": 10037,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/actor-300x300.png": {
+    "local": "/wp-content/uploads/2023/08/actor-300x300.png",
+    "status": "ok",
+    "bytes": 22570,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/actor.png": {
+    "local": "/wp-content/uploads/2023/08/actor.png",
+    "status": "ok",
+    "bytes": 62802,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/blank-logo-stamp-tag-template-1200x800.jpg": {
+    "local": "/wp-content/uploads/2023/08/blank-logo-stamp-tag-template-1200x800.jpg",
+    "status": "ok",
+    "bytes": 179393,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/blank-logo-stamp-tag-template-1536x1024.jpg": {
+    "local": "/wp-content/uploads/2023/08/blank-logo-stamp-tag-template-1536x1024.jpg",
+    "status": "ok",
+    "bytes": 244476,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/blank-logo-stamp-tag-template-2048x1365.jpg": {
+    "local": "/wp-content/uploads/2023/08/blank-logo-stamp-tag-template-2048x1365.jpg",
+    "status": "ok",
+    "bytes": 364501,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/blank-logo-stamp-tag-template-400x267.jpg": {
+    "local": "/wp-content/uploads/2023/08/blank-logo-stamp-tag-template-400x267.jpg",
+    "status": "ok",
+    "bytes": 63877,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/blank-logo-stamp-tag-template-768x512.jpg": {
+    "local": "/wp-content/uploads/2023/08/blank-logo-stamp-tag-template-768x512.jpg",
+    "status": "ok",
+    "bytes": 109167,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/blank-logo-stamp-tag-template-scaled.jpg": {
+    "local": "/wp-content/uploads/2023/08/blank-logo-stamp-tag-template-scaled.jpg",
+    "status": "ok",
+    "bytes": 506926,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/call-telephone-communication-phone-conversation-concept-1126x800.jpg": {
+    "local": "/wp-content/uploads/2023/08/call-telephone-communication-phone-conversation-concept-1126x800.jpg",
+    "status": "ok",
+    "bytes": 131437,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/call-telephone-communication-phone-conversation-concept-1536x1092.jpg": {
+    "local": "/wp-content/uploads/2023/08/call-telephone-communication-phone-conversation-concept-1536x1092.jpg",
+    "status": "ok",
+    "bytes": 188024,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/call-telephone-communication-phone-conversation-concept-2048x1456.jpg": {
+    "local": "/wp-content/uploads/2023/08/call-telephone-communication-phone-conversation-concept-2048x1456.jpg",
+    "status": "ok",
+    "bytes": 271388,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/call-telephone-communication-phone-conversation-concept-400x284.jpg": {
+    "local": "/wp-content/uploads/2023/08/call-telephone-communication-phone-conversation-concept-400x284.jpg",
+    "status": "ok",
+    "bytes": 56591,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/call-telephone-communication-phone-conversation-concept-768x546.jpg": {
+    "local": "/wp-content/uploads/2023/08/call-telephone-communication-phone-conversation-concept-768x546.jpg",
+    "status": "ok",
+    "bytes": 90735,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/call-telephone-communication-phone-conversation-concept-scaled.jpg": {
+    "local": "/wp-content/uploads/2023/08/call-telephone-communication-phone-conversation-concept-scaled.jpg",
+    "status": "ok",
+    "bytes": 370833,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/communities-150x150.png": {
+    "local": "/wp-content/uploads/2023/08/communities-150x150.png",
+    "status": "ok",
+    "bytes": 13678,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/communities-300x300.png": {
+    "local": "/wp-content/uploads/2023/08/communities-300x300.png",
+    "status": "ok",
+    "bytes": 32280,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/communities.png": {
+    "local": "/wp-content/uploads/2023/08/communities.png",
+    "status": "ok",
+    "bytes": 86644,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/contact-page-img-shape-2-1-282x300.png": {
+    "local": "/wp-content/uploads/2023/08/contact-page-img-shape-2-1-282x300.png",
+    "status": "ok",
+    "bytes": 101316,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/contact-page-img-shape-2-1.png": {
+    "local": "/wp-content/uploads/2023/08/contact-page-img-shape-2-1.png",
+    "status": "ok",
+    "bytes": 514239,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/creativity-150x150.png": {
+    "local": "/wp-content/uploads/2023/08/creativity-150x150.png",
+    "status": "ok",
+    "bytes": 11999,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/creativity-300x300.png": {
+    "local": "/wp-content/uploads/2023/08/creativity-300x300.png",
+    "status": "ok",
+    "bytes": 27605,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/creativity.png": {
+    "local": "/wp-content/uploads/2023/08/creativity.png",
+    "status": "ok",
+    "bytes": 74891,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/detailed-150x150.png": {
+    "local": "/wp-content/uploads/2023/08/detailed-150x150.png",
+    "status": "ok",
+    "bytes": 5967,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/detailed-300x300.png": {
+    "local": "/wp-content/uploads/2023/08/detailed-300x300.png",
+    "status": "ok",
+    "bytes": 13950,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/detailed.png": {
+    "local": "/wp-content/uploads/2023/08/detailed.png",
+    "status": "ok",
+    "bytes": 36915,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/focus-150x150.png": {
+    "local": "/wp-content/uploads/2023/08/focus-150x150.png",
+    "status": "ok",
+    "bytes": 14702,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/focus-300x300.png": {
+    "local": "/wp-content/uploads/2023/08/focus-300x300.png",
+    "status": "ok",
+    "bytes": 33817,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/focus.png": {
+    "local": "/wp-content/uploads/2023/08/focus.png",
+    "status": "ok",
+    "bytes": 46960,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/health-wellbeing-wellness-vitality-healthcare-concept-985x800.jpg": {
+    "local": "/wp-content/uploads/2023/08/health-wellbeing-wellness-vitality-healthcare-concept-985x800.jpg",
+    "status": "ok",
+    "bytes": 124110,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/silhouette-confident-businesspeople-1-scaled.jpg": {
+    "local": "/wp-content/uploads/2023/08/silhouette-confident-businesspeople-1-scaled.jpg",
+    "status": "ok",
+    "bytes": 565335,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/standard-quality-control-collage-concept-1200x800.jpg": {
+    "local": "/wp-content/uploads/2023/08/standard-quality-control-collage-concept-1200x800.jpg",
+    "status": "ok",
+    "bytes": 153060,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/standard-quality-control-collage-concept-1536x1024.jpg": {
+    "local": "/wp-content/uploads/2023/08/standard-quality-control-collage-concept-1536x1024.jpg",
+    "status": "ok",
+    "bytes": 216385,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/standard-quality-control-collage-concept-2048x1365.jpg": {
+    "local": "/wp-content/uploads/2023/08/standard-quality-control-collage-concept-2048x1365.jpg",
+    "status": "ok",
+    "bytes": 332109,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/standard-quality-control-collage-concept-400x267.jpg": {
+    "local": "/wp-content/uploads/2023/08/standard-quality-control-collage-concept-400x267.jpg",
+    "status": "ok",
+    "bytes": 40327,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/standard-quality-control-collage-concept-768x512.jpg": {
+    "local": "/wp-content/uploads/2023/08/standard-quality-control-collage-concept-768x512.jpg",
+    "status": "ok",
+    "bytes": 84527,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/08/standard-quality-control-collage-concept-scaled.jpg": {
+    "local": "/wp-content/uploads/2023/08/standard-quality-control-collage-concept-scaled.jpg",
+    "status": "ok",
+    "bytes": 469873,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/10/369803871_265917763052758_3399478089974637240_n-1300x585.jpg": {
+    "local": "/wp-content/uploads/2023/10/369803871_265917763052758_3399478089974637240_n-1300x585.jpg",
+    "status": "ok",
+    "bytes": 190310,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/10/369803871_265917763052758_3399478089974637240_n-1536x692.jpg": {
+    "local": "/wp-content/uploads/2023/10/369803871_265917763052758_3399478089974637240_n-1536x692.jpg",
+    "status": "ok",
+    "bytes": 248394,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/10/369803871_265917763052758_3399478089974637240_n-2048x922.jpg": {
+    "local": "/wp-content/uploads/2023/10/369803871_265917763052758_3399478089974637240_n-2048x922.jpg",
+    "status": "ok",
+    "bytes": 391368,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/10/369803871_265917763052758_3399478089974637240_n-400x180.jpg": {
+    "local": "/wp-content/uploads/2023/10/369803871_265917763052758_3399478089974637240_n-400x180.jpg",
+    "status": "ok",
+    "bytes": 25554,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/10/369803871_265917763052758_3399478089974637240_n-768x346.jpg": {
+    "local": "/wp-content/uploads/2023/10/369803871_265917763052758_3399478089974637240_n-768x346.jpg",
+    "status": "ok",
+    "bytes": 78061,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/10/Picture1-240x300.png": {
+    "local": "/wp-content/uploads/2023/10/Picture1-240x300.png",
+    "status": "ok",
+    "bytes": 102460,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/10/Picture1.png": {
+    "local": "/wp-content/uploads/2023/10/Picture1.png",
+    "status": "ok",
+    "bytes": 299736,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/10/Picture2-353x300.png": {
+    "local": "/wp-content/uploads/2023/10/Picture2-353x300.png",
+    "status": "ok",
+    "bytes": 187617,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/10/Picture2.png": {
+    "local": "/wp-content/uploads/2023/10/Picture2.png",
+    "status": "ok",
+    "bytes": 325197,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/1-healthy-environment-1900x1265-1-1202x800.jpg": {
+    "local": "/wp-content/uploads/2023/11/1-healthy-environment-1900x1265-1-1202x800.jpg",
+    "status": "ok",
+    "bytes": 177498,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/1-healthy-environment-1900x1265-1-1536x1023.jpg": {
+    "local": "/wp-content/uploads/2023/11/1-healthy-environment-1900x1265-1-1536x1023.jpg",
+    "status": "ok",
+    "bytes": 255926,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/1-healthy-environment-1900x1265-1-400x266.jpg": {
+    "local": "/wp-content/uploads/2023/11/1-healthy-environment-1900x1265-1-400x266.jpg",
+    "status": "ok",
+    "bytes": 32834,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/1-healthy-environment-1900x1265-1-768x511.jpg": {
+    "local": "/wp-content/uploads/2023/11/1-healthy-environment-1900x1265-1-768x511.jpg",
+    "status": "ok",
+    "bytes": 88795,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/1-healthy-environment-1900x1265-1.jpg": {
+    "local": "/wp-content/uploads/2023/11/1-healthy-environment-1900x1265-1.jpg",
+    "status": "ok",
+    "bytes": 369132,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/25-Ways-to-Volunteer-in-Your-Community-400x210.jpg": {
+    "local": "/wp-content/uploads/2023/11/25-Ways-to-Volunteer-in-Your-Community-400x210.jpg",
+    "status": "ok",
+    "bytes": 29285,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/25-Ways-to-Volunteer-in-Your-Community-768x403.jpg": {
+    "local": "/wp-content/uploads/2023/11/25-Ways-to-Volunteer-in-Your-Community-768x403.jpg",
+    "status": "ok",
+    "bytes": 80449,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/25-Ways-to-Volunteer-in-Your-Community.jpg": {
+    "local": "/wp-content/uploads/2023/11/25-Ways-to-Volunteer-in-Your-Community.jpg",
+    "status": "ok",
+    "bytes": 164067,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/Employees-keep-online-Calendar.jpg": {
+    "local": "/wp-content/uploads/2023/11/Employees-keep-online-Calendar.jpg",
+    "status": "ok",
+    "bytes": 135350,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/SHIP_2023-2028.pdf": {
+    "local": "/wp-content/uploads/2023/11/SHIP_2023-2028.pdf",
+    "status": "ok",
+    "bytes": 3874474,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/Senior-volunteer-helping-African-American-man-register-for-marathon-000065245281_Medium-1200x800.webp": {
+    "local": "/wp-content/uploads/2023/11/Senior-volunteer-helping-African-American-man-register-for-marathon-000065245281_Medium-1200x800.webp",
+    "status": "ok",
+    "bytes": 98168,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/Senior-volunteer-helping-African-American-man-register-for-marathon-000065245281_Medium-1536x1024.webp": {
+    "local": "/wp-content/uploads/2023/11/Senior-volunteer-helping-African-American-man-register-for-marathon-000065245281_Medium-1536x1024.webp",
+    "status": "ok",
+    "bytes": 133124,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/Senior-volunteer-helping-African-American-man-register-for-marathon-000065245281_Medium-400x267.webp": {
+    "local": "/wp-content/uploads/2023/11/Senior-volunteer-helping-African-American-man-register-for-marathon-000065245281_Medium-400x267.webp",
+    "status": "ok",
+    "bytes": 24182,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/Senior-volunteer-helping-African-American-man-register-for-marathon-000065245281_Medium-768x512.webp": {
+    "local": "/wp-content/uploads/2023/11/Senior-volunteer-helping-African-American-man-register-for-marathon-000065245281_Medium-768x512.webp",
+    "status": "ok",
+    "bytes": 57226,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/Senior-volunteer-helping-African-American-man-register-for-marathon-000065245281_Medium.webp": {
+    "local": "/wp-content/uploads/2023/11/Senior-volunteer-helping-African-American-man-register-for-marathon-000065245281_Medium.webp",
+    "status": "ok",
+    "bytes": 180610,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/company-core-values-graphic-1-1300x797.webp": {
+    "local": "/wp-content/uploads/2023/11/company-core-values-graphic-1-1300x797.webp",
+    "status": "ok",
+    "bytes": 90894,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/company-core-values-graphic-1-400x245.webp": {
+    "local": "/wp-content/uploads/2023/11/company-core-values-graphic-1-400x245.webp",
+    "status": "ok",
+    "bytes": 21382,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/company-core-values-graphic-1-768x471.webp": {
+    "local": "/wp-content/uploads/2023/11/company-core-values-graphic-1-768x471.webp",
+    "status": "ok",
+    "bytes": 48018,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/company-core-values-graphic-1.webp": {
+    "local": "/wp-content/uploads/2023/11/company-core-values-graphic-1.webp",
+    "status": "ok",
+    "bytes": 158048,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/diverse-office-setting-1024x325-1-400x127.jpg": {
+    "local": "/wp-content/uploads/2023/11/diverse-office-setting-1024x325-1-400x127.jpg",
+    "status": "ok",
+    "bytes": 14653,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/diverse-office-setting-1024x325-1-768x244.jpg": {
+    "local": "/wp-content/uploads/2023/11/diverse-office-setting-1024x325-1-768x244.jpg",
+    "status": "ok",
+    "bytes": 39118,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/diverse-office-setting-1024x325-1.jpg": {
+    "local": "/wp-content/uploads/2023/11/diverse-office-setting-1024x325-1.jpg",
+    "status": "ok",
+    "bytes": 63873,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/humble-stethoscope-can-detect-heart-defects-in-children-with-95-accuracy-study-400x255.webp": {
+    "local": "/wp-content/uploads/2023/11/humble-stethoscope-can-detect-heart-defects-in-children-with-95-accuracy-study-400x255.webp",
+    "status": "ok",
+    "bytes": 9222,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/humble-stethoscope-can-detect-heart-defects-in-children-with-95-accuracy-study-768x490.webp": {
+    "local": "/wp-content/uploads/2023/11/humble-stethoscope-can-detect-heart-defects-in-children-with-95-accuracy-study-768x490.webp",
+    "status": "ok",
+    "bytes": 20128,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/humble-stethoscope-can-detect-heart-defects-in-children-with-95-accuracy-study.webp": {
+    "local": "/wp-content/uploads/2023/11/humble-stethoscope-can-detect-heart-defects-in-children-with-95-accuracy-study.webp",
+    "status": "ok",
+    "bytes": 22154,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/overworked-businesswoman-with-dark-skin-brainstorming-financial-strategy-1200x800.jpg": {
+    "local": "/wp-content/uploads/2023/11/overworked-businesswoman-with-dark-skin-brainstorming-financial-strategy-1200x800.jpg",
+    "status": "ok",
+    "bytes": 101720,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/overworked-businesswoman-with-dark-skin-brainstorming-financial-strategy-1536x1024.jpg": {
+    "local": "/wp-content/uploads/2023/11/overworked-businesswoman-with-dark-skin-brainstorming-financial-strategy-1536x1024.jpg",
+    "status": "ok",
+    "bytes": 146887,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/overworked-businesswoman-with-dark-skin-brainstorming-financial-strategy-400x267.jpg": {
+    "local": "/wp-content/uploads/2023/11/overworked-businesswoman-with-dark-skin-brainstorming-financial-strategy-400x267.jpg",
+    "status": "ok",
+    "bytes": 21964,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/overworked-businesswoman-with-dark-skin-brainstorming-financial-strategy-768x512.jpg": {
+    "local": "/wp-content/uploads/2023/11/overworked-businesswoman-with-dark-skin-brainstorming-financial-strategy-768x512.jpg",
+    "status": "ok",
+    "bytes": 54368,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/overworked-businesswoman-with-dark-skin-brainstorming-financial-strategy.jpg": {
+    "local": "/wp-content/uploads/2023/11/overworked-businesswoman-with-dark-skin-brainstorming-financial-strategy.jpg",
+    "status": "ok",
+    "bytes": 1230494,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2023/11/person-presenting-information-meeting-white-board_23-2149085958.png": {
+    "local": "/wp-content/uploads/2023/11/person-presenting-information-meeting-white-board_23-2149085958.png",
+    "status": "ok",
+    "bytes": 472885,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/01/Beets.jpg": {
+    "local": null,
+    "status": "error:HTTP Error 404: Not Found",
+    "bytes": 0,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/01/Garden-2-e1704233569983.jpg": {
+    "local": "/wp-content/uploads/2024/01/Garden-2-e1704233569983.jpg",
+    "status": "ok",
+    "bytes": 145084,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/01/Noah.jpg": {
+    "local": null,
+    "status": "error:HTTP Error 404: Not Found",
+    "bytes": 0,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/01/cauliflower.jpg": {
+    "local": null,
+    "status": "error:HTTP Error 404: Not Found",
+    "bytes": 0,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/01/garden-150x150.jpg": {
+    "local": "/wp-content/uploads/2024/01/garden-150x150.jpg",
+    "status": "ok",
+    "bytes": 8914,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/01/garden-300x300.jpg": {
+    "local": "/wp-content/uploads/2024/01/garden-300x300.jpg",
+    "status": "ok",
+    "bytes": 30073,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/01/garden.jpg": {
+    "local": "/wp-content/uploads/2024/01/garden.jpg",
+    "status": "ok",
+    "bytes": 175357,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/01/period-Po-398x300.jpg": {
+    "local": "/wp-content/uploads/2024/01/period-Po-398x300.jpg",
+    "status": "ok",
+    "bytes": 24878,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/01/period-Po.jpg": {
+    "local": "/wp-content/uploads/2024/01/period-Po.jpg",
+    "status": "ok",
+    "bytes": 49682,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/02/smile-2.jpg": {
+    "local": "/wp-content/uploads/2024/02/smile-2.jpg",
+    "status": "ok",
+    "bytes": 3644,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/02/smile-3.png": {
+    "local": "/wp-content/uploads/2024/02/smile-3.png",
+    "status": "ok",
+    "bytes": 36924,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/02/smile.jpg": {
+    "local": "/wp-content/uploads/2024/02/smile.jpg",
+    "status": "ok",
+    "bytes": 9157,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/03/image.png": {
+    "local": "/wp-content/uploads/2024/03/image.png",
+    "status": "ok",
+    "bytes": 22560,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/04/gardening-400x163.jpg": {
+    "local": "/wp-content/uploads/2024/04/gardening-400x163.jpg",
+    "status": "ok",
+    "bytes": 19863,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/04/gardening.jpg": {
+    "local": "/wp-content/uploads/2024/04/gardening.jpg",
+    "status": "ok",
+    "bytes": 23265,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/05/1-1152x1536.jpg": {
+    "local": "/wp-content/uploads/2024/05/1-1152x1536.jpg",
+    "status": "ok",
+    "bytes": 207924,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/05/1-1536x2048.jpg": {
+    "local": "/wp-content/uploads/2024/05/1-1536x2048.jpg",
+    "status": "ok",
+    "bytes": 299317,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/05/1-225x300.jpg": {
+    "local": "/wp-content/uploads/2024/05/1-225x300.jpg",
+    "status": "ok",
+    "bytes": 21447,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/05/1-600x800.jpg": {
+    "local": "/wp-content/uploads/2024/05/1-600x800.jpg",
+    "status": "ok",
+    "bytes": 87007,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/05/1-768x1024.jpg": {
+    "local": "/wp-content/uploads/2024/05/1-768x1024.jpg",
+    "status": "ok",
+    "bytes": 119602,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/05/1.jpg": {
+    "local": "/wp-content/uploads/2024/05/1.jpg",
+    "status": "ok",
+    "bytes": 363622,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/07/image-400x269.png": {
+    "local": "/wp-content/uploads/2024/07/image-400x269.png",
+    "status": "ok",
+    "bytes": 209271,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/07/image.png": {
+    "local": "/wp-content/uploads/2024/07/image.png",
+    "status": "ok",
+    "bytes": 592796,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/07/resize-superhero-1267x800.jpg": {
+    "local": "/wp-content/uploads/2024/07/resize-superhero-1267x800.jpg",
+    "status": "ok",
+    "bytes": 234669,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/07/resize-superhero-1536x970.jpg": {
+    "local": "/wp-content/uploads/2024/07/resize-superhero-1536x970.jpg",
+    "status": "ok",
+    "bytes": 327231,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/07/resize-superhero-2048x1293.jpg": {
+    "local": "/wp-content/uploads/2024/07/resize-superhero-2048x1293.jpg",
+    "status": "ok",
+    "bytes": 526640,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/07/resize-superhero-400x253.jpg": {
+    "local": "/wp-content/uploads/2024/07/resize-superhero-400x253.jpg",
+    "status": "ok",
+    "bytes": 29320,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/07/resize-superhero-768x485.jpg": {
+    "local": "/wp-content/uploads/2024/07/resize-superhero-768x485.jpg",
+    "status": "ok",
+    "bytes": 95064,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/08/2024-Copy-of-fruit-and-veg-Contest-Final-copy.docx.pdf": {
+    "local": "/wp-content/uploads/2024/08/2024-Copy-of-fruit-and-veg-Contest-Final-copy.docx.pdf",
+    "status": "ok",
+    "bytes": 153523,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/08/candy-canes-400x238.jpg": {
+    "local": "/wp-content/uploads/2024/08/candy-canes-400x238.jpg",
+    "status": "ok",
+    "bytes": 22551,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/08/candy-canes.jpg": {
+    "local": "/wp-content/uploads/2024/08/candy-canes.jpg",
+    "status": "ok",
+    "bytes": 26625,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/08/image-1-400x271.png": {
+    "local": "/wp-content/uploads/2024/08/image-1-400x271.png",
+    "status": "ok",
+    "bytes": 177947,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/08/image-1-768x520.png": {
+    "local": "/wp-content/uploads/2024/08/image-1-768x520.png",
+    "status": "ok",
+    "bytes": 514602,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/08/image-1.png": {
+    "local": "/wp-content/uploads/2024/08/image-1.png",
+    "status": "ok",
+    "bytes": 702024,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/CSPAP-CoP-flyer-3-1.pdf": {
+    "local": "/wp-content/uploads/2024/09/CSPAP-CoP-flyer-3-1.pdf",
+    "status": "ok",
+    "bytes": 204008,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/CSPAP-CoP-flyer-3.pdf": {
+    "local": "/wp-content/uploads/2024/09/CSPAP-CoP-flyer-3.pdf",
+    "status": "ok",
+    "bytes": 204008,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/IMG_1470-1067x800.jpg": {
+    "local": "/wp-content/uploads/2024/09/IMG_1470-1067x800.jpg",
+    "status": "ok",
+    "bytes": 284253,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/IMG_1470-1536x1152.jpg": {
+    "local": "/wp-content/uploads/2024/09/IMG_1470-1536x1152.jpg",
+    "status": "ok",
+    "bytes": 534213,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/IMG_1470-2048x1536.jpg": {
+    "local": "/wp-content/uploads/2024/09/IMG_1470-2048x1536.jpg",
+    "status": "ok",
+    "bytes": 861634,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/IMG_1470-400x300.jpg": {
+    "local": "/wp-content/uploads/2024/09/IMG_1470-400x300.jpg",
+    "status": "ok",
+    "bytes": 45366,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/IMG_1470-768x576.jpg": {
+    "local": "/wp-content/uploads/2024/09/IMG_1470-768x576.jpg",
+    "status": "ok",
+    "bytes": 155504,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/IMG_1470-scaled.jpg": {
+    "local": "/wp-content/uploads/2024/09/IMG_1470-scaled.jpg",
+    "status": "ok",
+    "bytes": 1231399,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/IMG_1473-scaled.jpg": {
+    "local": "/wp-content/uploads/2024/09/IMG_1473-scaled.jpg",
+    "status": "ok",
+    "bytes": 1447837,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/IMG_1474-1067x800.jpg": {
+    "local": "/wp-content/uploads/2024/09/IMG_1474-1067x800.jpg",
+    "status": "ok",
+    "bytes": 295739,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/IMG_1474-1536x1152.jpg": {
+    "local": "/wp-content/uploads/2024/09/IMG_1474-1536x1152.jpg",
+    "status": "ok",
+    "bytes": 568579,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/IMG_1474-2048x1536.jpg": {
+    "local": "/wp-content/uploads/2024/09/IMG_1474-2048x1536.jpg",
+    "status": "ok",
+    "bytes": 926613,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/IMG_1474-400x300.jpg": {
+    "local": "/wp-content/uploads/2024/09/IMG_1474-400x300.jpg",
+    "status": "ok",
+    "bytes": 45147,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/IMG_1474-768x576.jpg": {
+    "local": "/wp-content/uploads/2024/09/IMG_1474-768x576.jpg",
+    "status": "ok",
+    "bytes": 157910,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/IMG_1474-scaled.jpg": {
+    "local": "/wp-content/uploads/2024/09/IMG_1474-scaled.jpg",
+    "status": "ok",
+    "bytes": 1325678,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/Restricting_Food_and_Beverage_Marketing_in_Schools-FINAL-201705.pdf": {
+    "local": "/wp-content/uploads/2024/09/Restricting_Food_and_Beverage_Marketing_in_Schools-FINAL-201705.pdf",
+    "status": "ok",
+    "bytes": 393440,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/SchoolWellnessInAction.pdf": {
+    "local": "/wp-content/uploads/2024/09/SchoolWellnessInAction.pdf",
+    "status": "ok",
+    "bytes": 2421916,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/back-to-school-saying.pdf": {
+    "local": "/wp-content/uploads/2024/09/back-to-school-saying.pdf",
+    "status": "ok",
+    "bytes": 523903,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/contest-1.jpg": {
+    "local": "/wp-content/uploads/2024/09/contest-1.jpg",
+    "status": "ok",
+    "bytes": 68203,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/contest-400x247.jpg": {
+    "local": "/wp-content/uploads/2024/09/contest-400x247.jpg",
+    "status": "ok",
+    "bytes": 28120,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/contest.jpg": {
+    "local": "/wp-content/uploads/2024/09/contest.jpg",
+    "status": "ok",
+    "bytes": 68203,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/gum.png": {
+    "local": "/wp-content/uploads/2024/09/gum.png",
+    "status": "ok",
+    "bytes": 68049,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/halloween2-1.jpg": {
+    "local": null,
+    "status": "error:HTTP Error 404: Not Found",
+    "bytes": 0,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/treats-378x300.jpg": {
+    "local": "/wp-content/uploads/2024/09/treats-378x300.jpg",
+    "status": "ok",
+    "bytes": 28738,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/09/treats.jpg": {
+    "local": "/wp-content/uploads/2024/09/treats.jpg",
+    "status": "ok",
+    "bytes": 43221,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/10/2024-strategic-plan.pdf": {
+    "local": "/wp-content/uploads/2024/10/2024-strategic-plan.pdf",
+    "status": "ok",
+    "bytes": 776928,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/10/Final-Assessment-document-.docx-2.pdf": {
+    "local": "/wp-content/uploads/2024/10/Final-Assessment-document-.docx-2.pdf",
+    "status": "ok",
+    "bytes": 716456,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/10/Full-Screen-Aware-Action-Kit-1-1.pdf": {
+    "local": "/wp-content/uploads/2024/10/Full-Screen-Aware-Action-Kit-1-1.pdf",
+    "status": "ok",
+    "bytes": 813338,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/10/Full-Screen-Aware-Action-Kit-1.pdf": {
+    "local": "/wp-content/uploads/2024/10/Full-Screen-Aware-Action-Kit-1.pdf",
+    "status": "ok",
+    "bytes": 813338,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/10/Summary-2023-34-Strategic-plan-2024-25.pdf": {
+    "local": "/wp-content/uploads/2024/10/Summary-2023-34-Strategic-plan-2024-25.pdf",
+    "status": "ok",
+    "bytes": 774163,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/10/image.png": {
+    "local": "/wp-content/uploads/2024/10/image.png",
+    "status": "ok",
+    "bytes": 73314,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/11/Strategic-Plan-and-Exciting-Vision-for-Healthy-Community-Lifespaces-2024-2.docx.pdf": {
+    "local": "/wp-content/uploads/2024/11/Strategic-Plan-and-Exciting-Vision-for-Healthy-Community-Lifespaces-2024-2.docx.pdf",
+    "status": "ok",
+    "bytes": 228868,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/12/2024-Copy-of-fruit-and-veg-Contest-Final-copy.docx-1.pdf": {
+    "local": "/wp-content/uploads/2024/12/2024-Copy-of-fruit-and-veg-Contest-Final-copy.docx-1.pdf",
+    "status": "ok",
+    "bytes": 179935,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/12/2024-Copy-of-fruit-and-veg-Contest-Final-copy.docx.pdf": {
+    "local": "/wp-content/uploads/2024/12/2024-Copy-of-fruit-and-veg-Contest-Final-copy.docx.pdf",
+    "status": "ok",
+    "bytes": 179719,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/12/CPR-400x210.jpg": {
+    "local": "/wp-content/uploads/2024/12/CPR-400x210.jpg",
+    "status": "ok",
+    "bytes": 17307,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/12/CPR.jpg": {
+    "local": "/wp-content/uploads/2024/12/CPR.jpg",
+    "status": "ok",
+    "bytes": 19909,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/12/Summary-2023-24-Strategic-plan-2024-25.pdf": {
+    "local": "/wp-content/uploads/2024/12/Summary-2023-24-Strategic-plan-2024-25.pdf",
+    "status": "ok",
+    "bytes": 233559,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/12/image-2.png": {
+    "local": null,
+    "status": "error:HTTP Error 404: Not Found",
+    "bytes": 0,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/12/image-3.png": {
+    "local": "/wp-content/uploads/2024/12/image-3.png",
+    "status": "ok",
+    "bytes": 131807,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/12/image-400x225.png": {
+    "local": "/wp-content/uploads/2024/12/image-400x225.png",
+    "status": "ok",
+    "bytes": 217438,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/12/image.png": {
+    "local": "/wp-content/uploads/2024/12/image.png",
+    "status": "ok",
+    "bytes": 527221,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/12/vegs-1.png": {
+    "local": "/wp-content/uploads/2024/12/vegs-1.png",
+    "status": "ok",
+    "bytes": 94468,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2024/12/vegs.png": {
+    "local": null,
+    "status": "error:HTTP Error 404: Not Found",
+    "bytes": 0,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/01/yuka.jpg": {
+    "local": "/wp-content/uploads/2025/01/yuka.jpg",
+    "status": "ok",
+    "bytes": 4205,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/02/1st-Vida-2024-25-1123x800.jpg": {
+    "local": "/wp-content/uploads/2025/02/1st-Vida-2024-25-1123x800.jpg",
+    "status": "ok",
+    "bytes": 123445,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/02/1st-Vida-2024-25-1536x1095.jpg": {
+    "local": "/wp-content/uploads/2025/02/1st-Vida-2024-25-1536x1095.jpg",
+    "status": "ok",
+    "bytes": 207363,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/02/1st-Vida-2024-25-2048x1460.jpg": {
+    "local": "/wp-content/uploads/2025/02/1st-Vida-2024-25-2048x1460.jpg",
+    "status": "ok",
+    "bytes": 339491,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/02/1st-Vida-2024-25-400x285.jpg": {
+    "local": "/wp-content/uploads/2025/02/1st-Vida-2024-25-400x285.jpg",
+    "status": "ok",
+    "bytes": 22441,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/02/1st-Vida-2024-25-768x547.jpg": {
+    "local": "/wp-content/uploads/2025/02/1st-Vida-2024-25-768x547.jpg",
+    "status": "ok",
+    "bytes": 66579,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/02/1st-Vida-2024-25-scaled.jpg": {
+    "local": "/wp-content/uploads/2025/02/1st-Vida-2024-25-scaled.jpg",
+    "status": "ok",
+    "bytes": 502643,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/02/2024-25-TEMS-1.pdf": {
+    "local": "/wp-content/uploads/2025/02/2024-25-TEMS-1.pdf",
+    "status": "ok",
+    "bytes": 116065,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/02/20250120-1512-27.4324814-1.mp4": {
+    "local": "/wp-content/uploads/2025/02/20250120-1512-27.4324814-1.mp4",
+    "status": "ok",
+    "bytes": 26409099,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/02/20250120-1512-27.4324814-2-1.mp4": {
+    "local": "/wp-content/uploads/2025/02/20250120-1512-27.4324814-2-1.mp4",
+    "status": "ok",
+    "bytes": 26409099,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/02/2nd-Vida-2024-25-1201x800.jpeg": {
+    "local": "/wp-content/uploads/2025/02/2nd-Vida-2024-25-1201x800.jpeg",
+    "status": "ok",
+    "bytes": 152951,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/02/2nd-Vida-2024-25-1536x1023.jpeg": {
+    "local": "/wp-content/uploads/2025/02/2nd-Vida-2024-25-1536x1023.jpeg",
+    "status": "ok",
+    "bytes": 230781,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/02/2nd-Vida-2024-25-2048x1364.jpeg": {
+    "local": "/wp-content/uploads/2025/02/2nd-Vida-2024-25-2048x1364.jpeg",
+    "status": "ok",
+    "bytes": 378972,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/02/2nd-Vida-2024-25-400x266.jpeg": {
+    "local": "/wp-content/uploads/2025/02/2nd-Vida-2024-25-400x266.jpeg",
+    "status": "ok",
+    "bytes": 25280,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/02/2nd-Vida-2024-25-768x511.jpeg": {
+    "local": "/wp-content/uploads/2025/02/2nd-Vida-2024-25-768x511.jpeg",
+    "status": "ok",
+    "bytes": 72948,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/02/2nd-Vida-2024-25-scaled.jpeg": {
+    "local": "/wp-content/uploads/2025/02/2nd-Vida-2024-25-scaled.jpeg",
+    "status": "ok",
+    "bytes": 562305,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/02/IMG_2094-scaled.jpg": {
+    "local": "/wp-content/uploads/2025/02/IMG_2094-scaled.jpg",
+    "status": "ok",
+    "bytes": 627217,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/02/Pennsylvania-School-Student-Fruit-contest-3.docx": {
+    "local": "/wp-content/uploads/2025/02/Pennsylvania-School-Student-Fruit-contest-3.docx",
+    "status": "ok",
+    "bytes": 28324,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/02/UMASD-State-fruit-essay.pdf": {
+    "local": "/wp-content/uploads/2025/02/UMASD-State-fruit-essay.pdf",
+    "status": "ok",
+    "bytes": 361364,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/03/Copy-of-Classroom-Education-Newsletter-in-Green-Red-and-Orange-Autumn-Leaves-Style-1.pdf": {
+    "local": "/wp-content/uploads/2025/03/Copy-of-Classroom-Education-Newsletter-in-Green-Red-and-Orange-Autumn-Leaves-Style-1.pdf",
+    "status": "ok",
+    "bytes": 1125943,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/03/HCL-Newsletter-final-Mar-Apr-May-2025-1.pdf": {
+    "local": "/wp-content/uploads/2025/03/HCL-Newsletter-final-Mar-Apr-May-2025-1.pdf",
+    "status": "ok",
+    "bytes": 1138381,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/03/HCL-Newsletter-final-Mar-Apr-May-2025.pdf": {
+    "local": "/wp-content/uploads/2025/03/HCL-Newsletter-final-Mar-Apr-May-2025.pdf",
+    "status": "ok",
+    "bytes": 1138381,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/03/brown-rice-400x290.jpg": {
+    "local": "/wp-content/uploads/2025/03/brown-rice-400x290.jpg",
+    "status": "ok",
+    "bytes": 20064,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/03/brown-rice.jpg": {
+    "local": "/wp-content/uploads/2025/03/brown-rice.jpg",
+    "status": "ok",
+    "bytes": 39578,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/03/march-april-may-2025-1.pdf": {
+    "local": "/wp-content/uploads/2025/03/march-april-may-2025-1.pdf",
+    "status": "ok",
+    "bytes": 982800,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/03/march-april-may-2025.pdf": {
+    "local": "/wp-content/uploads/2025/03/march-april-may-2025.pdf",
+    "status": "ok",
+    "bytes": 982800,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/04/2025-26-PA-State-Veg-Contest-images-0-scaled.jpg": {
+    "local": "/wp-content/uploads/2025/04/2025-26-PA-State-Veg-Contest-images-0-scaled.jpg",
+    "status": "ok",
+    "bytes": 536835,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/04/2025-26-PA-State-Veg-Contest-images-1-scaled.jpg": {
+    "local": "/wp-content/uploads/2025/04/2025-26-PA-State-Veg-Contest-images-1-scaled.jpg",
+    "status": "ok",
+    "bytes": 439217,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/04/2025-26-PA-State-Veg-Contest-images-2-scaled.jpg": {
+    "local": "/wp-content/uploads/2025/04/2025-26-PA-State-Veg-Contest-images-2-scaled.jpg",
+    "status": "ok",
+    "bytes": 378228,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/05/Contest-\u2013-www.hclwellness.org-Healthy-Community-Lifespaces.pdf": {
+    "local": "/wp-content/uploads/2025/05/Contest-\u2013-www.hclwellness.org-Healthy-Community-Lifespaces.pdf",
+    "status": "ok",
+    "bytes": 1210776,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/05/image-11-1.jpeg": {
+    "local": null,
+    "status": "error:HTTP Error 404: Not Found",
+    "bytes": 0,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/06/Screenshot-2025-06-16-104621-400x250.jpg": {
+    "local": "/wp-content/uploads/2025/06/Screenshot-2025-06-16-104621-400x250.jpg",
+    "status": "ok",
+    "bytes": 20421,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/06/Screenshot-2025-06-16-104621.jpg": {
+    "local": "/wp-content/uploads/2025/06/Screenshot-2025-06-16-104621.jpg",
+    "status": "ok",
+    "bytes": 48384,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/06/image_garden-fall-1.png": {
+    "local": "/wp-content/uploads/2025/06/image_garden-fall-1.png",
+    "status": "ok",
+    "bytes": 2397,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/06/image_garden-fall.png": {
+    "local": "/wp-content/uploads/2025/06/image_garden-fall.png",
+    "status": "ok",
+    "bytes": 2397,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/06/summary-2024-25-Plan-2025-2026-1.pdf": {
+    "local": "/wp-content/uploads/2025/06/summary-2024-25-Plan-2025-2026-1.pdf",
+    "status": "ok",
+    "bytes": 2190109,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/06/summary-2024-25-Plan-2025-2026-2.pdf": {
+    "local": "/wp-content/uploads/2025/06/summary-2024-25-Plan-2025-2026-2.pdf",
+    "status": "ok",
+    "bytes": 178171,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/06/summary-2024-25-Plan-2025-2026.pdf": {
+    "local": "/wp-content/uploads/2025/06/summary-2024-25-Plan-2025-2026.pdf",
+    "status": "ok",
+    "bytes": 2160631,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/10/1.jpg": {
+    "local": "/wp-content/uploads/2025/10/1.jpg",
+    "status": "ok",
+    "bytes": 140700,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/10/2.jpg": {
+    "local": "/wp-content/uploads/2025/10/2.jpg",
+    "status": "ok",
+    "bytes": 120088,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/10/2025-VEG-Contest-final.pdf": {
+    "local": "/wp-content/uploads/2025/10/2025-VEG-Contest-final.pdf",
+    "status": "ok",
+    "bytes": 1437521,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/10/3.jpg": {
+    "local": "/wp-content/uploads/2025/10/3.jpg",
+    "status": "ok",
+    "bytes": 81620,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/10/One-page-entry-2025-Veg-contest.pdf": {
+    "local": "/wp-content/uploads/2025/10/One-page-entry-2025-Veg-contest.pdf",
+    "status": "ok",
+    "bytes": 819619,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/11/Senate-Floor-Picture-1300x732.jpg": {
+    "local": "/wp-content/uploads/2025/11/Senate-Floor-Picture-1300x732.jpg",
+    "status": "ok",
+    "bytes": 254608,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/11/Senate-Floor-Picture-1536x864.jpg": {
+    "local": "/wp-content/uploads/2025/11/Senate-Floor-Picture-1536x864.jpg",
+    "status": "ok",
+    "bytes": 335188,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/11/Senate-Floor-Picture-400x225.jpg": {
+    "local": "/wp-content/uploads/2025/11/Senate-Floor-Picture-400x225.jpg",
+    "status": "ok",
+    "bytes": 32079,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/11/Senate-Floor-Picture-768x432.jpg": {
+    "local": "/wp-content/uploads/2025/11/Senate-Floor-Picture-768x432.jpg",
+    "status": "ok",
+    "bytes": 101186,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/11/Senate-Floor-Picture.jpg": {
+    "local": "/wp-content/uploads/2025/11/Senate-Floor-Picture.jpg",
+    "status": "ok",
+    "bytes": 469727,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/11/image-1.png": {
+    "local": "/wp-content/uploads/2025/11/image-1.png",
+    "status": "ok",
+    "bytes": 40398,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/11/qr-doc-letter.jpg": {
+    "local": "/wp-content/uploads/2025/11/qr-doc-letter.jpg",
+    "status": "ok",
+    "bytes": 19926,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/11/representatives-letter-for-cameras-and-scooter-warnings.pdf": {
+    "local": "/wp-content/uploads/2025/11/representatives-letter-for-cameras-and-scooter-warnings.pdf",
+    "status": "ok",
+    "bytes": 589482,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/11/school-zone-3-400x167.jpg": {
+    "local": "/wp-content/uploads/2025/11/school-zone-3-400x167.jpg",
+    "status": "ok",
+    "bytes": 10932,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2025/11/school-zone-3.jpg": {
+    "local": "/wp-content/uploads/2025/11/school-zone-3.jpg",
+    "status": "ok",
+    "bytes": 33841,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/01/image-15.png": {
+    "local": "/wp-content/uploads/2026/01/image-15.png",
+    "status": "ok",
+    "bytes": 265896,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/02/Pennsylvania-deserves-a-state-vegetable-that-reflects-the-strength-resilience-and-vitality-of-its-people.-No-choice-captures-those-qualities-better-than-the-humble-yet-extraordinary-carrot.-Carr-2-1152x1536.jpg": {
+    "local": "/wp-content/uploads/2026/02/Pennsylvania-deserves-a-state-vegetable-that-reflects-the-strength-resilience-and-vitality-of-its-people.-No-choice-captures-those-qualities-better-than-the-humble-yet-extraordinary-carrot.-Carr-2-1152x1536.jpg",
+    "status": "ok",
+    "bytes": 339858,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/02/Pennsylvania-deserves-a-state-vegetable-that-reflects-the-strength-resilience-and-vitality-of-its-people.-No-choice-captures-those-qualities-better-than-the-humble-yet-extraordinary-carrot.-Carr-2-1536x2048.jpg": {
+    "local": "/wp-content/uploads/2026/02/Pennsylvania-deserves-a-state-vegetable-that-reflects-the-strength-resilience-and-vitality-of-its-people.-No-choice-captures-those-qualities-better-than-the-humble-yet-extraordinary-carrot.-Carr-2-1536x2048.jpg",
+    "status": "ok",
+    "bytes": 481109,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/02/Pennsylvania-deserves-a-state-vegetable-that-reflects-the-strength-resilience-and-vitality-of-its-people.-No-choice-captures-those-qualities-better-than-the-humble-yet-extraordinary-carrot.-Carr-2-225x300.jpg": {
+    "local": "/wp-content/uploads/2026/02/Pennsylvania-deserves-a-state-vegetable-that-reflects-the-strength-resilience-and-vitality-of-its-people.-No-choice-captures-those-qualities-better-than-the-humble-yet-extraordinary-carrot.-Carr-2-225x300.jpg",
+    "status": "ok",
+    "bytes": 23936,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/02/Pennsylvania-deserves-a-state-vegetable-that-reflects-the-strength-resilience-and-vitality-of-its-people.-No-choice-captures-those-qualities-better-than-the-humble-yet-extraordinary-carrot.-Carr-2-600x800.jpg": {
+    "local": "/wp-content/uploads/2026/02/Pennsylvania-deserves-a-state-vegetable-that-reflects-the-strength-resilience-and-vitality-of-its-people.-No-choice-captures-those-qualities-better-than-the-humble-yet-extraordinary-carrot.-Carr-2-600x800.jpg",
+    "status": "ok",
+    "bytes": 133556,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/02/Pennsylvania-deserves-a-state-vegetable-that-reflects-the-strength-resilience-and-vitality-of-its-people.-No-choice-captures-those-qualities-better-than-the-humble-yet-extraordinary-carrot.-Carr-2-768x1024.jpg": {
+    "local": "/wp-content/uploads/2026/02/Pennsylvania-deserves-a-state-vegetable-that-reflects-the-strength-resilience-and-vitality-of-its-people.-No-choice-captures-those-qualities-better-than-the-humble-yet-extraordinary-carrot.-Carr-2-768x1024.jpg",
+    "status": "ok",
+    "bytes": 194446,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/02/Pennsylvania-deserves-a-state-vegetable-that-reflects-the-strength-resilience-and-vitality-of-its-people.-No-choice-captures-those-qualities-better-than-the-humble-yet-extraordinary-carrot.-Carr-2.jpg": {
+    "local": "/wp-content/uploads/2026/02/Pennsylvania-deserves-a-state-vegetable-that-reflects-the-strength-resilience-and-vitality-of-its-people.-No-choice-captures-those-qualities-better-than-the-humble-yet-extraordinary-carrot.-Carr-2.jpg",
+    "status": "ok",
+    "bytes": 859048,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/02/carrots-1158x800.jpeg": {
+    "local": "/wp-content/uploads/2026/02/carrots-1158x800.jpeg",
+    "status": "ok",
+    "bytes": 156632,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/02/carrots-1536x1061.jpeg": {
+    "local": "/wp-content/uploads/2026/02/carrots-1536x1061.jpeg",
+    "status": "ok",
+    "bytes": 249925,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/02/carrots-2048x1415.jpeg": {
+    "local": "/wp-content/uploads/2026/02/carrots-2048x1415.jpeg",
+    "status": "ok",
+    "bytes": 413100,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/02/carrots-400x276.jpeg": {
+    "local": "/wp-content/uploads/2026/02/carrots-400x276.jpeg",
+    "status": "ok",
+    "bytes": 27998,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/02/carrots-768x530.jpeg": {
+    "local": "/wp-content/uploads/2026/02/carrots-768x530.jpeg",
+    "status": "ok",
+    "bytes": 81046,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/02/carrots-scaled.jpeg": {
+    "local": "/wp-content/uploads/2026/02/carrots-scaled.jpeg",
+    "status": "ok",
+    "bytes": 625550,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/02/corn-1196x800.jpeg": {
+    "local": "/wp-content/uploads/2026/02/corn-1196x800.jpeg",
+    "status": "ok",
+    "bytes": 168352,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/02/corn-1536x1027.jpeg": {
+    "local": "/wp-content/uploads/2026/02/corn-1536x1027.jpeg",
+    "status": "ok",
+    "bytes": 254842,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/02/corn-2048x1369.jpeg": {
+    "local": "/wp-content/uploads/2026/02/corn-2048x1369.jpeg",
+    "status": "ok",
+    "bytes": 414349,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/02/corn-400x267.jpeg": {
+    "local": "/wp-content/uploads/2026/02/corn-400x267.jpeg",
+    "status": "ok",
+    "bytes": 27051,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/02/corn-768x514.jpeg": {
+    "local": "/wp-content/uploads/2026/02/corn-768x514.jpeg",
+    "status": "ok",
+    "bytes": 81978,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/02/corn-scaled.jpeg": {
+    "local": "/wp-content/uploads/2026/02/corn-scaled.jpeg",
+    "status": "ok",
+    "bytes": 612286,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/03/My-Healthy-Teacher-2023.pdf": {
+    "local": "/wp-content/uploads/2026/03/My-Healthy-Teacher-2023.pdf",
+    "status": "ok",
+    "bytes": 830694,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/03/emma.jpg": {
+    "local": "/wp-content/uploads/2026/03/emma.jpg",
+    "status": "ok",
+    "bytes": 129559,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/03/emmas-letter.pdf": {
+    "local": "/wp-content/uploads/2026/03/emmas-letter.pdf",
+    "status": "ok",
+    "bytes": 200603,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/03/teacher-favorites.pdf": {
+    "local": "/wp-content/uploads/2026/03/teacher-favorites.pdf",
+    "status": "ok",
+    "bytes": 394179,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/03/vegetable-contest-2026-27.pdf": {
+    "local": "/wp-content/uploads/2026/03/vegetable-contest-2026-27.pdf",
+    "status": "ok",
+    "bytes": 1521212,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/04/Garden-Program-Spring-2026.docx": {
+    "local": "/wp-content/uploads/2026/04/Garden-Program-Spring-2026.docx",
+    "status": "ok",
+    "bytes": 335152,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/04/MIcromobility-School-district-draft-policy.pdf": {
+    "local": "/wp-content/uploads/2026/04/MIcromobility-School-district-draft-policy.pdf",
+    "status": "ok",
+    "bytes": 51402,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/04/Powered-Personal-Transportation-Devices-as-of-June-2024-2.pdf": {
+    "local": "/wp-content/uploads/2026/04/Powered-Personal-Transportation-Devices-as-of-June-2024-2.pdf",
+    "status": "ok",
+    "bytes": 113672,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/04/Ride-Smart-Stay-Safe-Your-Choices-Matter.pdf": {
+    "local": "/wp-content/uploads/2026/04/Ride-Smart-Stay-Safe-Your-Choices-Matter.pdf",
+    "status": "ok",
+    "bytes": 359169,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/04/Safe-Kids-Helmet-Fit-Test-English_Spanish-2024-2.pdf": {
+    "local": "/wp-content/uploads/2026/04/Safe-Kids-Helmet-Fit-Test-English_Spanish-2024-2.pdf",
+    "status": "ok",
+    "bytes": 6631579,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/04/image-1-400x225.jpeg": {
+    "local": "/wp-content/uploads/2026/04/image-1-400x225.jpeg",
+    "status": "ok",
+    "bytes": 32375,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/04/image-1-768x432.jpeg": {
+    "local": "/wp-content/uploads/2026/04/image-1-768x432.jpeg",
+    "status": "ok",
+    "bytes": 96328,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/04/image-1.jpeg": {
+    "local": "/wp-content/uploads/2026/04/image-1.jpeg",
+    "status": "ok",
+    "bytes": 75723,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/04/image-2-400x267.jpeg": {
+    "local": "/wp-content/uploads/2026/04/image-2-400x267.jpeg",
+    "status": "ok",
+    "bytes": 43862,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/04/image-2-768x512.jpeg": {
+    "local": "/wp-content/uploads/2026/04/image-2-768x512.jpeg",
+    "status": "ok",
+    "bytes": 129132,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/04/image-2.jpeg": {
+    "local": "/wp-content/uploads/2026/04/image-2.jpeg",
+    "status": "ok",
+    "bytes": 102057,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/04/image-3-400x273.jpeg": {
+    "local": "/wp-content/uploads/2026/04/image-3-400x273.jpeg",
+    "status": "ok",
+    "bytes": 34010,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/04/image-3-767x524.jpeg": {
+    "local": "/wp-content/uploads/2026/04/image-3-767x524.jpeg",
+    "status": "ok",
+    "bytes": 88112,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/04/image-3.jpeg": {
+    "local": "/wp-content/uploads/2026/04/image-3.jpeg",
+    "status": "ok",
+    "bytes": 67726,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/04/image-4-369x300.jpeg": {
+    "local": "/wp-content/uploads/2026/04/image-4-369x300.jpeg",
+    "status": "ok",
+    "bytes": 18930,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/04/image-4-768x624.jpeg": {
+    "local": "/wp-content/uploads/2026/04/image-4-768x624.jpeg",
+    "status": "ok",
+    "bytes": 50987,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/04/image-4.jpeg": {
+    "local": "/wp-content/uploads/2026/04/image-4.jpeg",
+    "status": "ok",
+    "bytes": 39340,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/04/image-400x180.jpeg": {
+    "local": "/wp-content/uploads/2026/04/image-400x180.jpeg",
+    "status": "ok",
+    "bytes": 25926,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/04/image-400x64.png": {
+    "local": "/wp-content/uploads/2026/04/image-400x64.png",
+    "status": "ok",
+    "bytes": 23477,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/04/image-767x122.png": {
+    "local": "/wp-content/uploads/2026/04/image-767x122.png",
+    "status": "ok",
+    "bytes": 72175,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/04/image-767x345.jpeg": {
+    "local": "/wp-content/uploads/2026/04/image-767x345.jpeg",
+    "status": "ok",
+    "bytes": 74803,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/04/image.jpeg": {
+    "local": "/wp-content/uploads/2026/04/image.jpeg",
+    "status": "ok",
+    "bytes": 57800,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/04/image.png": {
+    "local": "/wp-content/uploads/2026/04/image.png",
+    "status": "ok",
+    "bytes": 76161,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/04/low_speed_fact_sheet_2021_final.pdf": {
+    "local": "/wp-content/uploads/2026/04/low_speed_fact_sheet_2021_final.pdf",
+    "status": "ok",
+    "bytes": 321837,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/05/Copilot_20260508_235646-1200x800.png": {
+    "local": "/wp-content/uploads/2026/05/Copilot_20260508_235646-1200x800.png",
+    "status": "ok",
+    "bytes": 2484782,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/05/Copilot_20260508_235646-400x267.png": {
+    "local": "/wp-content/uploads/2026/05/Copilot_20260508_235646-400x267.png",
+    "status": "ok",
+    "bytes": 295522,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/05/Copilot_20260508_235646-768x512.png": {
+    "local": "/wp-content/uploads/2026/05/Copilot_20260508_235646-768x512.png",
+    "status": "ok",
+    "bytes": 1051658,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/05/Copilot_20260508_235646.png": {
+    "local": "/wp-content/uploads/2026/05/Copilot_20260508_235646.png",
+    "status": "ok",
+    "bytes": 3926930,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/05/Garden-Program-Spring-2026-1.docx": {
+    "local": "/wp-content/uploads/2026/05/Garden-Program-Spring-2026-1.docx",
+    "status": "ok",
+    "bytes": 335152,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/05/Garden-Program-Spring-2026-2.docx": {
+    "local": "/wp-content/uploads/2026/05/Garden-Program-Spring-2026-2.docx",
+    "status": "ok",
+    "bytes": 335152,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/05/Garden-Program-Spring-2026.docx": {
+    "local": "/wp-content/uploads/2026/05/Garden-Program-Spring-2026.docx",
+    "status": "ok",
+    "bytes": 335152,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/05/MIcromobility-School-district-draft-policy.pdf": {
+    "local": "/wp-content/uploads/2026/05/MIcromobility-School-district-draft-policy.pdf",
+    "status": "ok",
+    "bytes": 518389,
+    "kind": "hcl-file"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/05/draft-micromobility_safety_policy.docx": {
+    "local": "/wp-content/uploads/2026/05/draft-micromobility_safety_policy.docx",
+    "status": "ok",
+    "bytes": 3689953,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/05/helmet-chart-1-259x300.jpeg": {
+    "local": "/wp-content/uploads/2026/05/helmet-chart-1-259x300.jpeg",
+    "status": "ok",
+    "bytes": 32515,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/05/helmet-chart-1.jpg": {
+    "local": "/wp-content/uploads/2026/05/helmet-chart-1.jpg",
+    "status": "ok",
+    "bytes": 183919,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/05/helmet-chart.jpg": {
+    "local": "/wp-content/uploads/2026/05/helmet-chart.jpg",
+    "status": "ok",
+    "bytes": 211737,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/05/image-1-400x266.png": {
+    "local": "/wp-content/uploads/2026/05/image-1-400x266.png",
+    "status": "ok",
+    "bytes": 65716,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/05/image-1-767x510.png": {
+    "local": "/wp-content/uploads/2026/05/image-1-767x510.png",
+    "status": "ok",
+    "bytes": 183777,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/05/image-1.png": {
+    "local": "/wp-content/uploads/2026/05/image-1.png",
+    "status": "ok",
+    "bytes": 227944,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/05/image-251x300.png": {
+    "local": "/wp-content/uploads/2026/05/image-251x300.png",
+    "status": "ok",
+    "bytes": 133144,
+    "kind": "hcl-asset"
+  },
+  "https://hclwellness.org/wp-content/uploads/2026/05/image.png": {
+    "local": "/wp-content/uploads/2026/05/image.png",
+    "status": "ok",
+    "bytes": 421116,
+    "kind": "hcl-asset"
+  },
+  "https://www.health.pa.gov/topics/Documents/SHIP/SHIP_2023-2028.pdf": {
+    "local": "/external/www.health.pa.gov/topics/Documents/SHIP/SHIP_2023-2028.pdf",
+    "status": "ok",
+    "bytes": 189195,
+    "kind": "ext-file"
+  },
+  "https://www.pas-meeting.org/wp-content/uploads/PAS-2698024-Birken-Ma-Screens-Speech-Delays-PAS-17-FINAL.pdf": {
+    "local": "/external/www.pas-meeting.org/wp-content/uploads/PAS-2698024-Birken-Ma-Screens-Speech-Delays-PAS-17-FINAL.pdf",
+    "status": "ok",
+    "bytes": 174063,
+    "kind": "ext-file"
+  }
+}
