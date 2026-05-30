@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { siteUrl } from '@/lib/site.config'
-import { getPages } from '@/lib/wordpress'
+import { getPages, getPosts, DEDICATED_ROUTE_SLUGS } from '@/lib/wordpress'
 
 export const dynamic = 'force-static'
 
@@ -26,6 +26,7 @@ type SitemapEntry = {
 // changeFrequency: 'monthly' for content pages, 'yearly' for policy pages.
 export const routes: readonly SitemapEntry[] = [
   { path: '/', changeFrequency: 'weekly', priority: 1.0 },
+  { path: '/blog', changeFrequency: 'weekly', priority: 0.7 },
   { path: '/privacy-policy', changeFrequency: 'yearly', priority: 0.2 },
   { path: '/cookie-policy', changeFrequency: 'yearly', priority: 0.2 },
   { path: '/terms-of-service', changeFrequency: 'yearly', priority: 0.2 },
@@ -47,13 +48,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Migrated WordPress pages are served by the dynamic `src/app/[slug]` route,
   // so they aren't in the static `routes` list above — enumerate them here from
-  // the same content the route renders.
-  const wpEntries: MetadataRoute.Sitemap = getPages().map((p) => ({
-    url: siteUrl(p.route),
-    lastModified: p.modified ? new Date(p.modified) : now,
-    changeFrequency: 'monthly',
-    priority: 0.6,
-  }))
+  // the same content the route renders. Skip slugs owned by a dedicated static
+  // route (e.g. /blog) to avoid a duplicate entry.
+  const wpEntries: MetadataRoute.Sitemap = [...getPages(), ...getPosts()]
+    .filter((p) => !DEDICATED_ROUTE_SLUGS.has(p.slug))
+    .map((p) => ({
+      url: siteUrl(p.route),
+      lastModified: p.modified ? new Date(p.modified) : now,
+      changeFrequency: 'monthly',
+      priority: p.type === 'post' ? 0.5 : 0.6,
+    }))
 
   return [...staticEntries, ...wpEntries]
 }

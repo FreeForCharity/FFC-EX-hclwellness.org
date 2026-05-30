@@ -2,15 +2,20 @@ import React from 'react'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import WordPressContent from '@/components/WordPressContent'
-import { getPages, getPageBySlug } from '@/lib/wordpress'
+import { getPages, getPageBySlug, DEDICATED_ROUTE_SLUGS } from '@/lib/wordpress'
 
 /**
  * Renders every migrated WordPress page (except the front page) at its
  * original top-level slug — e.g. /about-us, /team, /contest — so the static
  * site preserves the live URL structure exactly.
+ *
+ * Slugs in DEDICATED_ROUTE_SLUGS (e.g. /blog) are skipped because a dedicated
+ * static route owns them.
  */
 export function generateStaticParams() {
-  return getPages().map((p) => ({ slug: p.slug }))
+  return getPages()
+    .filter((p) => !DEDICATED_ROUTE_SLUGS.has(p.slug))
+    .map((p) => ({ slug: p.slug }))
 }
 
 export async function generateMetadata({
