@@ -10,6 +10,26 @@ describe('siteUrl', () => {
     expect(siteUrl('/foo/bar/')).toBe(`${siteConfig.url}/foo/bar/`)
   })
 
+  describe('with a deploy base path (github.io subpath)', () => {
+    const BP = '/FFC-EX-hclwellness.org'
+    const prev = process.env.NEXT_PUBLIC_BASE_PATH
+    beforeEach(() => {
+      process.env.NEXT_PUBLIC_BASE_PATH = BP
+    })
+    afterEach(() => {
+      if (prev === undefined) delete process.env.NEXT_PUBLIC_BASE_PATH
+      else process.env.NEXT_PUBLIC_BASE_PATH = prev
+    })
+
+    it('prefixes the base path exactly once for "/" and nested paths', () => {
+      expect(siteUrl('/')).toBe(`${siteConfig.url}${BP}/`)
+      expect(siteUrl('/about-us/')).toBe(`${siteConfig.url}${BP}/about-us/`)
+      // No double-prefixing.
+      const occurrences = siteUrl('/about-us/').split(BP).length - 1
+      expect(occurrences).toBe(1)
+    })
+  })
+
   it('throws on an empty string', () => {
     expect(() => siteUrl('')).toThrow(TypeError)
   })
