@@ -92,6 +92,22 @@ ZEFFY_DONATE = (
     "8e423183-d093-41c4-91a0-947ff24c3bee?modal=true"
 )
 
+
+def _site_config_value(key):
+    """Read a simple string value from src/lib/site.config.ts (single source)."""
+    with open(os.path.join(ROOT, "src", "lib", "site.config.ts"), encoding="utf-8") as f:
+        m = re.search(key + r":\s*['\"]([^'\"]+)['\"]", f.read())
+    return m.group(1) if m else ""
+
+
+# Contact details reused across the page overrides below. The email is the
+# single source of truth (siteConfig.contactEmail); phone/address are not in
+# siteConfig, so they live here as named constants to avoid in-file drift.
+CONTACT_EMAIL = _site_config_value("contactEmail")
+CONTACT_PHONE = "610-505-0515"
+CONTACT_PHONE_TEL = "+16105050515"
+CONTACT_ADDRESS = "620 Keebler Road, King of Prussia, PA 19406"
+
 # GiveWP donation pages are dynamic (donor portal / post-checkout state) and
 # cannot function on a static export — they otherwise render a perpetual
 # loading spinner. Replace them with static content. (donation-failed already
@@ -102,9 +118,8 @@ PAGE_HTML_OVERRIDES = {
         "donation provider rather than on this site.</p>"
         f'<p><a class="wp-block-button__link" href="{ZEFFY_DONATE}" '
         'target="_blank" rel="noopener noreferrer">Make a donation</a></p>'
-        '<p>Questions about a donation? Email '
-        '<a href="mailto:Healthycommunitylifespaces@gmail.com">'
-        "Healthycommunitylifespaces@gmail.com</a>.</p>"
+        "<p>Questions about a donation? Email "
+        f'<a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a>.</p>'
     ),
     "donation-confirmation": (
         "<p>Thank you for your donation! Your support helps Healthy Community "
@@ -117,23 +132,21 @@ PAGE_HTML_OVERRIDES = {
     "contact-us": (
         "<p>We&#8217;d love to hear from you &mdash; reach out any time.</p>"
         '<ul class="contact-details">'
-        '<li><strong>Email:</strong> '
-        '<a href="mailto:Healthycommunitylifespaces@gmail.com">'
-        "Healthycommunitylifespaces@gmail.com</a></li>"
-        '<li><strong>Phone:</strong> <a href="tel:+16105050515">610-505-0515</a></li>'
-        "<li><strong>Address:</strong> 620 Keebler Road, King of Prussia, PA 19406</li>"
+        f'<li><strong>Email:</strong> <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a></li>'
+        f'<li><strong>Phone:</strong> <a href="tel:{CONTACT_PHONE_TEL}">{CONTACT_PHONE}</a></li>'
+        f"<li><strong>Address:</strong> {CONTACT_ADDRESS}</li>"
         "</ul>"
-        '<p><a class="wp-block-button__link" '
-        'href="mailto:Healthycommunitylifespaces@gmail.com?subject=Website%20inquiry">'
+        f'<p><a class="wp-block-button__link" '
+        f'href="mailto:{CONTACT_EMAIL}?subject=Website%20inquiry">'
         "Email us</a></p>"
     ),
     "contact-form": (
         "<p>To get in touch, email us and we&#8217;ll get back to you as soon as we can.</p>"
-        '<p><a class="wp-block-button__link" '
-        'href="mailto:Healthycommunitylifespaces@gmail.com?subject=Website%20inquiry">'
+        f'<p><a class="wp-block-button__link" '
+        f'href="mailto:{CONTACT_EMAIL}?subject=Website%20inquiry">'
         "Email us</a></p>"
-        '<p>Prefer phone or mail? Call <a href="tel:+16105050515">610-505-0515</a> '
-        "or write to 620 Keebler Road, King of Prussia, PA 19406.</p>"
+        f'<p>Prefer phone or mail? Call <a href="tel:{CONTACT_PHONE_TEL}">{CONTACT_PHONE}</a> '
+        f"or write to {CONTACT_ADDRESS}.</p>"
     ),
 }
 
