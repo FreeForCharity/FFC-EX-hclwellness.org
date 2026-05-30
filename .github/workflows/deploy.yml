@@ -47,9 +47,14 @@ jobs:
           # it isn't already — otherwise this step fails with "HttpError: Not
           # Found" on repos where Pages was never turned on. Idempotent.
           enablement: true
-          # Automatically inject basePath in your Next.js configuration file and disable
-          # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
-          static_site_generator: next
+          # NOTE: we deliberately do NOT set `static_site_generator: next`.
+          # That option rewrites next.config to inject basePath, which clobbers
+          # our committed config and silently DROPS `trailingSlash: true` — so
+          # the export emits flat `about-us.html` files instead of
+          # `about-us/index.html`, and every trailing-slash URL (our links,
+          # canonical, and sitemap all use them) 404s on Pages. We already set
+          # `output: export`, `images.unoptimized`, and basePath (via
+          # NEXT_PUBLIC_BASE_PATH in the build step) in next.config.ts.
 
       - name: Restore Next.js cache
         uses: actions/cache@v5
