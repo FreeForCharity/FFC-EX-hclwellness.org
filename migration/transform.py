@@ -58,6 +58,25 @@ def categories(item):
 
 HOST_RE = re.compile(r"https?://(?:www\.)?hclwellness\.org", re.I)
 
+# External embedded images that could NOT be re-downloaded (source down /
+# 403 / expired CDN tokens) are mapped to local equivalents so the built site
+# loads zero external images. Reasons are documented in MIGRATION_REPORT.md.
+EXTERNAL_OVERRIDES = {
+    "https://block21.oitemplates.org/wp-content/uploads/2023/06/call-1.png": "/external/icons/phone.svg",
+    "https://block21.oitemplates.org/wp-content/uploads/2023/06/email-1.png": "/external/icons/email.svg",
+    "https://block21.oitemplates.org/wp-content/uploads/2023/06/location-1.png": "/external/icons/location.svg",
+}
+# LinkedIn CDN images (403 / expired tokens) -> local placeholder.
+LICDN_PLACEHOLDER = "/external/placeholder.svg"
+
+# Broken source links repaired to the localized target.
+LINK_OVERRIDES = [
+    (
+        re.compile(r'href="[^"]*representatives-letter-for-cameras-and-scooter-warnings[^"]*"', re.I),
+        'href="/wp-content/uploads/2025/11/representatives-letter-for-cameras-and-scooter-warnings.pdf"',
+    ),
+]
+
 
 def local_asset(url):
     """wp-content asset URL -> root-relative local path (host stripped)."""
@@ -141,6 +160,17 @@ def rewrite_html(raw, route_map, unresolved):
     #    links carry — e.g. href="%0b%0b/foo%0b%0b" — so links stay clean.
     h = re.sub(r'(?:%0[9abcdABCD])+', "", h)
     h = re.sub(r'[\x00-\x08\x0b\x0c\x0e-\x1f]', "", h)
+
+    # 8. localize unrecoverable external embedded images so the built site
+    #    loads zero external images (see EXTERNAL_OVERRIDES / report).
+    for ext_url, local in EXTERNAL_OVERRIDES.items():
+        h = h.replace(ext_url, local)
+    # LinkedIn CDN images (also appear with &amp; entity-encoded params).
+    h = re.sub(r'https://media\.licdn\.com/[^"\']*', LICDN_PLACEHOLDER, h)
+
+    # 9. repair known broken source links to their localized targets.
+    for pat, repl in LINK_OVERRIDES:
+        h = pat.sub(repl, h)
 
     return h.strip()
 

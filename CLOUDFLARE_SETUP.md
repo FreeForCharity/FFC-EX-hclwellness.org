@@ -28,7 +28,7 @@ This guide provides step-by-step instructions for configuring Cloudflare for you
 
 1. Log in to [Cloudflare Dashboard](https://dash.cloudflare.com/)
 2. Click **"Add a Site"**
-3. Enter your domain name (e.g., `ffcworkingsite1.org`)
+3. Enter your domain name (e.g., `hclwellness.org`)
 4. Select the **Free** plan
 5. Cloudflare will scan your existing DNS records
 
@@ -78,7 +78,7 @@ Cloudflare Free plan includes **3 Page Rules**. Use them wisely for maximum perf
 
 #### Page Rule 1: Cache Static Assets (Highest Priority)
 
-**URL Pattern:** `*ffcworkingsite1.org/_next/static/*`
+**URL Pattern:** `*hclwellness.org/_next/static/*`
 
 **Settings:**
 
@@ -90,7 +90,7 @@ Cloudflare Free plan includes **3 Page Rules**. Use them wisely for maximum perf
 
 #### Page Rule 2: Cache Images and Media
 
-**URL Pattern:** `*ffcworkingsite1.org/Images/*` OR `*ffcworkingsite1.org/Svgs/*`
+**URL Pattern:** `*hclwellness.org/Images/*` OR `*hclwellness.org/Svgs/*`
 
 **Settings:**
 
@@ -102,7 +102,7 @@ Cloudflare Free plan includes **3 Page Rules**. Use them wisely for maximum perf
 
 #### Page Rule 3: HTML Pages with Revalidation
 
-**URL Pattern:** `*ffcworkingsite1.org/*.html`
+**URL Pattern:** `*hclwellness.org/*.html`
 
 **Settings:**
 
@@ -260,7 +260,7 @@ Use browser DevTools or online tools:
 
 ```bash
 # Test static asset caching
-curl -I https://ffcworkingsite1.org/_next/static/chunks/[hash].js
+curl -I https://hclwellness.org/_next/static/chunks/[hash].js
 
 # Look for:
 # cache-control: public, max-age=31536000, immutable
@@ -282,7 +282,7 @@ curl -I https://ffcworkingsite1.org/_next/static/chunks/[hash].js
 Use [Security Headers](https://securityheaders.com/) to test:
 
 ```
-https://securityheaders.com/?q=https://ffcworkingsite1.org
+https://securityheaders.com/?q=https://hclwellness.org
 ```
 
 ### 4. Test SSL Configuration
@@ -290,7 +290,7 @@ https://securityheaders.com/?q=https://ffcworkingsite1.org
 Use [SSL Labs](https://www.ssllabs.com/ssltest/) to test:
 
 ```
-https://www.ssllabs.com/ssltest/analyze.html?d=ffcworkingsite1.org
+https://www.ssllabs.com/ssltest/analyze.html?d=hclwellness.org
 ```
 
 ---

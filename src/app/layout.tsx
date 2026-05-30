@@ -99,13 +99,12 @@ export default function RootLayout({
         <meta name="color-scheme" content="light" />
         <meta name="theme-color" content={siteConfig.themeColor} />
 
-        {/* Preconnect to external domains for faster resource loading */}
+        {/* Preconnect to the external services this site actually uses:
+            Google Tag Manager (analytics) and Zeffy (donation form). */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.zeffy.com" />
-        <link rel="preconnect" href="https://widgets.guidestar.org" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.zeffy.com" />
-        <link rel="dns-prefetch" href="https://www.idealist.org" />
 
         <GoogleTagManager />
       </head>

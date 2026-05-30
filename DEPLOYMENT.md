@@ -20,7 +20,7 @@ This document explains how the Free For Charity website is deployed to GitHub Pa
 The Free For Charity website is a static Next.js application deployed to GitHub Pages. The site is accessible at:
 
 - **GitHub Pages URL**: https://freeforcharity.github.io/FFC_Single_Page_Template/
-- **Custom Domain**: https://ffcworkingsite1.org
+- **Custom Domain**: https://hclwellness.org
 
 ### Technology Stack
 
@@ -207,7 +207,7 @@ If using a custom domain:
 1. **Add a CNAME file** to the `public` directory with your domain:
 
    ```
-   ffcworkingsite1.org
+   hclwellness.org
    ```
 
 2. **Configure DNS records** at your domain provider:

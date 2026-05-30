@@ -563,9 +563,9 @@ These steps must be completed **outside the codebase** before implementation:
 1. Go to App Dashboard
 2. Navigate to **Settings > Basic**
 3. Note your **App ID** and **App Secret** (keep these secure)
-4. Add **App Domains:** `ffcworkingsite1.org`, `freeforcharity.github.io`
-5. Add **Privacy Policy URL:** `https://ffcworkingsite1.org/privacy-policy`
-6. Add **Terms of Service URL:** `https://ffcworkingsite1.org/terms-of-service`
+4. Add **App Domains:** `hclwellness.org`, `freeforcharity.github.io`
+5. Add **Privacy Policy URL:** `https://hclwellness.org/privacy-policy`
+6. Add **Terms of Service URL:** `https://hclwellness.org/terms-of-service`
 7. Save changes
 
 #### 4. Get Page Access Token
@@ -1009,7 +1009,7 @@ The GitHub Actions workflow will:
 
 ### Verify Deployment
 
-1. Visit https://ffcworkingsite1.org
+1. Visit https://hclwellness.org
 2. Scroll to Events section
 3. Test cookie consent flow
 4. Verify events load correctly

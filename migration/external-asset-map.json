@@ -1,0 +1,26 @@
+{
+  "https://block21.oitemplates.org/wp-content/uploads/2023/06/call-1.png": {
+    "local": null,
+    "status": "error:<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] ce"
+  },
+  "https://block21.oitemplates.org/wp-content/uploads/2023/06/email-1.png": {
+    "local": null,
+    "status": "error:<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] ce"
+  },
+  "https://block21.oitemplates.org/wp-content/uploads/2023/06/location-1.png": {
+    "local": null,
+    "status": "error:<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] ce"
+  },
+  "https://media.licdn.com/dms/image/v2/C4D03AQGsii9Y4jMcqw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1634303864407?e=1738800000&v=beta&t=ASoKFtc5fJwKvtQ1XN9PLbV6bsuS5hq-hIom6pCbiZU": {
+    "local": null,
+    "status": "error:HTTP Error 403: Forbidden"
+  },
+  "https://media.licdn.com/dms/image/v2/D4D12AQGuVZ8UXtQZSQ/article-cover_image-shrink_600_2000/B4DZ3Uz1GaGwAU-/0/1777391850220?e=1779321600&v=beta&t=n_76QSwaMoILDhbeh61ghm1Z8fnfDBB1MRfdeeEILoU": {
+    "local": null,
+    "status": "error:HTTP Error 403: Forbidden"
+  },
+  "https://media.licdn.com/dms/image/v2/D4E12AQGMA_TysEEDIw/article-inline_image-shrink_1000_1488/B4EZ3UlWAYHcAQ-/0/1777388053028?e=1779321600&v=beta&t=LtfEXSo_zCKtxiV3rOZuKYGznHB20oB4d7VhmE3gvvo": {
+    "local": null,
+    "status": "error:HTTP Error 403: Forbidden"
+  }
+}

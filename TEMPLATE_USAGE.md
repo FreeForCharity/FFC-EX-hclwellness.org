@@ -484,8 +484,8 @@ The template includes a FUNDING.yml file for GitHub Sponsors button:
 ```yaml
 github: FreeForCharity
 custom:
-  - 'https://ffcworkingsite1.org'
-  - 'https://ffcworkingsite1.org/#donate'
+  - 'https://hclwellness.org'
+  - 'https://hclwellness.org/#donate'
 ```
 
 **To customize**:
@@ -631,10 +631,10 @@ grep -r "Free For Charity" . --exclude-dir=node_modules --exclude-dir=.git
 grep -r "46-2471893" . --exclude-dir=node_modules --exclude-dir=.git
 ```
 
-**Domain**: "ffcworkingsite1.org" → "yourwebsite.org"
+**Domain**: "hclwellness.org" → "yourwebsite.org"
 
 ```bash
-grep -r "ffcworkingsite1.org" . --exclude-dir=node_modules --exclude-dir=.git
+grep -r "hclwellness.org" . --exclude-dir=node_modules --exclude-dir=.git
 ```
 
 **Social media links**: Update in `src/components/footer/index.tsx`
@@ -911,7 +911,7 @@ After completing the "Rebrand Template To A New Brand" issue with all required i
 
 - Organization name replacement: "Free For Charity" → Your charity name
 - EIN replacement: "46-2471893" → Your EIN
-- Domain replacement: "ffcworkingsite1.org" → Your domain
+- Domain replacement: "hclwellness.org" → Your domain
 - Contact email updates: Multiple files with contact information
 - Social media links: Footer and other components
 - CODEOWNERS updates: GitHub usernames
@@ -923,7 +923,7 @@ After completing the "Rebrand Template To A New Brand" issue with all required i
 Based on the information in issue #[number], update all instances of:
 - "Free For Charity" to "[New Org Name]"
 - "46-2471893" to "[New EIN]"
-- "ffcworkingsite1.org" to "[new-domain.org]"
+- "hclwellness.org" to "[new-domain.org]"
 - Update CODEOWNERS with @[username1], @[username2]
 - Update NEXT_PUBLIC_BASE_PATH in both workflow files to /[new-repo-name]
 - Update all social media links in footer components
