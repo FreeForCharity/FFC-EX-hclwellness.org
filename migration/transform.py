@@ -92,6 +92,22 @@ ZEFFY_DONATE = (
     "8e423183-d093-41c4-91a0-947ff24c3bee?modal=true"
 )
 
+
+def _site_config_value(key):
+    """Read a simple string value from src/lib/site.config.ts (single source)."""
+    with open(os.path.join(ROOT, "src", "lib", "site.config.ts"), encoding="utf-8") as f:
+        m = re.search(key + r":\s*['\"]([^'\"]+)['\"]", f.read())
+    return m.group(1) if m else ""
+
+
+# Contact details reused across the page overrides below. The email is the
+# single source of truth (siteConfig.contactEmail); phone/address are not in
+# siteConfig, so they live here as named constants to avoid in-file drift.
+CONTACT_EMAIL = _site_config_value("contactEmail")
+CONTACT_PHONE = "610-505-0515"
+CONTACT_PHONE_TEL = "+16105050515"
+CONTACT_ADDRESS = "620 Keebler Road, King of Prussia, PA 19406"
+
 # GiveWP donation pages are dynamic (donor portal / post-checkout state) and
 # cannot function on a static export — they otherwise render a perpetual
 # loading spinner. Replace them with static content. (donation-failed already
@@ -102,14 +118,56 @@ PAGE_HTML_OVERRIDES = {
         "donation provider rather than on this site.</p>"
         f'<p><a class="wp-block-button__link" href="{ZEFFY_DONATE}" '
         'target="_blank" rel="noopener noreferrer">Make a donation</a></p>'
-        '<p>Questions about a donation? Email '
-        '<a href="mailto:Healthycommunitylifespaces@gmail.com">'
-        "Healthycommunitylifespaces@gmail.com</a>.</p>"
+        "<p>Questions about a donation? Email "
+        f'<a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a>.</p>'
     ),
     "donation-confirmation": (
         "<p>Thank you for your donation! Your support helps Healthy Community "
         "Lifespaces promote health, nutrition, and safe communities.</p>"
         '<p><a href="/">Return to the home page</a></p>'
+    ),
+    # The contact pages used a WordPress WPForms form that cannot submit on a
+    # static site; replace it with a direct mailto (plus phone / address) so the
+    # page is functional. Newsletter + donations are handled by Zeffy.
+    "contact-us": (
+        "<p>We&#8217;d love to hear from you &mdash; reach out any time.</p>"
+        '<ul class="contact-details">'
+        f'<li><strong>Email:</strong> <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a></li>'
+        f'<li><strong>Phone:</strong> <a href="tel:{CONTACT_PHONE_TEL}">{CONTACT_PHONE}</a></li>'
+        f"<li><strong>Address:</strong> {CONTACT_ADDRESS}</li>"
+        "</ul>"
+        f'<p><a class="wp-block-button__link" '
+        f'href="mailto:{CONTACT_EMAIL}?subject=Website%20inquiry">'
+        "Email us</a></p>"
+    ),
+    "contact-form": (
+        "<p>To get in touch, email us and we&#8217;ll get back to you as soon as we can.</p>"
+        f'<p><a class="wp-block-button__link" '
+        f'href="mailto:{CONTACT_EMAIL}?subject=Website%20inquiry">'
+        "Email us</a></p>"
+        f'<p>Prefer phone or mail? Call <a href="tel:{CONTACT_PHONE_TEL}">{CONTACT_PHONE}</a> '
+        f"or write to {CONTACT_ADDRESS}.</p>"
+    ),
+    # /17034-2/ is an untitled duplicate "Contact Form" page (WPForms).
+    "17034-2": (
+        "<p>To get in touch, email us and we&#8217;ll get back to you as soon as we can.</p>"
+        f'<p><a class="wp-block-button__link" '
+        f'href="mailto:{CONTACT_EMAIL}?subject=Website%20inquiry">'
+        "Email us</a></p>"
+        f'<p>Prefer phone or mail? Call <a href="tel:{CONTACT_PHONE_TEL}">{CONTACT_PHONE}</a> '
+        f"or write to {CONTACT_ADDRESS}.</p>"
+    ),
+    # /17033-2/ "Newsletter" used an Advanced Gutenberg POST form with no static
+    # backend. Newsletter contacts are managed in Zeffy; collect sign-ups by
+    # email until/unless a hosted Zeffy newsletter embed is added.
+    "17033-2": (
+        "<p>Stay updated with the latest news and resources from Healthy "
+        "Community Lifespaces.</p>"
+        f'<p>To subscribe, email us at '
+        f'<a href="mailto:{CONTACT_EMAIL}?subject=Newsletter%20signup">{CONTACT_EMAIL}</a> '
+        "and we&#8217;ll add you to our list.</p>"
+        f'<p><a class="wp-block-button__link" '
+        f'href="mailto:{CONTACT_EMAIL}?subject=Newsletter%20signup">Subscribe</a></p>'
     ),
 }
 
@@ -156,6 +214,13 @@ def rewrite_html(raw, route_map, unresolved):
     # 1. strip scripts/styles that don't belong inline in content
     h = re.sub(r"<script\b[^>]*>.*?</script>", "", h, flags=re.S | re.I)
     h = re.sub(r"<noscript\b[^>]*>.*?</noscript>", "", h, flags=re.S | re.I)
+
+    # 1b. strip WordPress backend forms (WPForms / Contact Form 7 / Advanced
+    #     Gutenberg newsletter / native comment forms). None can submit on a
+    #     static export, so leaving them exposes dead signup paths. Pages that
+    #     are primarily a form get a working replacement via PAGE_HTML_OVERRIDES.
+    #     (Forms don't nest, so a non-greedy match removes each one cleanly.)
+    h = re.sub(r"<form\b[^>]*>.*?</form>", "", h, flags=re.S | re.I)
 
     # 2. neutralize WP oEmbed iframes: <iframe ... src="...">...</iframe>
     #    keep YouTube (functional video); turn others into a link.

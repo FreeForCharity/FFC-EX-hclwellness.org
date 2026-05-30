@@ -8,10 +8,16 @@ confirm we are **not regressing the donation experience**. Tracking: #33.
 
 The live site uses **two** donation-related systems:
 
-| System     | Role on WordPress                                  | Status on static site                                                   |
-| ---------- | -------------------------------------------------- | ----------------------------------------------------------------------- |
-| **Zeffy**  | Primary, active donation form (the "Donate" CTA)   | ✅ **Preserved exactly** — same form, same processor                    |
-| **GiveWP** | Donor portal + post-donation receipt/failure pages | ⚠️ **Static fallbacks** (the dynamic portal can't run on a static host) |
+| System     | Role on WordPress                                | Status on static site                                                          |
+| ---------- | ------------------------------------------------ | ------------------------------------------------------------------------------ |
+| **Zeffy**  | Primary, active donation form (the "Donate" CTA) | ✅ **Preserved exactly** — same form, same processor                           |
+| **GiveWP** | (legacy) donor portal + post-donation pages      | 🗑️ **Deprecated** — the org moved everything to Zeffy; static fallbacks remain |
+
+> **Confirmed by the organization:** **Zeffy is the sole, current CRM** — the
+> system of record for both **donations and newsletter contacts**. Donations go
+> through the Zeffy form; newsletter sign-ups are collected by email (`mailto:`)
+> and managed in Zeffy. The GiveWP donor dashboard is being deprecated. There is
+> no other payment/donation processor.
 
 ## 1. Zeffy — primary donation path (preserved)
 
@@ -53,24 +59,25 @@ The live site uses **two** donation-related systems:
 
 ## Regression assessment
 
-| Capability                                      | WordPress           | Static site                                 | Regression?                                                      |
-| ----------------------------------------------- | ------------------- | ------------------------------------------- | ---------------------------------------------------------------- |
-| Make a one-time donation                        | Zeffy modal         | Zeffy modal (same form)                     | **No**                                                           |
-| Donate from header / home / volunteer           | Zeffy               | Zeffy                                       | **No**                                                           |
-| Post-donation receipt page                      | GiveWP dynamic      | Static thank-you                            | Minor — receipts come from the processor (Zeffy/GiveWP) by email |
-| Donor login / giving history / manage recurring | GiveWP donor portal | **Not available** (static notice + contact) | **Yes — if GiveWP held active donor accounts/recurring gifts**   |
+| Capability                                      | WordPress                              | Static site                         | Regression?                                                      |
+| ----------------------------------------------- | -------------------------------------- | ----------------------------------- | ---------------------------------------------------------------- |
+| Make a one-time donation                        | Zeffy modal                            | Zeffy modal (same form)             | **No**                                                           |
+| Donate from header / home / volunteer           | Zeffy                                  | Zeffy                               | **No**                                                           |
+| Post-donation receipt page                      | GiveWP dynamic                         | Static thank-you                    | Minor — receipts come from the processor (Zeffy/GiveWP) by email |
+| Donor login / giving history / manage recurring | GiveWP donor portal (being deprecated) | Static notice + Zeffy "Donate" link | **No** — the org moved all donor management to Zeffy             |
 
-## Open questions for the organization (need confirmation)
+## Confirmed by the organization
 
-- [ ] Is **Zeffy the sole current processor**, or are live donations still taken
-      through **GiveWP** anywhere (campaign links not in the crawled page set)?
-- [ ] Are there **active recurring donations / donor accounts in GiveWP**? If so,
-      how should those donors be directed now that the portal is gone (email,
-      keep a GiveWP subdomain, migrate to Zeffy recurring, etc.)?
-- [ ] Should `/donor-dashboard`, `/donation-confirmation`, `/donation-failed`
-      **redirect** into the Zeffy flow instead of showing a static notice?
-- [ ] Confirm the **Zeffy form id** `8e423183-…` is the correct, current campaign.
-- [ ] Any **tax-acknowledgement / receipt automation** that lived in GiveWP and
-      needs a replacement?
+- ✅ **Zeffy is the sole, current processor** and the **only CRM** — for both
+  **donations and newsletter** sign-ups.
+- ✅ The **GiveWP** donor dashboard is **being deprecated**; everything moved to
+  Zeffy. No active GiveWP donor accounts / recurring gifts need a separate path.
+- ✅ The dynamic donation pages (`/donor-dashboard`, `/donation-confirmation`,
+  `/donation-failed`) keep their static fallbacks (notice + Zeffy "Donate").
+- ✅ The contact pages' WPForms form is now a direct **`mailto:`** link
+  (`/contact-us`, `/contact-form`, and the untitled `/17034-2/`).
+- ✅ The **Newsletter** page (`/17033-2/`) dead POST form is replaced with an
+  email (`mailto:`) sign-up; all other WordPress backend forms (Contact Form 7,
+  native comment forms) are stripped site-wide.
 
-Once answered, update this file with the decisions and close #33.
+Resolves #33.
