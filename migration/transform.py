@@ -137,6 +137,11 @@ def rewrite_html(raw, route_map, unresolved):
     #    visible URL text) so nothing points back at the WordPress host.
     h = re.sub(r'https?:/+(?:www\.)?hclwellness\.org', "", h, flags=re.I)
 
+    # 7. strip stray control characters (raw and %-encoded) that a few source
+    #    links carry — e.g. href="%0b%0b/foo%0b%0b" — so links stay clean.
+    h = re.sub(r'(?:%0[9abcdABCD])+', "", h)
+    h = re.sub(r'[\x00-\x08\x0b\x0c\x0e-\x1f]', "", h)
+
     return h.strip()
 
 
