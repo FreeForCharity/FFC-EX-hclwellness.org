@@ -111,6 +111,30 @@ PAGE_HTML_OVERRIDES = {
         "Lifespaces promote health, nutrition, and safe communities.</p>"
         '<p><a href="/">Return to the home page</a></p>'
     ),
+    # The contact pages used a WordPress WPForms form that cannot submit on a
+    # static site; replace it with a direct mailto (plus phone / address) so the
+    # page is functional. Newsletter + donations are handled by Zeffy.
+    "contact-us": (
+        "<p>We&#8217;d love to hear from you &mdash; reach out any time.</p>"
+        '<ul class="contact-details">'
+        '<li><strong>Email:</strong> '
+        '<a href="mailto:Healthycommunitylifespaces@gmail.com">'
+        "Healthycommunitylifespaces@gmail.com</a></li>"
+        '<li><strong>Phone:</strong> <a href="tel:+16105050515">610-505-0515</a></li>'
+        "<li><strong>Address:</strong> 620 Keebler Road, King of Prussia, PA 19406</li>"
+        "</ul>"
+        '<p><a class="wp-block-button__link" '
+        'href="mailto:Healthycommunitylifespaces@gmail.com?subject=Website%20inquiry">'
+        "Email us</a></p>"
+    ),
+    "contact-form": (
+        "<p>To get in touch, email us and we&#8217;ll get back to you as soon as we can.</p>"
+        '<p><a class="wp-block-button__link" '
+        'href="mailto:Healthycommunitylifespaces@gmail.com?subject=Website%20inquiry">'
+        "Email us</a></p>"
+        '<p>Prefer phone or mail? Call <a href="tel:+16105050515">610-505-0515</a> '
+        "or write to 620 Keebler Road, King of Prussia, PA 19406.</p>"
+    ),
 }
 
 # Broken source links repaired to the localized target.

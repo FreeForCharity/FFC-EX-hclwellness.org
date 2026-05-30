@@ -935,3 +935,13 @@ For comprehensive guides and documentation:
 - **[LESSONS_LEARNED.md](./LESSONS_LEARNED.md)** - Project retrospective, what worked, what didn't
 - **[SITE_IMPROVEMENTS.md](./SITE_IMPROVEMENTS.md)** - ✅ Phase 5 Complete: Technical analysis showing repository comparison and implemented improvements
 - **[TECHNICAL_DEBT.md](./TECHNICAL_DEBT.md)** - Consolidated tracking of technical debt items, security vulnerabilities, and future refactoring plans
+
+## Donations & CRM
+
+**Zeffy is the primary and only CRM for this site.** It handles **all donations
+and newsletter sign-ups**. The previous WordPress **GiveWP** donor dashboard has
+been **deprecated** — everything moved to Zeffy. There is no other payment or
+donation processor (no PayPal/Stripe/Donorbox/etc.).
+
+See [`DONATIONS.md`](./DONATIONS.md) for the full donation methodology and how the
+static site maps each touchpoint.
