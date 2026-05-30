@@ -1,6 +1,5 @@
 import React from 'react'
 import { siteConfig, siteUrl } from '@/lib/site.config'
-import { assetPath } from '@/lib/assetPath'
 
 /**
  * Builds the schema.org NGO JSON-LD object for this site. Pulls every value
@@ -16,7 +15,8 @@ export function buildOrganizationSchema(): Record<string, unknown> {
     name: siteConfig.name,
     description: siteConfig.description,
     url: siteUrl('/'),
-    logo: siteUrl(assetPath('/web-app-manifest-512x512.png')),
+    // siteUrl() already includes the deploy base path, so pass the bare asset path.
+    logo: siteUrl('/web-app-manifest-512x512.png'),
   }
 
   if (sameAs.length > 0) {

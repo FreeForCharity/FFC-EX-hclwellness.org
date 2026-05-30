@@ -65,7 +65,10 @@ export const siteConfig: SiteConfig = {
     'Healthy Community Lifespaces provides equity, innovative strategies, and education for all systems to transform into inclusive healthy environments—empowering communities and individuals to make evidence-based choices in their pursuit of healthy lifespaces.',
   shortDescription:
     'Promoting equity, evidence-based choices, and healthy environments for communities and individuals.',
-  url: 'https://hclwellness.org',
+  // Bare origin. Published to the GitHub Pages default project location; the
+  // /FFC-EX-hclwellness.org project subpath is applied by siteUrl()/assetPath()
+  // via NEXT_PUBLIC_BASE_PATH (set by the deploy workflow when no CNAME exists).
+  url: 'https://freeforcharity.github.io',
   twitterHandle: '',
   contactEmail: 'Healthycommunitylifespaces@gmail.com',
   keywords: [
@@ -102,7 +105,11 @@ export function siteUrl(path = '/'): string {
     )
   }
   const base = siteConfig.url.replace(/\/$/, '')
-  return `${base}${path}`
+  // Include the deploy base path (e.g. /FFC-EX-hclwellness.org on a github.io
+  // subpath deploy) so canonical / OG / sitemap URLs match where the page is
+  // actually served. Empty on a custom-domain deploy.
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+  return `${base}${basePath}${path}`
 }
 
 /**

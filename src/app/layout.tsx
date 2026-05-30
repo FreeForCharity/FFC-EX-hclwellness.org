@@ -20,8 +20,13 @@ import {
 
 const defaultTitle = `${siteConfig.name} | ${siteConfig.tagline}`
 
+// Resolve relative metadata URLs (canonical, OG images) against the origin +
+// deploy base path, so they match where pages are actually served (e.g. the
+// /FFC-EX-hclwellness.org github.io project subpath). Empty on a custom domain.
+const metadataBaseUrl = new URL(`${siteConfig.url}${process.env.NEXT_PUBLIC_BASE_PATH || ''}`)
+
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
+  metadataBase: metadataBaseUrl,
   title: {
     default: defaultTitle,
     template: `%s | ${siteConfig.name}`,
@@ -50,7 +55,9 @@ export const metadata: Metadata = {
     description: cardDescription(),
     images: [
       {
-        url: assetPath('/web-app-manifest-512x512.png'),
+        // Bare path: Next resolves OG images against metadataBase, which
+        // already carries the deploy base path (avoid double-prefixing).
+        url: '/web-app-manifest-512x512.png',
         width: 512,
         height: 512,
         alt: siteConfig.name,
@@ -62,7 +69,7 @@ export const metadata: Metadata = {
     site: twitterSite(),
     title: defaultTitle,
     description: cardDescription(),
-    images: [assetPath('/web-app-manifest-512x512.png')],
+    images: ['/web-app-manifest-512x512.png'],
   },
   icons: {
     icon: [

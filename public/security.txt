@@ -12,7 +12,7 @@
 Contact: mailto:Healthycommunitylifespaces@gmail.com
 Expires: 2027-01-01T00:00:00.000Z
 Preferred-Languages: en
-Canonical: https://hclwellness.org/.well-known/security.txt
-Canonical: https://hclwellness.org/security.txt
-Policy: https://hclwellness.org/vulnerability-disclosure-policy
-Acknowledgments: https://hclwellness.org/security-acknowledgements
+Canonical: https://freeforcharity.github.io/FFC-EX-hclwellness.org/.well-known/security.txt
+Canonical: https://freeforcharity.github.io/FFC-EX-hclwellness.org/security.txt
+Policy: https://freeforcharity.github.io/FFC-EX-hclwellness.org/vulnerability-disclosure-policy/
+Acknowledgments: https://freeforcharity.github.io/FFC-EX-hclwellness.org/security-acknowledgements/
