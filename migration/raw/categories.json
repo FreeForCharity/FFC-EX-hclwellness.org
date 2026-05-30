@@ -1,0 +1,272 @@
+[
+  {
+    "id": 16,
+    "count": 2,
+    "description": "",
+    "link": "https://hclwellness.org/category/decoration/",
+    "name": "Decoration",
+    "slug": "decoration",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/categories/16",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/posts?categories=16"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 17,
+    "count": 2,
+    "description": "",
+    "link": "https://hclwellness.org/category/design-trends/",
+    "name": "Design trends",
+    "slug": "design-trends",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/categories/17",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/posts?categories=17"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 79,
+    "count": 2,
+    "description": "",
+    "link": "https://hclwellness.org/category/education/",
+    "name": "education",
+    "slug": "education",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/categories/79",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/posts?categories=79"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 18,
+    "count": 2,
+    "description": "",
+    "link": "https://hclwellness.org/category/furniture/",
+    "name": "Furniture",
+    "slug": "furniture",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/categories/18",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/posts?categories=18"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 19,
+    "count": 2,
+    "description": "",
+    "link": "https://hclwellness.org/category/inspiration/",
+    "name": "Inspiration",
+    "slug": "inspiration",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/categories/19",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/posts?categories=19"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 1,
+    "count": 2,
+    "description": "",
+    "link": "https://hclwellness.org/category/uncategorized/",
+    "name": "Uncategorized",
+    "slug": "uncategorized",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/categories/1",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/posts?categories=1"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

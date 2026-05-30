@@ -1,0 +1,398 @@
+[
+  {
+    "id": 27,
+    "count": 0,
+    "description": "",
+    "link": "https://hclwellness.org/tag/chair/",
+    "name": "Chair",
+    "slug": "chair",
+    "taxonomy": "post_tag",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/tags/27",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/tags"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/taxonomies/post_tag"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/posts?tags=27"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 33,
+    "count": 0,
+    "description": "",
+    "link": "https://hclwellness.org/tag/furniture/",
+    "name": "Furniture",
+    "slug": "furniture",
+    "taxonomy": "post_tag",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/tags/33",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/tags"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/taxonomies/post_tag"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/posts?tags=33"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 35,
+    "count": 2,
+    "description": "",
+    "link": "https://hclwellness.org/tag/guide/",
+    "name": "Guide",
+    "slug": "guide",
+    "taxonomy": "post_tag",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/tags/35",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/tags"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/taxonomies/post_tag"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/posts?tags=35"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 37,
+    "count": 1,
+    "description": "",
+    "link": "https://hclwellness.org/tag/inspiratio/",
+    "name": "Inspiratio",
+    "slug": "inspiratio",
+    "taxonomy": "post_tag",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/tags/37",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/tags"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/taxonomies/post_tag"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/posts?tags=37"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 47,
+    "count": 1,
+    "description": "",
+    "link": "https://hclwellness.org/tag/news/",
+    "name": "News",
+    "slug": "news",
+    "taxonomy": "post_tag",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/tags/47",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/tags"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/taxonomies/post_tag"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/posts?tags=47"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 50,
+    "count": 1,
+    "description": "",
+    "link": "https://hclwellness.org/tag/sofa/",
+    "name": "Sofa",
+    "slug": "sofa",
+    "taxonomy": "post_tag",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/tags/50",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/tags"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/taxonomies/post_tag"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/posts?tags=50"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 51,
+    "count": 1,
+    "description": "",
+    "link": "https://hclwellness.org/tag/style/",
+    "name": "Style",
+    "slug": "style",
+    "taxonomy": "post_tag",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/tags/51",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/tags"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/taxonomies/post_tag"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/posts?tags=51"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 52,
+    "count": 0,
+    "description": "",
+    "link": "https://hclwellness.org/tag/table/",
+    "name": "Table",
+    "slug": "table",
+    "taxonomy": "post_tag",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/tags/52",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/tags"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/taxonomies/post_tag"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/posts?tags=52"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 54,
+    "count": 0,
+    "description": "",
+    "link": "https://hclwellness.org/tag/trends/",
+    "name": "Trends",
+    "slug": "trends",
+    "taxonomy": "post_tag",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/tags/54",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/tags"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/taxonomies/post_tag"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://hclwellness.org/wp-json/wp/v2/posts?tags=54"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]
