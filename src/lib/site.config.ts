@@ -59,31 +59,32 @@ export type SiteConfig = {
 }
 
 export const siteConfig: SiteConfig = {
-  name: 'Free For Charity',
-  tagline: 'Reduce Costs, Increase Impact',
+  name: 'Healthy Community Lifespaces',
+  tagline: 'Health Promotion',
   description:
-    'Free For Charity connects students, professionals, and businesses with nonprofits to reduce costs and increase revenues—putting more resources back into their missions.',
+    'Healthy Community Lifespaces provides equity, innovative strategies, and education for all systems to transform into inclusive healthy environments—empowering communities and individuals to make evidence-based choices in their pursuit of healthy lifespaces.',
   shortDescription:
-    'Connecting students, professionals, and businesses with nonprofits to reduce costs and increase revenues.',
-  url: 'https://ffcworkingsite1.org',
-  twitterHandle: '@freeforcharity',
-  contactEmail: 'security@freeforcharity.org',
+    'Promoting equity, evidence-based choices, and healthy environments for communities and individuals.',
+  url: 'https://hclwellness.org',
+  twitterHandle: '',
+  contactEmail: 'Healthycommunitylifespaces@gmail.com',
   keywords: [
+    'community health',
+    'health promotion',
+    'wellness',
+    'nutrition',
+    'safe routes to school',
+    'school wellness',
+    'health equity',
     'nonprofit',
-    'charity',
-    'volunteer',
-    'donate',
-    'free hosting',
-    'domains',
-    'Microsoft 365',
   ],
-  themeColor: '#ffffff',
+  themeColor: '#68bb6c',
   vulnerabilityDisclosurePath: '/vulnerability-disclosure-policy',
   social: [
-    { label: 'Facebook', href: 'https://www.facebook.com/freeforcharity' },
-    { label: 'X (Twitter)', href: 'https://x.com/freeforcharity1' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/freeforcharity/' },
-    { label: 'GitHub', href: 'https://github.com/FreeForCharity/FFC_Single_Page_Template' },
+    {
+      label: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/dr-marianne-infante-healthy-community-lifespaces/',
+    },
   ],
 }
 

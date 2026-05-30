@@ -30,10 +30,10 @@ describe('Header component', () => {
     expect(screen.getByRole('banner')).toBeInTheDocument()
   })
 
-  it('should display the Free For Charity logo', () => {
+  it('should display the Healthy Community Lifespaces logo', () => {
     render(<Header />)
     // Check for logo image with alt text
-    expect(screen.getByAltText('Free For Charity')).toBeInTheDocument()
+    expect(screen.getByAltText('Healthy Community Lifespaces')).toBeInTheDocument()
   })
 
   it('should display Home navigation link', () => {
@@ -56,10 +56,10 @@ describe('Header component', () => {
     expect(buttons.length).toBeGreaterThan(0)
   })
 
-  it('should have search functionality button', () => {
+  it('should expose dropdown menu controls', () => {
     render(<Header />)
     const buttons = screen.getAllByRole('button')
-    // Should have at least menu and search buttons
+    // Mobile-menu toggle plus the Get Involved / Events / Resources / Blog dropdowns
     expect(buttons.length).toBeGreaterThanOrEqual(2)
   })
 
