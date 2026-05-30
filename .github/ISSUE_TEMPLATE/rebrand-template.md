@@ -447,7 +447,7 @@ Copy and paste this template into a comment on this issue, filling in the values
 
 1. Replace all instances of "Free For Charity" with "[Your Organization Name]"
 2. Replace all instances of "46-2471893" with "[Your EIN]"
-3. Replace all instances of "ffcworkingsite1.org" with "[your-domain.org]"
+3. Replace all instances of "hclwellness.org" with "[your-domain.org]"
 4. Update CODEOWNERS file to list: @[username1], @[username2], @[username3]
 5. Update NEXT_PUBLIC_BASE_PATH in .github/workflows/deploy.yml and .github/workflows/lighthouse.yml to /[your-repo-name]
 6. Update all social media links in footer component to:

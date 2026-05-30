@@ -423,7 +423,7 @@ npm run test:e2e
    ```bash
    # Should be in public/CNAME
    cat public/CNAME
-   # Should contain: ffcworkingsite1.org
+   # Should contain: hclwellness.org
    ```
 
 ### Issue: Images Load Locally but Not in Production

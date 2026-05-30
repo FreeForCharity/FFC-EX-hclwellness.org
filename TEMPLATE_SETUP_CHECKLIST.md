@@ -112,7 +112,7 @@ You don't have to edit either workflow when you rename the repo.
       manifest, sitemap, robots, security headers)
 - [ ] Run `npm run check:drift` after editing — the placeholder-URL
       and CSP-sync rules will flag anything still pointing at
-      `ffcworkingsite1.org` or out of sync
+      `hclwellness.org` or out of sync
 - [ ] Update the EIN, mailing addresses, phone number, and GuideStar
       profile link still hardcoded in `src/components/footer/index.tsx`
       (these are not in siteConfig yet)
