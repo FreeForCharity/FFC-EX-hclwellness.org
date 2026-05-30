@@ -21,10 +21,10 @@ test.describe('head metadata and security claims', () => {
     expect(csp).toBeTruthy()
     expect(csp).toContain('default-src')
     expect(csp).toContain('https://www.googletagmanager.com') // GTM
-    expect(csp).toContain('https://www.clarity.ms') // Microsoft Clarity
-    expect(csp).toContain('https://widgets.sociablekit.com') // Facebook events widget
-    expect(csp).toContain('https://forms.office.com') // Microsoft Forms iframe
-    expect(csp).toContain('object-src')
+    expect(csp).toContain('https://www.clarity.ms') // Microsoft Clarity (via GTM)
+    expect(csp).toContain('https://www.zeffy.com') // Zeffy donation form
+    expect(csp).toContain('https://www.youtube.com') // YouTube video embeds
+    expect(csp).toContain('object-src') // 'self' — local PDF embeds
     // frame-ancestors is intentionally omitted from the meta CSP (browsers
     // ignore it there per spec). It lives in public/_headers only.
     expect(csp).not.toContain('frame-ancestors')
