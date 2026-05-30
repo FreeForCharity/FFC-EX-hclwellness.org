@@ -32,6 +32,15 @@ if (!baseArg) {
   process.exit(2)
 }
 const BASE = baseArg.replace(/\/$/, '')
+// Deploy base path, e.g. '' on a custom domain or '/FFC-EX-hclwellness.org' on a
+// github.io project deploy. Used to de-dupe paths that already include it.
+const BASE_PATHNAME = (() => {
+  try {
+    return new URL(BASE).pathname.replace(/\/+$/, '')
+  } catch {
+    return ''
+  }
+})()
 
 const TOTAL_DEADLINE_MS = 180 * 1000
 const REQUEST_TIMEOUT_MS = 15 * 1000
@@ -112,6 +121,11 @@ async function smoke() {
       )
     )
   }
+
+  // 1b. A nested route — verifies subdirectory pages (not just the root
+  // index + root-level files) are actually served. The retry window gives a
+  // freshly-enabled Pages site time to propagate nested paths.
+  await expect200('/blog/', 'nested route (/blog/) returns 200')
 
   // 2. robots + sitemap.
   const robotsRes = await expect200('/robots.txt')
@@ -201,7 +215,13 @@ async function smoke() {
             : icon.src.startsWith('/')
               ? icon.src
               : `/${icon.src}`
-          const iconPath = iconUrl.startsWith('http') ? iconUrl.replace(BASE, '') : iconUrl
+          let iconPath = iconUrl.startsWith('http') ? new URL(iconUrl).pathname : iconUrl
+          // Manifest icon srcs are domain-root-absolute and already include the
+          // deploy base path; strip it so fetchWithRetry (which prepends BASE,
+          // also base-path-inclusive) doesn't double it on a subpath deploy.
+          if (BASE_PATHNAME && iconPath.startsWith(`${BASE_PATHNAME}/`)) {
+            iconPath = iconPath.slice(BASE_PATHNAME.length)
+          }
           const r = await fetchWithRetry(iconPath).catch(() => null)
           const ok = r && r.status === 200
           record(`manifest icon ${icon.src} resolves`, ok, r ? `HTTP ${r.status}` : 'fetch failed')
