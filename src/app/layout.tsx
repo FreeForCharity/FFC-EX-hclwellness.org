@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import '@/styles/wordpress.css'
 import Header from './../components/header'
 import Footer from './../components/footer'
 import CookieConsent from './../components/cookie-consent'
@@ -105,14 +106,6 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.zeffy.com" />
         <link rel="dns-prefetch" href="https://www.idealist.org" />
-
-        {/* Preload critical LCP image */}
-        <link
-          rel="preload"
-          as="image"
-          href={assetPath('/Images/figma-hero-img.webp')}
-          fetchPriority="high"
-        />
 
         <GoogleTagManager />
       </head>

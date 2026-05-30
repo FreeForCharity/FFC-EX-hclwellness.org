@@ -36,3 +36,9 @@ playwright-report
 migration/raw
 migration/asset-map.json
 migration/external-report.json
+migration/link-report.json
+
+# Generated from the WordPress migration (see migration/transform.py &
+# migration/capture_css.py) — captured artifacts, not authored source.
+src/data/wordpress
+src/styles/wordpress.css
