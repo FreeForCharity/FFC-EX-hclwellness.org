@@ -199,7 +199,7 @@ def rewrite_html(raw, route_map, unresolved):
 
     # 10. images already 404 on the live site -> local placeholder.
     for img in BROKEN_SOURCE_IMAGES:
-        h = h.replace('src="' + img + '"', 'src="/external/placeholder.svg"')
+        h = h.replace('src="' + img + '"', 'src="' + LICDN_PLACEHOLDER + '"')
         h = re.sub(r'srcset="[^"]*' + re.escape(img.rsplit("/", 1)[-1]) + r'[^"]*"', "", h)
 
     # 11. unwrap dead WordPress system / missing links, keeping their visible

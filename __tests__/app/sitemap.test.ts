@@ -19,7 +19,8 @@ function discoverPublicRoutes(dir: string, prefix = ''): string[] {
 
   for (const entry of entries) {
     if (entry.isFile() && entry.name === 'page.tsx') {
-      out.push(prefix === '' ? '/' : prefix)
+      // Match next.config trailingSlash: routes resolve as <route>/.
+      out.push(prefix === '' ? '/' : `${prefix}/`)
     }
     if (entry.isDirectory()) {
       // Skip Next.js conventions that aren't a separate URL segment.
