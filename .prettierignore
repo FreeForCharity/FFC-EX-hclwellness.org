@@ -29,3 +29,10 @@ playwright-report
 # Other
 .DS_Store
 *.pem
+
+# Migration workspace: captured WordPress REST data + generated asset maps.
+# These are external/generated artifacts, not authored source — Prettier
+# should not police their formatting.
+migration/raw
+migration/asset-map.json
+migration/external-report.json

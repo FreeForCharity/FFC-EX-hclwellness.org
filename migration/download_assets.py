@@ -11,7 +11,7 @@ Writes migration/asset-map.json: { original_url: {local, status, bytes, kind} }
 Outbound citation hyperlinks to third-party *pages* are NOT downloaded; they are
 recorded separately in migration/external-report.json for the independence report.
 """
-import json, os, re, sys, time, html
+import json, os, re, time, html
 import urllib.request, urllib.error
 from urllib.parse import urlparse, unquote
 
@@ -24,7 +24,8 @@ FILE_RE = re.compile(r'\.(pdf|docx?|xlsx?|pptx?|zip|jpe?g|png|gif|webp|svg|mp4|m
 
 
 def load(name):
-    return json.load(open(os.path.join(RAW, name), encoding="utf-8"))
+    with open(os.path.join(RAW, name), encoding="utf-8") as f:
+        return json.load(f)
 
 
 def all_content():
@@ -59,7 +60,19 @@ def gather_urls():
 
 
 def is_hcl(u):
-    return "hclwellness.org" in (urlparse(u).netloc or "")
+    # Exact host match (or a true subdomain) — a substring test would also
+    # accept a spoof like "hclwellness.org.evil.tld".
+    host = (urlparse(u).hostname or "").lower()
+    return host == "hclwellness.org" or host.endswith(".hclwellness.org")
+
+
+def _safe_join(base, *parts):
+    """Join under `base`, rejecting any result that escapes it (path traversal)."""
+    dest = os.path.normpath(os.path.join(base, *parts))
+    base_abs = os.path.abspath(base)
+    if os.path.commonpath([base_abs, os.path.abspath(dest)]) != base_abs:
+        return None
+    return dest
 
 
 def local_path_for(u):
@@ -68,12 +81,12 @@ def local_path_for(u):
     if is_hcl(u):
         # mirror wp-content path under public/
         if path.startswith("/wp-content/"):
-            return os.path.join(PUBLIC, path.lstrip("/"))
+            return _safe_join(PUBLIC, path.lstrip("/"))
         return None
     # external -> public/external/<host>/<path>
-    host = p.netloc.replace(":", "_")
+    host = (p.hostname or "unknown").replace(":", "_")
     safe = path.lstrip("/") or "index"
-    return os.path.join(PUBLIC, "external", host, safe)
+    return _safe_join(os.path.join(PUBLIC, "external"), host, safe)
 
 
 def download(u, dest):
@@ -148,13 +161,15 @@ def main():
             if i % 25 == 0:
                 print(f"  [{i}/{len(to_get)}] ok={ok} fail={fail}")
 
-    json.dump(asset_map, open(os.path.join(ROOT, "migration", "asset-map.json"), "w"), indent=2)
+    with open(os.path.join(ROOT, "migration", "asset-map.json"), "w", encoding="utf-8") as f:
+        json.dump(asset_map, f, indent=2, ensure_ascii=False)
     # dedupe external pages
     seen = set(); ext = []
     for e in external_pages:
         if e["url"] in seen: continue
         seen.add(e["url"]); ext.append(e)
-    json.dump(ext, open(os.path.join(ROOT, "migration", "external-report.json"), "w"), indent=2)
+    with open(os.path.join(ROOT, "migration", "external-report.json"), "w", encoding="utf-8") as f:
+        json.dump(ext, f, indent=2, ensure_ascii=False)
     print(f"\nDONE  ok={ok} fail={fail}  external-pages={len(ext)}")
     print("asset-map.json + external-report.json written")
 
