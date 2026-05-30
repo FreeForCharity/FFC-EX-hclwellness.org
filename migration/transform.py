@@ -87,6 +87,32 @@ DEAD_LINK_RE = re.compile(
     r"/(?:wp-admin|wp-json)|/comment-page-|[?&]replytocom=|/services-and-resources"
 )
 
+ZEFFY_DONATE = (
+    "https://www.zeffy.com/embed/donation-form/"
+    "8e423183-d093-41c4-91a0-947ff24c3bee?modal=true"
+)
+
+# GiveWP donation pages are dynamic (donor portal / post-checkout state) and
+# cannot function on a static export — they otherwise render a perpetual
+# loading spinner. Replace them with static content. (donation-failed already
+# carries usable static copy and is left as-is.)
+PAGE_HTML_OVERRIDES = {
+    "donor-dashboard": (
+        '<p>Donor accounts and giving history are managed securely through our '
+        "donation provider rather than on this site.</p>"
+        f'<p><a class="wp-block-button__link" href="{ZEFFY_DONATE}" '
+        'target="_blank" rel="noopener noreferrer">Make a donation</a></p>'
+        '<p>Questions about a donation? Email '
+        '<a href="mailto:Healthycommunitylifespaces@gmail.com">'
+        "Healthycommunitylifespaces@gmail.com</a>.</p>"
+    ),
+    "donation-confirmation": (
+        "<p>Thank you for your donation! Your support helps Healthy Community "
+        "Lifespaces promote health, nutrition, and safe communities.</p>"
+        '<p><a href="/">Return to the home page</a></p>'
+    ),
+}
+
 # Broken source links repaired to the localized target.
 LINK_OVERRIDES = [
     (
@@ -215,6 +241,10 @@ def rewrite_html(raw, route_map, unresolved):
 
 
 def convert(item, typ, route_map, unresolved):
+    override = PAGE_HTML_OVERRIDES.get(item["slug"]) if typ == "page" else None
+    html_body = override or rewrite_html(
+        item.get("content", {}).get("rendered", ""), route_map, unresolved
+    )
     return {
         "type": typ,
         "id": item["id"],
@@ -224,7 +254,7 @@ def convert(item, typ, route_map, unresolved):
         "date": item.get("date"),
         "modified": item.get("modified"),
         "excerpt": text(item.get("excerpt", {}).get("rendered", ""))[:300],
-        "html": rewrite_html(item.get("content", {}).get("rendered", ""), route_map, unresolved),
+        "html": html_body,
         "featuredImage": featured(item),
         "categories": categories(item),
         "parent": item.get("parent", 0),

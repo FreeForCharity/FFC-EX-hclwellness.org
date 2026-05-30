@@ -102,11 +102,25 @@ Artifacts: `migration/asset-map.json` (URL → local path for every asset),
 `migration/link-report.json` (6 internal links that 404 on the source — WordPress
 comment-thread / admin URLs and one page that no longer exists).
 
+## Post-migration visual review (Playwright)
+
+`migration/visual_review.mjs` drove Chromium over the built site (14 key pages,
+desktop + mobile). Findings and fixes:
+
+- **All pages 200, zero broken images;** header/footer/WordPress CSS render
+  faithfully; layout is responsive.
+- **Contest & PDF pages:** WordPress embeds PDFs via `<object>`, which the CSP's
+  `object-src 'none'` blocked. Relaxed to `object-src 'self'` (layout.tsx +
+  `public/_headers`) so local PDFs embed.
+- **GiveWP donation pages** (`/donor-dashboard`, `/donation-confirmation`) showed
+  a perpetual loading spinner — they require the WordPress backend. Replaced with
+  static content (a Donate link / thank-you message). `/donation-failed` already
+  had usable static copy.
+
 ## Known follow-ups
 
-- **Link check (CI):** the `Link check` job is `continue-on-error` (non-blocking).
-  Its remaining reports are extensionless internal URLs that GitHub Pages serves
-  via clean-URLs in production (`/about-us` → `about-us.html`); linkinator's local
-  file probe can't resolve them.
-- The Content-Security-Policy in `src/app/layout.tsx` is still the broad template
-  default; it can be tightened to HCL's actual third parties (GTM, Zeffy, YouTube).
+- **Link check (CI): green.** Enabling `trailingSlash: true` makes internal
+  links resolve as clean directory URLs; the checker validates internal links
+  (external citation hosts bot-block automated checkers and are skipped).
+- **Blog index** styling is intentionally minimal (dated text cards) — optional
+  visual polish if desired.
