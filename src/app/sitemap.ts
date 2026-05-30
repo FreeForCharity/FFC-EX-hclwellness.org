@@ -25,15 +25,17 @@ type SitemapEntry = {
 //
 // changeFrequency: 'monthly' for content pages, 'yearly' for policy pages.
 export const routes: readonly SitemapEntry[] = [
+  // Trailing slashes match next.config `trailingSlash: true` (routes export as
+  // <route>/index.html), keeping these consistent with the migrated WP routes.
   { path: '/', changeFrequency: 'weekly', priority: 1.0 },
-  { path: '/blog', changeFrequency: 'weekly', priority: 0.7 },
-  { path: '/privacy-policy', changeFrequency: 'yearly', priority: 0.2 },
-  { path: '/cookie-policy', changeFrequency: 'yearly', priority: 0.2 },
-  { path: '/terms-of-service', changeFrequency: 'yearly', priority: 0.2 },
-  { path: '/donation-policy', changeFrequency: 'yearly', priority: 0.2 },
-  { path: '/free-for-charity-donation-policy', changeFrequency: 'yearly', priority: 0.2 },
-  { path: '/vulnerability-disclosure-policy', changeFrequency: 'yearly', priority: 0.2 },
-  { path: '/security-acknowledgements', changeFrequency: 'monthly', priority: 0.2 },
+  { path: '/blog/', changeFrequency: 'weekly', priority: 0.7 },
+  { path: '/privacy-policy/', changeFrequency: 'yearly', priority: 0.2 },
+  { path: '/cookie-policy/', changeFrequency: 'yearly', priority: 0.2 },
+  { path: '/terms-of-service/', changeFrequency: 'yearly', priority: 0.2 },
+  { path: '/donation-policy/', changeFrequency: 'yearly', priority: 0.2 },
+  { path: '/free-for-charity-donation-policy/', changeFrequency: 'yearly', priority: 0.2 },
+  { path: '/vulnerability-disclosure-policy/', changeFrequency: 'yearly', priority: 0.2 },
+  { path: '/security-acknowledgements/', changeFrequency: 'monthly', priority: 0.2 },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

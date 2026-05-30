@@ -3,6 +3,11 @@ import withBundleAnalyzer from '@next/bundle-analyzer'
 
 const nextConfig: NextConfig = {
   output: 'export',
+  // Emit each route as <route>/index.html and add trailing slashes to internal
+  // links. This matches the live WordPress URL structure (trailing slashes) and
+  // lets the static export's links resolve as clean directory URLs (so the
+  // link checker — and GitHub Pages — resolve /about-us/ to about-us/index.html).
+  trailingSlash: true,
   // Images configuration
   images: {
     // This allows all images, local or external, to load without optimization

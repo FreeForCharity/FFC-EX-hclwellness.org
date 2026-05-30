@@ -19,7 +19,8 @@ function discoverPublicRoutes(dir: string, prefix = ''): string[] {
 
   for (const entry of entries) {
     if (entry.isFile() && entry.name === 'page.tsx') {
-      out.push(prefix === '' ? '/' : prefix)
+      // Match next.config trailingSlash: routes resolve as <route>/.
+      out.push(prefix === '' ? '/' : `${prefix}/`)
     }
     if (entry.isDirectory()) {
       // Skip Next.js conventions that aren't a separate URL segment.
@@ -61,8 +62,8 @@ describe('sitemap.ts', () => {
 
   it('includes migrated WordPress pages served by the dynamic route', () => {
     const urls = sitemap().map((e) => e.url)
-    expect(urls).toContain(siteConfig.url.replace(/\/$/, '') + '/about-us')
-    expect(urls).toContain(siteConfig.url.replace(/\/$/, '') + '/team')
+    expect(urls).toContain(siteConfig.url.replace(/\/$/, '') + '/about-us/')
+    expect(urls).toContain(siteConfig.url.replace(/\/$/, '') + '/team/')
   })
 
   it('uses priority 1.0 for the root route only', () => {
