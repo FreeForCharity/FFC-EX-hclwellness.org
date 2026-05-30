@@ -148,6 +148,27 @@ PAGE_HTML_OVERRIDES = {
         f'<p>Prefer phone or mail? Call <a href="tel:{CONTACT_PHONE_TEL}">{CONTACT_PHONE}</a> '
         f"or write to {CONTACT_ADDRESS}.</p>"
     ),
+    # /17034-2/ is an untitled duplicate "Contact Form" page (WPForms).
+    "17034-2": (
+        "<p>To get in touch, email us and we&#8217;ll get back to you as soon as we can.</p>"
+        f'<p><a class="wp-block-button__link" '
+        f'href="mailto:{CONTACT_EMAIL}?subject=Website%20inquiry">'
+        "Email us</a></p>"
+        f'<p>Prefer phone or mail? Call <a href="tel:{CONTACT_PHONE_TEL}">{CONTACT_PHONE}</a> '
+        f"or write to {CONTACT_ADDRESS}.</p>"
+    ),
+    # /17033-2/ "Newsletter" used an Advanced Gutenberg POST form with no static
+    # backend. Newsletter contacts are managed in Zeffy; collect sign-ups by
+    # email until/unless a hosted Zeffy newsletter embed is added.
+    "17033-2": (
+        "<p>Stay updated with the latest news and resources from Healthy "
+        "Community Lifespaces.</p>"
+        f'<p>To subscribe, email us at '
+        f'<a href="mailto:{CONTACT_EMAIL}?subject=Newsletter%20signup">{CONTACT_EMAIL}</a> '
+        "and we&#8217;ll add you to our list.</p>"
+        f'<p><a class="wp-block-button__link" '
+        f'href="mailto:{CONTACT_EMAIL}?subject=Newsletter%20signup">Subscribe</a></p>'
+    ),
 }
 
 # Broken source links repaired to the localized target.
@@ -193,6 +214,13 @@ def rewrite_html(raw, route_map, unresolved):
     # 1. strip scripts/styles that don't belong inline in content
     h = re.sub(r"<script\b[^>]*>.*?</script>", "", h, flags=re.S | re.I)
     h = re.sub(r"<noscript\b[^>]*>.*?</noscript>", "", h, flags=re.S | re.I)
+
+    # 1b. strip WordPress backend forms (WPForms / Contact Form 7 / Advanced
+    #     Gutenberg newsletter / native comment forms). None can submit on a
+    #     static export, so leaving them exposes dead signup paths. Pages that
+    #     are primarily a form get a working replacement via PAGE_HTML_OVERRIDES.
+    #     (Forms don't nest, so a non-greedy match removes each one cleanly.)
+    h = re.sub(r"<form\b[^>]*>.*?</form>", "", h, flags=re.S | re.I)
 
     # 2. neutralize WP oEmbed iframes: <iframe ... src="...">...</iframe>
     #    keep YouTube (functional video); turn others into a link.

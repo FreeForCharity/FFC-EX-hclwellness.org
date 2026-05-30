@@ -13,9 +13,11 @@ The live site uses **two** donation-related systems:
 | **Zeffy**  | Primary, active donation form (the "Donate" CTA) | ✅ **Preserved exactly** — same form, same processor                           |
 | **GiveWP** | (legacy) donor portal + post-donation pages      | 🗑️ **Deprecated** — the org moved everything to Zeffy; static fallbacks remain |
 
-> **Confirmed by the organization:** **Zeffy is the sole, current CRM for both
-> donations and newsletter sign-ups.** The GiveWP donor dashboard is being
-> deprecated. There is no other payment/donation processor.
+> **Confirmed by the organization:** **Zeffy is the sole, current CRM** — the
+> system of record for both **donations and newsletter contacts**. Donations go
+> through the Zeffy form; newsletter sign-ups are collected by email (`mailto:`)
+> and managed in Zeffy. The GiveWP donor dashboard is being deprecated. There is
+> no other payment/donation processor.
 
 ## 1. Zeffy — primary donation path (preserved)
 
@@ -73,6 +75,9 @@ The live site uses **two** donation-related systems:
 - ✅ The dynamic donation pages (`/donor-dashboard`, `/donation-confirmation`,
   `/donation-failed`) keep their static fallbacks (notice + Zeffy "Donate").
 - ✅ The contact pages' WPForms form is now a direct **`mailto:`** link
-  (`/contact-us`, `/contact-form`).
+  (`/contact-us`, `/contact-form`, and the untitled `/17034-2/`).
+- ✅ The **Newsletter** page (`/17033-2/`) dead POST form is replaced with an
+  email (`mailto:`) sign-up; all other WordPress backend forms (Contact Form 7,
+  native comment forms) are stripped site-wide.
 
 Resolves #33.
