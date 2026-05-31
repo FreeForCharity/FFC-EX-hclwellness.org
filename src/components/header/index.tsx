@@ -33,7 +33,10 @@ const NAV: NavItem[] = [
   {
     label: 'Resources',
     children: [
+      { label: 'Documents Library', path: '/documents' },
       { label: 'Evidenced-based resources', path: '/evidenced-based-resources' },
+      { label: 'Micromobility & Safety', path: '/micromobility-information-and-resources' },
+      { label: 'Annual Summary & Plan', path: '/summary-24-25-plan-2025-26' },
       { label: 'Post Healthy Ideas', path: '/post-healthy-ideas' },
     ],
   },

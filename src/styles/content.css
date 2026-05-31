@@ -3653,6 +3653,15 @@ input:not(
 .wp-block-file a {
   display: none !important;
 }
+/* ...but keep the Download button visible. showPdfEmbeds() (see SiteContent)
+   reveals the inline <object> PDF preview in migrated WordPress File blocks;
+   without this the rule above would also hide the block's Download button (it
+   is itself an <a>), leaving the embed un-downloadable. This selector's
+   specificity (0,0,2,1) beats `.wp-block-file a` (0,0,1,1) so the button shows
+   while the redundant plain-text filename link stays hidden. */
+.wp-block-file a.wp-block-file__button {
+  display: inline-block !important;
+}
 .site-content {
   max-width: 1200px; /* Adjust as needed */
   margin: 0 auto;
