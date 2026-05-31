@@ -211,3 +211,137 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* ------------------------------------------------------------------ *
+ * Mobile flow fixes for the migrated content (.wp-content).
+ *
+ * The captured WordPress theme was authored for desktop; on small
+ * screens a few things break the flow: long headings/words force
+ * horizontal scroll, fixed desktop font-sizes feel oversized, and some
+ * multi-column blocks stay cramped. These rules only adjust layout on
+ * narrow viewports — no content changes — so the page reads as a clean
+ * single column on phones.
+ * ------------------------------------------------------------------ */
+
+/* Never allow the page to scroll sideways. */
+html,
+body {
+  overflow-x: hidden;
+}
+
+.wp-content {
+  /* Long titles / unbroken strings (e.g. contest headings) must wrap
+     instead of overflowing the viewport. */
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.wp-content img {
+  height: auto; /* keep aspect ratio when width is constrained */
+}
+
+/* Hero / cover text legibility: the migrated home hero lays light text
+   over a photo with a weak overlay, so it's hard to read. Add a soft
+   gradient scrim behind the foreground text and a subtle shadow. */
+.wp-content .wp-block-cover .wp-block-cover__inner-container {
+  position: relative;
+  z-index: 1;
+}
+.wp-content .wp-block-cover .wp-block-cover__inner-container::before {
+  content: '';
+  position: absolute;
+  inset: -1rem -1rem -1rem -1rem;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.45));
+  border-radius: 6px;
+}
+.wp-content .wp-block-cover .wp-block-cover__inner-container :where(p, h1, h2, h3, li) {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+}
+
+@media (max-width: 600px) {
+  /* Comfortable, consistent side gutters for the whole content column. */
+  .wp-content,
+  .wp-content .has-global-padding {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Tame oversized desktop headings so they don't dominate the screen
+     or overflow. Scales down the largest presets only. */
+  .wp-content h1,
+  .wp-content h2,
+  .wp-content .has-huge-font-size,
+  .wp-content .has-x-large-font-size,
+  .wp-content .has-xx-large-font-size {
+    font-size: clamp(1.5rem, 7vw, 2rem) !important;
+    line-height: 1.25 !important;
+  }
+
+  .wp-content h3,
+  .wp-content .has-large-font-size {
+    font-size: clamp(1.25rem, 5.5vw, 1.6rem) !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Columns blocks that were side-by-side on desktop should stack with
+     breathing room on mobile rather than squeezing into slivers. */
+  .wp-content .wp-block-columns {
+    gap: 1.25rem;
+  }
+  .wp-content .wp-block-columns > .wp-block-column {
+    flex-basis: 100% !important;
+    min-width: 0;
+  }
+
+  /* Buttons span the column so tap targets are comfortable. */
+  .wp-content .wp-block-button {
+    width: 100%;
+  }
+  .wp-content .wp-block-button__link {
+    display: block;
+    text-align: center;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Home page top CTA row.
+ *
+ * The migrated home page packs three links — Donate / Contact Us /
+ * annual-summary — into a single <h5> separated only by whitespace, so
+ * they render as one cramped underlined run (especially on mobile).
+ * Lay them out as spaced, tappable pills that wrap. Scoped to the home
+ * article's single <h5> so no other heading is affected.
+ * ------------------------------------------------------------------ */
+.wp-site-blocks > .wp-content h5.wp-block-heading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  align-items: stretch;
+  margin: 1.25rem auto;
+}
+
+.wp-site-blocks > .wp-content h5.wp-block-heading > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.1rem;
+  border-radius: 9999px;
+  background: #4c9a51; /* HCL brand green (#68bb6c) darkened for AA text contrast */
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: filter 0.15s ease;
+}
+
+.wp-site-blocks > .wp-content h5.wp-block-heading > a:hover {
+  filter: brightness(1.08);
+}
+
+/* Keep the Donate link's inner <strong> from looking different. */
+.wp-site-blocks > .wp-content h5.wp-block-heading > a strong {
+  font-weight: 600;
+}
