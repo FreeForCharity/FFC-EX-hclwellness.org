@@ -345,3 +345,24 @@ body {
 .wp-site-blocks > .wp-content h5.wp-block-heading > a strong {
   font-weight: 600;
 }
+
+/* ------------------------------------------------------------------ *
+ * Footer link readability on the dark footer.
+ *
+ * The captured WordPress theme (src/styles/content.css) sets a global,
+ * UNLAYERED rule: `a:where(:not(.wp-element-button)) { color:#000 }`.
+ * Because `@import 'tailwindcss'` puts Tailwind utilities in a @layer,
+ * that unlayered theme rule beats the footer's `text-gray-200` utility
+ * (unlayered always wins over layered, regardless of specificity), so
+ * footer links rendered near-black on the dark footer and were unreadable.
+ *
+ * Fix: an equally-unlayered, higher-specificity (footer a > a) override
+ * that restores the intended light link color + green hover. Keep these
+ * values in sync with footer/index.tsx (gray-200 / green-400).
+ * ------------------------------------------------------------------ */
+footer a:where(:not(.wp-element-button)) {
+  color: #e5e7eb; /* gray-200 */
+}
+footer a:where(:not(.wp-element-button)):hover {
+  color: #4ade80; /* green-400 */
+}
