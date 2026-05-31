@@ -59,15 +59,20 @@ const Header: React.FC = () => {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
         <Link href="/" className="flex shrink-0 items-center gap-3" aria-label="Home">
+          {/* Round HCL emblem (square) — legible at header size. The portrait
+              HCL1.png also contains the wordmark, which duplicated the text
+              beside it; the emblem + a single text wordmark reads cleanly. */}
           <Image
-            src={assetPath('/wp-content/uploads/2021/08/HCL1.png')}
-            alt="Healthy Community Lifespaces"
-            width={56}
-            height={56}
-            className="h-12 w-auto"
+            src={assetPath(
+              '/wp-content/uploads/2024/01/cropped-Healthy-Community-Lifespaces-2.png'
+            )}
+            alt=""
+            width={48}
+            height={48}
+            className="h-11 w-11 rounded-full"
             priority
           />
-          <span className="hidden text-sm font-semibold leading-tight text-gray-800 sm:block">
+          <span className="text-sm font-semibold leading-tight text-gray-800">
             Healthy Community
             <br />
             Lifespaces
