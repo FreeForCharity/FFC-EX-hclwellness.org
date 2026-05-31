@@ -6,10 +6,11 @@ migration can be re-run or audited without touching the live site.
 
 ## Scripts
 
-| Script               | What it does                                                                                |
-| -------------------- | ------------------------------------------------------------------------------------------- |
-| `harvest.py`         | Pulls all pages/posts/media/categories/tags from the public WP REST API into `raw/*.json`.  |
-| `download_assets.py` | Extracts every referenced asset URL, downloads localizable ones into `public/`, classifies. |
+| Script                     | What it does                                                                                                                      |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `harvest.py`               | Pulls all pages/posts/media/categories/tags from the public WP REST API into `raw/*.json`.                                        |
+| `download_assets.py`       | Extracts every referenced asset URL, downloads localizable ones into `public/`, classifies.                                       |
+| `compare-wp-vs-static.mjs` | QA: screenshots every route (see `compare-routes.txt`) on live WP vs the deployed static site, side by side, into `/tmp/compare`. |
 
 ## Outputs
 
