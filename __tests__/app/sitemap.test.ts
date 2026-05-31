@@ -60,7 +60,7 @@ describe('sitemap.ts', () => {
     }
   })
 
-  it('includes migrated WordPress pages served by the dynamic route', () => {
+  it('includes migrated content pages served by the dynamic route', () => {
     const urls = sitemap().map((e) => e.url)
     expect(urls).toContain(siteConfig.url.replace(/\/$/, '') + '/about-us/')
     expect(urls).toContain(siteConfig.url.replace(/\/$/, '') + '/team/')

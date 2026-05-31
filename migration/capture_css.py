@@ -12,13 +12,13 @@ Sources, in cascade order:
 Any url(...) inside the CSS that points at the live host is downloaded into
 public/ and rewritten to a root-relative local path.
 
-Output: src/styles/wordpress.css
+Output: src/styles/content.css
 """
 import os, re, html, urllib.request, urllib.parse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PUBLIC = os.path.join(ROOT, "public")
-OUT = os.path.join(ROOT, "src", "styles", "wordpress.css")
+OUT = os.path.join(ROOT, "src", "styles", "content.css")
 UA = "Mozilla/5.0 (compatible; HCL-static-migration/1.0)"
 HOME = "https://hclwellness.org/"
 
