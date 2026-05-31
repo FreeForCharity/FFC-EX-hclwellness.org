@@ -29,6 +29,7 @@ export const routes: readonly SitemapEntry[] = [
   // <route>/index.html), keeping these consistent with the migrated WP routes.
   { path: '/', changeFrequency: 'weekly', priority: 1.0 },
   { path: '/blog/', changeFrequency: 'weekly', priority: 0.7 },
+  { path: '/documents/', changeFrequency: 'monthly', priority: 0.6 },
   { path: '/privacy-policy/', changeFrequency: 'yearly', priority: 0.2 },
   { path: '/cookie-policy/', changeFrequency: 'yearly', priority: 0.2 },
   { path: '/terms-of-service/', changeFrequency: 'yearly', priority: 0.2 },
