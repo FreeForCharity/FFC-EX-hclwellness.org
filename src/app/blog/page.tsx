@@ -1,7 +1,7 @@
 import React from 'react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { getArticles } from '@/lib/wordpress'
+import { getArticles } from '@/lib/content'
 import { assetPath } from '@/lib/assetPath'
 
 export const metadata: Metadata = {

@@ -1,8 +1,8 @@
 import React from 'react'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import WordPressContent from '@/components/WordPressContent'
-import { getPages, getPageBySlug, DEDICATED_ROUTE_SLUGS } from '@/lib/wordpress'
+import SiteContent from '@/components/SiteContent'
+import { getPages, getPageBySlug, DEDICATED_ROUTE_SLUGS } from '@/lib/content'
 
 /**
  * Renders every migrated WordPress page (except the front page) at its
@@ -36,7 +36,7 @@ export async function generateMetadata({
   }
 }
 
-export default async function WordPressPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function SitePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const page = getPageBySlug(slug)
   if (!page) notFound()
@@ -46,7 +46,7 @@ export default async function WordPressPage({ params }: { params: Promise<{ slug
       {page.title && (
         <h1 className="wp-page-title mb-6 text-3xl font-bold text-gray-900">{page.title}</h1>
       )}
-      <WordPressContent html={page.html} />
+      <SiteContent html={page.html} />
     </article>
   )
 }

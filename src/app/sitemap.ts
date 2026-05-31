@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { siteUrl } from '@/lib/site.config'
-import { getPages, getPosts, DEDICATED_ROUTE_SLUGS } from '@/lib/wordpress'
+import { getPages, getPosts, DEDICATED_ROUTE_SLUGS } from '@/lib/content'
 
 export const dynamic = 'force-static'
 

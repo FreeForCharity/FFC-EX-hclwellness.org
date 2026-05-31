@@ -9,7 +9,7 @@ modules the static site renders, with every reference made local:
   - WP oEmbed iframes       -> plain links (internal -> local route)
 
 Output:
-  src/data/wordpress/content.json   list of { type, id, slug, route, title,
+  src/data/content/content.json   list of { type, id, slug, route, title,
         date, modified, excerpt, html, featuredImage, categories, parent, order }
   migration/link-report.json        internal links that did not resolve to a route
 """
@@ -18,7 +18,7 @@ from urllib.parse import urlparse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW = os.path.join(ROOT, "migration", "raw")
-OUT_DIR = os.path.join(ROOT, "src", "data", "wordpress")
+OUT_DIR = os.path.join(ROOT, "src", "data", "content")
 FRONT_PAGE_ID = 17630
 
 

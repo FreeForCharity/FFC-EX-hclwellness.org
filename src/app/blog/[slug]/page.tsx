@@ -1,8 +1,8 @@
 import React from 'react'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import WordPressContent from '@/components/WordPressContent'
-import { getPosts, getPostBySlug } from '@/lib/wordpress'
+import SiteContent from '@/components/SiteContent'
+import { getPosts, getPostBySlug } from '@/lib/content'
 
 /**
  * Renders migrated WordPress posts at /blog/<slug>. (On the live site the news
@@ -38,7 +38,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       {post.title && (
         <h1 className="wp-page-title mb-6 text-3xl font-bold text-gray-900">{post.title}</h1>
       )}
-      <WordPressContent html={post.html} />
+      <SiteContent html={post.html} />
     </article>
   )
 }
