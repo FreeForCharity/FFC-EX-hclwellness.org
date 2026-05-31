@@ -61,20 +61,15 @@ const Header: React.FC = () => {
       className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white shadow-sm"
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
-        <Link href="/" className="flex shrink-0 items-center gap-3" aria-label="Home">
+        <Link href="/" className="flex shrink-0 items-center" aria-label="Home">
           <Image
-            src={assetPath('/wp-content/uploads/2021/08/HCL1.png')}
+            src={assetPath('/hcl-logo.png')}
             alt="Healthy Community Lifespaces"
-            width={56}
-            height={56}
-            className="h-12 w-auto"
+            width={780}
+            height={124}
+            className="h-9 w-auto sm:h-11"
             priority
           />
-          <span className="hidden text-sm font-semibold leading-tight text-gray-800 sm:block">
-            Healthy Community
-            <br />
-            Lifespaces
-          </span>
         </Link>
 
         {/* Desktop navigation */}
