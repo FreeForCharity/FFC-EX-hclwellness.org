@@ -1,0 +1,48 @@
+{
+  "slug": "low-speed-vehicle-fact-sheet",
+  "title": "Low-Speed Vehicle Fact Sheet (2021)",
+  "source": "text",
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "PA MICROMOBILITY FACT SHEET"
+    },
+    {
+      "type": "img",
+      "src": "/documents/low-speed-vehicle-fact-sheet/img-01.png"
+    },
+    {
+      "type": "p",
+      "text": "MIN MAX CAPABLE RIDE ON RIDE ON POSSIBLE PA deScriPtioN LICENSE REGISTRATION INSURANCE HELMET PASSENGER LIGHTS AGE SPEED SIDEWALK BIKE LANE DUI VEHICLE CODE"
+    },
+    {
+      "type": "li",
+      "text": "- - - - - - - - - Yes electric § 102 Scooter Can operate only on private property. Electric scooters, like electric skateboards and electric unicycles, cannot be legally operated on public roadways. Motorized 16 C Yes Yes Yes, Yes Yes 25 No No Yes § 102, § 3523(e), Pedalcycle under § 1714 21"
+    },
+    {
+      "type": "img",
+      "src": "/documents/low-speed-vehicle-fact-sheet/img-02.png"
+    },
+    {
+      "type": "p",
+      "text": "Has operable pedals. Design speed of no more than 25 mph. Gas - motor rated 1.5 brake horsepower or less, has an automatic transmission. Electric - powered by an electric battery. Motor 16 Class Yes Yes Yes, Yes Yes Up to No No Yes § 102, § 3525 M/Class Scooter under 5 brake if >50 cc, 21 horsepower Class C if <50cc Is a motor-driven cycle. Motor shall not exceed five brake horsepower."
+    },
+    {
+      "type": "li",
+      "text": "No No No Yes, No Yes - Yes No Yes Segway § 102, under § 3581-3583, 12 § 3703 (c) Is an electric personal assistive mobility device. An electric, self-balancing, two-nontandem-wheeled device. Lighting must be used when operating between sunset and sunrise. A Segway is allowed on sidewalks unless a municipality prohibits it. 16 No No No No Yes Yes 20 Yes, Yes Yes e-Bike § 102, § 3514 not in"
+    },
+    {
+      "type": "img",
+      "src": "/documents/low-speed-vehicle-fact-sheet/img-03.png"
+    },
+    {
+      "type": "p",
+      "text": "business district Is a pedalcycle with electric assist. Weighs less than 100 pounds. Motor not more than 750 watts. Has operable pedals. Not capable going faster than 20 mph on a level surface when powered by the motor source only. Lighting must be used when operating between sunset and sunrise."
+    },
+    {
+      "type": "li",
+      "text": "No No No Yes, Yes Yes - Yes, Yes Yes Bicycle § 102, under not in § 3501 et seq., 12 business § 3802, district § 1547 Is a pedalcycle. Is moved solely by human-powered pedals. Lighting must be used when operating between sunset and sunrise. For more information visit penndot.gov May 2021"
+    }
+  ],
+  "plain": "PA MICROMOBILITY FACT SHEET\n\nMIN MAX CAPABLE RIDE ON RIDE ON POSSIBLE PA deScriPtioN LICENSE REGISTRATION INSURANCE HELMET PASSENGER LIGHTS AGE SPEED SIDEWALK BIKE LANE DUI VEHICLE CODE\n\n- - - - - - - - - Yes electric § 102 Scooter Can operate only on private property. Electric scooters, like electric skateboards and electric unicycles, cannot be legally operated on public roadways. Motorized 16 C Yes Yes Yes, Yes Yes 25 No No Yes § 102, § 3523(e), Pedalcycle under § 1714 21\n\nHas operable pedals. Design speed of no more than 25 mph. Gas - motor rated 1.5 brake horsepower or less, has an automatic transmission. Electric - powered by an electric battery. Motor 16 Class Yes Yes Yes, Yes Yes Up to No No Yes § 102, § 3525 M/Class Scooter under 5 brake if >50 cc, 21 horsepower Class C if <50cc Is a motor-driven cycle. Motor shall not exceed five brake horsepower.\n\nNo No No Yes, No Yes - Yes No Yes Segway § 102, under § 3581-3583, 12 § 3703 (c) Is an electric personal assistive mobility device. An electric, self-balancing, two-nontandem-wheeled device. Lighting must be used when operating between sunset and sunrise. A Segway is allowed on sidewalks unless a municipality prohibits it. 16 No No No No Yes Yes 20 Yes, Yes Yes e-Bike § 102, § 3514 not in\n\nbusiness district Is a pedalcycle with electric assist. Weighs less than 100 pounds. Motor not more than 750 watts. Has operable pedals. Not capable going faster than 20 mph on a level surface when powered by the motor source only. Lighting must be used when operating between sunset and sunrise.\n\nNo No No Yes, Yes Yes - Yes, Yes Yes Bicycle § 102, under not in § 3501 et seq., 12 business § 3802, district § 1547 Is a pedalcycle. Is moved solely by human-powered pedals. Lighting must be used when operating between sunset and sunrise. For more information visit penndot.gov May 2021"
+}
