@@ -1,27 +1,26 @@
-# Free For Charity Website
+# Healthy Community Lifespaces
 
-Single-page Next.js 16.0.7 website built with App Router for Free For Charity nonprofit organization.
+The static **Healthy Community Lifespaces** (HCL) website — `hclwellness.org` —
+a Next.js (App Router) static export deployed to GitHub Pages. It was migrated
+off WordPress into this repository; the live content is preserved page-for-page.
 
-## 🎉 Phase 5 Implementation Complete
+Built on the Free For Charity single-page template (FFC provides free websites
+and domain management to 501(c)(3) nonprofits).
 
-**Status:** ✅ All critical gaps closed. Repository now has enterprise-grade tooling, comprehensive testing, and professional documentation.
+**Start here:**
 
-**Quick Links:**
-
-- 📚 [Quick Start Guide](./QUICK_START.md) - Get set up in 5 minutes
-- 🎯 [**Template Usage Guide**](./TEMPLATE_USAGE.md) - **NEW**: Complete guide for using this repository as a template
-- 📋 [**Content Replacement Guide**](./CONTENT_REPLACEMENT_GUIDE.md) - **NEW**: Identify every piece of content to replace for your charity
-- 📋 [Site Improvements Summary](./SITE_IMPROVEMENTS.md) - See what was implemented (13 of 19 gaps closed)
+- 🧭 [Migration Report](./MIGRATION_REPORT.md) - How the WordPress site was migrated, and what was/wasn't localized
+- 💛 [Donations & CRM](./DONATIONS.md) - Zeffy is the sole donation/newsletter CRM
+- 📚 [Quick Start Guide](./QUICK_START.md) - Local dev in 5 minutes
 - 🧪 [Testing Guide](./TESTING.md) - Unit + E2E + Accessibility tests
 - 🎨 [Responsive Design Guide](./RESPONSIVE_DESIGN.md) - Mobile-first design principles
-- 📝 [Naming Conventions](./NAMING_CONVENTIONS.md) - **Required**: kebab-case for SEO (Google-recommended)
-- 🤖 [Copilot Autofix Guide](./COPILOT_AUTOFIX_GUIDE.md) - Understanding GitHub Copilot automated checks
-- 🔗 [External Dependencies](./EXTERNAL_DEPENDENCIES.md) - Third-party services and integrations
-- 🏥 [Community Health Files](./COMMUNITY_HEALTH_FILES.md) - Complete guide to GitHub navigation and documentation
+- 📝 [Naming Conventions](./NAMING_CONVENTIONS.md) - kebab-case routes for SEO
+- 🔗 [External Dependencies](./EXTERNAL_DEPENDENCIES.md) - Third-party services
+- 🏥 [Community Health Files](./COMMUNITY_HEALTH_FILES.md) - GitHub navigation and documentation
 
 ## Organization
 
-**Free For Charity** is a 501(c)(3) nonprofit organization (EIN: 46-2471893) dedicated to supporting other nonprofits.
+**Healthy Community Lifespaces** is a Pennsylvania-based nonprofit advancing community health, nutrition, and safe, walkable neighborhoods. This site is hosted free of charge by **Free For Charity**, a 501(c)(3) nonprofit (EIN: 46-2471893) that provides websites and domain management to other nonprofits.
 
 ## CNCF-Compliant Open Source Project
 
@@ -922,12 +921,6 @@ For comprehensive guides and documentation:
 - **[LIGHTHOUSE.md](./LIGHTHOUSE.md)** - Performance monitoring with Lighthouse CI
 - **[SECURITY.md](./SECURITY.md)** - Security policies, branch protection rules, and best practices
 - **[DEPENDABOT.md](./DEPENDABOT.md)** - Automated dependency management and security updates
-
-### Feature Implementation Guides
-
-- **[FACEBOOK_EVENTS_SUMMARY.md](./FACEBOOK_EVENTS_SUMMARY.md)** - 📋 Executive summary and decision guide for Facebook Events integration
-- **[FACEBOOK_EVENTS_REQUIREMENTS.md](./FACEBOOK_EVENTS_REQUIREMENTS.md)** - Complete requirements analysis for Facebook Events integration
-- **[FACEBOOK_EVENTS_SETUP.md](./FACEBOOK_EVENTS_SETUP.md)** - Step-by-step implementation guide for adding Facebook Events section
 
 ### Troubleshooting & Planning
 
