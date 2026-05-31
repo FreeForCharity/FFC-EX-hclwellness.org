@@ -1,3 +1,4 @@
+/
 /about-us/
 /blog/
 /calendar/
