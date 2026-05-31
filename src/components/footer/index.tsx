@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
           <ul className="space-y-2 text-sm">
             {QUICK_LINKS.map((l) => (
               <li key={l.path}>
-                <Link href={l.path} className="text-gray-400 hover:text-green-400">
+                <Link href={l.path} className="text-gray-200 hover:text-green-400">
                   {l.label}
                 </Link>
               </li>
@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
           <h2 className="text-lg font-semibold text-white">Contact Us</h2>
           <a
             href={`mailto:${siteConfig.contactEmail}`}
-            className="flex items-center gap-2 text-sm text-gray-400 hover:text-green-400"
+            className="flex items-center gap-2 text-sm text-gray-200 hover:text-green-400"
           >
             <Mail aria-hidden size={16} />
             {siteConfig.contactEmail}
