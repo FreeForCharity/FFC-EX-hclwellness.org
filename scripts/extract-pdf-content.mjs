@@ -91,9 +91,17 @@ function decodeEntities(s) {
     .replace(/&amp;/g, '&')
 }
 
-/** Strip inline <b>/<i>/<a> tags pdftohtml leaves inside text runs, keep text. */
+/** Strip inline <b>/<i>/<a> tags pdftohtml leaves inside text runs, keep text.
+ * Applied repeatedly until stable so overlapping/malformed tag fragments can't
+ * survive a single pass (CodeQL: incomplete multi-character sanitization). */
 function stripInline(s) {
-  return s.replace(/<[^>]+>/g, '')
+  let prev
+  let out = s
+  do {
+    prev = out
+    out = out.replace(/<[^>]*>/g, '')
+  } while (out !== prev)
+  return out
 }
 
 /** Parse <fontspec id= size=> declarations → map of id → size (px). */

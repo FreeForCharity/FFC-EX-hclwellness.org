@@ -32,6 +32,22 @@ function escapeHtml(s: string): string {
 }
 
 /**
+ * Strip HTML tags, applied repeatedly until the string stops changing, so
+ * overlapping/malformed fragments (e.g. `<scr<x>ipt>`) cannot leave a live tag
+ * behind after a single pass (CodeQL: incomplete multi-character sanitization).
+ * The result is additionally HTML-escaped by the caller before re-insertion.
+ */
+function stripTags(s: string): string {
+  let prev: string
+  let out = s
+  do {
+    prev = out
+    out = out.replace(/<[^>]*>/g, '')
+  } while (out !== prev)
+  return out
+}
+
+/**
  * Replace migrated WordPress "File" blocks with a web-friendly callout.
  *
  * WordPress renders each File block as a `<object type="application/pdf">`
@@ -55,10 +71,8 @@ function rewriteFileBlocks(html: string): string {
     if (!pdf) return block
     // Title = text of the first non-button anchor (WordPress's filename link);
     // fall back to the PDF's file name.
-    const label = block
-      .match(/<a(?![^>]*wp-block-file__button)[^>]*>([\s\S]*?)<\/a>/)?.[1]
-      ?.replace(/<[^>]+>/g, '')
-      .trim()
+    const labelHtml = block.match(/<a(?![^>]*wp-block-file__button)[^>]*>([\s\S]*?)<\/a>/)?.[1]
+    const label = labelHtml ? stripTags(labelHtml).trim() : undefined
     const title = (
       label && label.length > 1 ? label : decodeURIComponent(pdf.split('/').pop() || 'document')
     ).trim()
