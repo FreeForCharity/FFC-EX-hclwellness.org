@@ -3650,17 +3650,49 @@ input:not(
   font-size: 18px !important;
   font-weight: bold;
 }
-.wp-block-file a {
-  display: none !important;
+/* Document callout that replaces migrated WordPress "File" blocks (see
+   SiteContent.rewriteFileBlocks). The original inline PDF <object> embed showed
+   a blank box on browsers without a built-in PDF viewer (Android Chrome), so we
+   render a "Read online / Download" callout instead. */
+.ffc-doc-callout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  margin: 1.25rem 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid #d8dee4;
+  border-left: 5px solid #0073e6;
+  border-radius: 6px;
+  background: #f7fafc;
 }
-/* ...but keep the Download button visible. showPdfEmbeds() (see SiteContent)
-   reveals the inline <object> PDF preview in migrated WordPress File blocks;
-   without this the rule above would also hide the block's Download button (it
-   is itself an <a>), leaving the embed un-downloadable. This selector's
-   specificity (0,0,2,1) beats `.wp-block-file a` (0,0,1,1) so the button shows
-   while the redundant plain-text filename link stays hidden. */
-.wp-block-file a.wp-block-file__button {
-  display: inline-block !important;
+.ffc-doc-callout .ffc-doc-title {
+  font-weight: 700;
+  color: #1f2937;
+  flex: 1 1 12rem;
+}
+.ffc-doc-callout .ffc-doc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: center;
+}
+.ffc-doc-callout .ffc-doc-read {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  background: #0073e6;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.ffc-doc-callout .ffc-doc-read:hover {
+  background: #005bb7;
+}
+.ffc-doc-callout .ffc-doc-download {
+  color: #005bb7;
+  font-weight: 600;
+  text-decoration: underline;
 }
 .site-content {
   max-width: 1200px; /* Adjust as needed */

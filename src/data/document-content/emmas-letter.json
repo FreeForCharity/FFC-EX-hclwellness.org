@@ -1,0 +1,40 @@
+{
+  "slug": "emmas-letter",
+  "title": "Emma's Letter",
+  "source": "ocr",
+  "blocks": [
+    {
+      "type": "p",
+      "text": "Hello, my name is Emma Luque Valmisa, and I am a fifth grader at Vida Charter School."
+    },
+    {
+      "type": "p",
+      "text": "I have a vision to help the state of Pennsylvania to provide better food to schools. It has come to me as a problem that the school lunches are ultra-processed food and utterly unhealthy."
+    },
+    {
+      "type": "p",
+      "text": "Kids go to school for many years and eat very unhealthy food every day of their lives. In my school, we don’t own the kitchen. We don’t have fresh food; the food they give us is either bagged or frozen. There are no fresh ingredients in any of the food the school offers. The best we get is an orange or apple every month. I think that it would be okay to have a pizza Friday or taco Tuesday, but what they are serving us every day is pure ultra-processed food without nutrients, vitamins, or any other ingredients necessary for growth."
+    },
+    {
+      "type": "p",
+      "text": "At my last year at Vida Charter School, I would like to see future generations eating the nutrients and calories that their body should be consuming. And beyond Vida, that all the kids at all the schools have access to the food they need and deserve."
+    },
+    {
+      "type": "p",
+      "text": "There is evidence that, in the United States of America, the percentage of overweight children has gone up in the last fifty years. If we don’t feed the future generations the food they should be eating, the health of these children will drop dramatically. The health of these kids is the priority, and if we don’t put the money to give these children healthy bodies and healthy habits now, we will be giving the money in the future to sick adults."
+    },
+    {
+      "type": "p",
+      "text": "My goal is so that this will not happen. And so should be yours. My friends and I have been investigating some food resources for my school to be able to switch to healthy ingredients and save the kids from a sickly future. But with this opportunity I might be able to help many more than the kids at my school. I will be helping all the kids in my state. And that is a very important mission."
+    },
+    {
+      "type": "p",
+      "text": "I may be young, but I am aware. Respectfully yours,"
+    },
+    {
+      "type": "p",
+      "text": "Emma"
+    }
+  ],
+  "plain": "Hello, my name is Emma Luque Valmisa, and I am a fifth grader at Vida Charter School.\n\nI have a vision to help the state of Pennsylvania to provide better food to schools. It has come to me as a problem that the school lunches are ultra-processed food and utterly unhealthy.\n\nKids go to school for many years and eat very unhealthy food every day of their lives. In my school, we don’t own the kitchen. We don’t have fresh food; the food they give us is either bagged or frozen. There are no fresh ingredients in any of the food the school offers. The best we get is an orange or apple every month. I think that it would be okay to have a pizza Friday or taco Tuesday, but what they are serving us every day is pure ultra-processed food without nutrients, vitamins, or any other ingredients necessary for growth.\n\nAt my last year at Vida Charter School, I would like to see future generations eating the nutrients and calories that their body should be consuming. And beyond Vida, that all the kids at all the schools have access to the food they need and deserve.\n\nThere is evidence that, in the United States of America, the percentage of overweight children has gone up in the last fifty years. If we don’t feed the future generations the food they should be eating, the health of these children will drop dramatically. The health of these kids is the priority, and if we don’t put the money to give these children healthy bodies and healthy habits now, we will be giving the money in the future to sick adults.\n\nMy goal is so that this will not happen. And so should be yours. My friends and I have been investigating some food resources for my school to be able to switch to healthy ingredients and save the kids from a sickly future. But with this opportunity I might be able to help many more than the kids at my school. I will be helping all the kids in my state. And that is a very important mission.\n\nI may be young, but I am aware. Respectfully yours,\n\nEmma"
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import { ALL_DOCUMENTS } from '@/data/documents'
 
 /**
  * Renders the site's page/post content.
@@ -18,23 +19,75 @@ import React from 'react'
  */
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
+// Map mirrored PDF path → document content-page slug, for File blocks whose PDF
+// has a web-readable content page at /documents/<slug>/ (issue #59).
+const SLUG_BY_PDF = new Map(ALL_DOCUMENTS.map((d) => [d.file, d.slug]))
+
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+}
+
 /**
- * Reveal the inline PDF readers in migrated WordPress "File" blocks.
- *
- * WordPress renders the `<object>` preview inside a File block with `hidden`
- * plus a `data-wp-bind--hidden="!state.hasPdfPreview"` directive; its
- * Interactivity API script clears `hidden` at runtime once it confirms the
- * browser can preview PDFs. That script is **not** part of this static export,
- * so without intervention the preview stays hidden forever and visitors can
- * only download the file — never read it inline. We strip the directive and the
- * `hidden` attribute so the embed shows (the CSP allows it via
- * `object-src 'self'`). The `<object>` still degrades to its inner fallback on
- * browsers that can't render PDFs inline.
+ * Strip HTML tags, applied repeatedly until the string stops changing, so
+ * overlapping/malformed fragments (e.g. `<scr<x>ipt>`) cannot leave a live tag
+ * behind after a single pass (CodeQL: incomplete multi-character sanitization).
+ * The result is additionally HTML-escaped by the caller before re-insertion.
  */
-function showPdfEmbeds(html: string): string {
-  return html.replace(/<object\b[^>]*\bwp-block-file__embed\b[^>]*>/g, (tag) =>
-    tag.replace(/\s*data-wp-bind--hidden="[^"]*"/g, '').replace(/\s+hidden(?=[\s>])/g, '')
-  )
+function stripTags(s: string): string {
+  let prev: string
+  let out = s
+  do {
+    prev = out
+    out = out.replace(/<[^>]*>/g, '')
+  } while (out !== prev)
+  return out
+}
+
+/**
+ * Replace migrated WordPress "File" blocks with a web-friendly callout.
+ *
+ * WordPress renders each File block as a `<object type="application/pdf">`
+ * preview plus download links. That inline `<object>` viewer renders as a
+ * **blank box** on browsers without a built-in PDF viewer (notably Android
+ * Chrome), and depends on a WordPress Interactivity API script we don't ship.
+ * So instead of embedding the PDF, we replace the whole block with a callout:
+ *
+ *  - If the PDF has a web-readable content page (/documents/<slug>/), link
+ *    "Read online" to it plus a Download link.
+ *  - Otherwise, offer Download + Open-in-new-tab.
+ *
+ * The block's structure is `<div class="wp-block-file"> <object…></object>
+ * <a href=PDF>title</a> <a class="wp-block-file__button" download>Download</a>
+ * </div>` with no nested divs, so a non-greedy match to the next `</div>` is
+ * safe.
+ */
+function rewriteFileBlocks(html: string): string {
+  return html.replace(/<div[^>]*\bclass="wp-block-file"[^>]*>([\s\S]*?)<\/div>/g, (block) => {
+    const pdf = block.match(/data="([^"]+\.pdf)"/i)?.[1] ?? block.match(/href="([^"]+\.pdf)"/i)?.[1]
+    if (!pdf) return block
+    // Title = text of the first non-button anchor (WordPress's filename link);
+    // fall back to the PDF's file name.
+    const labelHtml = block.match(/<a(?![^>]*wp-block-file__button)[^>]*>([\s\S]*?)<\/a>/)?.[1]
+    const label = labelHtml ? stripTags(labelHtml).trim() : undefined
+    const title = (
+      label && label.length > 1 ? label : decodeURIComponent(pdf.split('/').pop() || 'document')
+    ).trim()
+    const slug = SLUG_BY_PDF.get(pdf)
+    const read = slug
+      ? `<a class="ffc-doc-read" href="/documents/${slug}">📄 Read online</a>`
+      : `<a class="ffc-doc-read" href="${pdf}" target="_blank" rel="noopener noreferrer">📄 Open PDF ↗</a>`
+    return (
+      `<div class="ffc-doc-callout">` +
+      `<span class="ffc-doc-title">${escapeHtml(title)}</span>` +
+      `<span class="ffc-doc-actions">${read}` +
+      `<a class="ffc-doc-download" href="${pdf}" download>⬇ Download PDF</a>` +
+      `</span></div>`
+    )
+  })
 }
 
 function withBasePath(html: string): string {
@@ -58,7 +111,7 @@ export default function SiteContent({
   return (
     <div
       className={`wp-content entry-content is-layout-constrained ${className}`.trim()}
-      dangerouslySetInnerHTML={{ __html: withBasePath(showPdfEmbeds(html)) }}
+      dangerouslySetInnerHTML={{ __html: withBasePath(rewriteFileBlocks(html)) }}
     />
   )
 }
