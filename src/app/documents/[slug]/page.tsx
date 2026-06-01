@@ -2,29 +2,20 @@ import React from 'react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import fs from 'node:fs'
-import path from 'node:path'
-import DocumentContent, { type ContentBlock } from '@/components/DocumentContent'
+import DocumentContent from '@/components/DocumentContent'
 import { assetPath } from '@/lib/assetPath'
 import { ALL_DOCUMENTS, getDocBySlug } from '@/data/documents'
-
-type DocJson = {
-  slug: string
-  title: string
-  source: 'text' | 'ocr'
-  blocks: ContentBlock[]
-  plain: string
-}
+import { DOCUMENT_CONTENT } from '@/data/document-content'
 
 /**
- * Load a document's extracted content (committed JSON produced by
- * scripts/extract-pdf-content.mjs). Read at build time on the server — these
- * files are not bundled, so we read from disk.
+ * Look up a document's extracted content from the auto-generated index
+ * (scripts/extract-pdf-content.mjs → src/data/document-content/index.ts). The
+ * JSON is statically imported and keyed by slug — no filesystem access or
+ * path construction from the route param — so the content is bundled with the
+ * static export and there is no path-injection surface.
  */
-function loadContent(slug: string): DocJson | null {
-  const file = path.join(process.cwd(), 'src', 'data', 'document-content', `${slug}.json`)
-  if (!fs.existsSync(file)) return null
-  return JSON.parse(fs.readFileSync(file, 'utf8')) as DocJson
+function loadContent(slug: string) {
+  return DOCUMENT_CONTENT[slug] ?? null
 }
 
 export function generateStaticParams() {
