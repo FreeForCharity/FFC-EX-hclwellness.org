@@ -45,9 +45,10 @@ describe('Footer component', () => {
     const githubLink = screen.getByRole('link', {
       name: /request changes or features on github/i,
     })
-    expect(githubLink).toHaveAttribute('href', expect.stringContaining('/issues'))
+    expect(githubLink).toHaveAttribute('href', expect.stringMatching(/\/issues$/))
     expect(githubLink).toHaveAttribute('target', '_blank')
     expect(githubLink).toHaveAttribute('rel', expect.stringContaining('noopener'))
+    expect(githubLink).toHaveAttribute('rel', expect.stringContaining('noreferrer'))
   })
 
   it('should have email contact link', () => {

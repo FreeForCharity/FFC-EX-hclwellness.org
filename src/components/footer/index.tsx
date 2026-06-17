@@ -90,11 +90,10 @@ const Footer: React.FC = () => {
               href={`${siteConfig.repoUrl}/issues`}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Request changes or features on GitHub"
               className="flex items-center gap-2 text-sm text-gray-200 hover:text-green-400"
             >
               <FaGithub aria-hidden size={16} />
-              Request changes or features
+              Request changes or features on GitHub
             </a>
           )}
         </div>
