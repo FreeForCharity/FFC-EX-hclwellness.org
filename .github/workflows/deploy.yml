@@ -57,7 +57,7 @@ jobs:
           # NEXT_PUBLIC_BASE_PATH in the build step) in next.config.ts.
 
       - name: Restore Next.js cache
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: |
             .next/cache
