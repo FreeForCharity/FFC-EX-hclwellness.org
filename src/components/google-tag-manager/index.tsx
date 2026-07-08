@@ -1,9 +1,10 @@
 'use client'
 
 import Script from 'next/script'
+import { analyticsConfig } from '@/lib/analytics.config'
 
 // Google Tag Manager ID
-const GTM_ID = 'GTM-TQ5H8HPR'
+const GTM_ID = analyticsConfig.gtmId
 
 export default function GoogleTagManager() {
   return (
