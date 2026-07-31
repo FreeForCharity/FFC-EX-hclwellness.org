@@ -7,9 +7,12 @@ import type { PdfDoc } from '@/data/documents'
  * A single document card: title, description, action links, and a collapsible
  * inline PDF reader.
  *
- * The reader uses a native `<object>` embed (allowed by the CSP's
- * `object-src 'self'`; an `<iframe>` would be blocked because `frame-src` does
- * not include `'self'`). It is wrapped in a native `<details>` so it expands on
+ * The reader uses a native `<object>` embed. Note that this needs BOTH
+ * `object-src 'self'` and `frame-src 'self'` in the CSP: Chromium renders a
+ * PDF `<object>` by creating an internal frame, so it is `frame-src` — not
+ * `object-src` — that decides whether the document loads. Omitting `'self'`
+ * there blocks every inline PDF on the site (this was the cause of issue
+ * #101). It is wrapped in a native `<details>` so it expands on
  * click with no JavaScript, keeping the page light while still letting visitors
  * read the document without downloading it. On browsers that can't render PDFs
  * inline, the `<object>` falls back to its download/open links.

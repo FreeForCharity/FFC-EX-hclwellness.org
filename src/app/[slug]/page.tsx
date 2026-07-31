@@ -2,6 +2,7 @@ import React from 'react'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import SiteContent from '@/components/SiteContent'
+import RelatedDocuments from '@/components/RelatedDocuments'
 import { getPages, getPageBySlug, DEDICATED_ROUTE_SLUGS } from '@/lib/content'
 
 /**
@@ -47,6 +48,7 @@ export default async function SitePage({ params }: { params: Promise<{ slug: str
         <h1 className="wp-page-title mb-6 text-3xl font-bold text-gray-900">{page.title}</h1>
       )}
       <SiteContent html={page.html} />
+      <RelatedDocuments route={slug} />
     </article>
   )
 }

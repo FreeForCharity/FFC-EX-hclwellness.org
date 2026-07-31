@@ -3653,14 +3653,36 @@ input:not(
 .wp-block-file a {
   display: none !important;
 }
-/* ...but keep the Download button visible. showPdfEmbeds() (see SiteContent)
-   reveals the inline <object> PDF preview in migrated WordPress File blocks;
-   without this the rule above would also hide the block's Download button (it
-   is itself an <a>), leaving the embed un-downloadable. This selector's
-   specificity (0,0,2,1) beats `.wp-block-file a` (0,0,1,1) so the button shows
-   while the redundant plain-text filename link stays hidden. */
+/* ...but keep the action buttons visible. enhancePdfEmbeds() (see SiteContent)
+   reveals the inline <object> PDF preview in migrated WordPress File blocks and
+   adds a "View" button beside "Download"; without this the rule above would
+   also hide those buttons (they are themselves <a>), leaving the embed
+   unusable. This selector's specificity (0,0,2,1) beats `.wp-block-file a`
+   (0,0,1,1) so the buttons show while the redundant plain-text filename link
+   stays hidden. */
 .wp-block-file a.wp-block-file__button {
   display: inline-block !important;
+  margin-right: 0.5rem;
+}
+
+/* Fallback shown inside the <object> when the browser cannot render a PDF
+   inline (every iOS browser, Android Chrome). Its links must escape the
+   `.wp-block-file a { display: none }` rule above — same specificity trick. */
+.pdf-embed-fallback {
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  background: #f9fafb;
+  font-size: 0.95rem;
+  color: #374151;
+}
+.pdf-embed-fallback a {
+  text-decoration: underline;
+  color: #1d4ed8;
+}
+.wp-block-file .pdf-embed-fallback a {
+  display: inline !important;
 }
 .site-content {
   max-width: 1200px; /* Adjust as needed */
