@@ -47,6 +47,23 @@ describe('Footer component', () => {
     expect(emailLink).toBeDefined()
   })
 
+  it('should display Legal section', () => {
+    render(<Footer />)
+    expect(screen.getByText('Legal')).toBeInTheDocument()
+  })
+
+  // Compliance guard: the post-deploy smoke check fails the whole deploy when
+  // the rendered footer is missing these policy links (see issue #86).
+  it.each([
+    ['/privacy-policy', 'Privacy Policy'],
+    ['/terms-of-service', 'Terms of Service'],
+    ['/cookie-policy', 'Cookie Policy'],
+    ['/donation-policy', 'Donation Policy'],
+  ])('should link to %s in the footer', (path, label) => {
+    render(<Footer />)
+    expect(screen.getByRole('link', { name: label })).toHaveAttribute('href', path)
+  })
+
   it('should not have accessibility violations', async () => {
     const { container } = render(<Footer />)
     const results = await axe(container)
