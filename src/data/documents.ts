@@ -70,6 +70,20 @@ export const DOCUMENT_GROUPS: DocumentGroup[] = [
         sourceRoute: '/contest',
         sourceLabel: 'Contest',
       },
+      {
+        title: 'Twin Valley Middle School — Winning Entry (2024–25)',
+        file: '/wp-content/uploads/2025/02/2024-25-TEMS-1.pdf',
+        description: 'Student contest entry from Twin Valley Middle School, 2024–25.',
+        sourceRoute: '/contest',
+        sourceLabel: 'Contest',
+      },
+      {
+        title: 'UMASD State Fruit Essay',
+        file: '/wp-content/uploads/2025/02/UMASD-State-fruit-essay.pdf',
+        description: 'Student essay entry supporting the state fruit campaign.',
+        sourceRoute: '/contest',
+        sourceLabel: 'Contest',
+      },
     ],
   },
   {
@@ -133,3 +147,14 @@ export const DOCUMENT_GROUPS: DocumentGroup[] = [
 
 /** Flat list of every document across all groups. */
 export const ALL_DOCUMENTS: PdfDoc[] = DOCUMENT_GROUPS.flatMap((g) => g.docs)
+
+/**
+ * Documents published on a given page, matched by `sourceRoute`.
+ *
+ * Accepts a route with or without surrounding slashes so callers can pass
+ * either a page slug ("contest") or a route ("/contest/").
+ */
+export function getDocumentsForRoute(route: string): PdfDoc[] {
+  const key = route.replace(/^\/|\/$/g, '')
+  return ALL_DOCUMENTS.filter((d) => (d.sourceRoute || '').replace(/^\/|\/$/g, '') === key)
+}
