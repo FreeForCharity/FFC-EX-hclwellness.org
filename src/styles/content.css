@@ -3698,3 +3698,34 @@ input:not(
   max-width: 1200px; /* Adjust as needed */
   margin: 0 auto;
 }
+
+/* Uniform team grid on /team/ (issues #105, #109): responsive 3-column card
+   grid with consistent circular 200px member photos, centered name and role.
+   Collapses to 2 / 1 columns on narrow screens via auto-fit. */
+.hcl-team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem 1.5rem;
+  margin: 2rem 0 2.5rem;
+}
+.hcl-team-card {
+  text-align: center;
+}
+.hcl-team-card img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 0.85rem;
+  display: block;
+}
+.hcl-team-card h5 {
+  margin: 0 0 0.3rem;
+  font-size: 1.05rem;
+}
+.hcl-team-card .hcl-team-role {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #374151;
+}

@@ -44,6 +44,7 @@ const NAV: NavItem[] = [
     label: 'Blog',
     children: [
       { label: 'Blog Articles', path: '/blog' },
+      { label: 'Teen Health Blog', path: '/blog/teen-health' },
       { label: 'News', path: '/news' },
     ],
   },
