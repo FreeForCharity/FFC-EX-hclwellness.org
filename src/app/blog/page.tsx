@@ -1,20 +1,13 @@
 import React from 'react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import ArticleCard from '@/components/ArticleCard'
 import { getArticles } from '@/lib/content'
-import { assetPath } from '@/lib/assetPath'
 
 export const metadata: Metadata = {
   title: 'Blog & News',
   description: 'News, articles, and health-promotion stories from Healthy Community Lifespaces.',
   alternates: { canonical: '/blog' },
-}
-
-function formatDate(date: string | null): string {
-  if (!date) return ''
-  const d = new Date(date)
-  if (Number.isNaN(d.getTime())) return ''
-  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
 }
 
 export default function BlogIndex() {
@@ -34,64 +27,26 @@ export default function BlogIndex() {
         <p className="mt-2 text-sm text-gray-500">{articles.length} articles</p>
       </header>
 
+      <Link
+        href="/blog/teen-health"
+        className="group mb-10 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-green-200 bg-green-50 p-5 transition hover:border-green-400 hover:bg-green-100"
+      >
+        <span>
+          <span className="block text-lg font-bold text-gray-900">Teen Health Blog</span>
+          <span className="block text-gray-600">Health articles for teens, written by teens.</span>
+        </span>
+        <span className="inline-flex items-center font-semibold text-green-700">
+          Visit the Teen Health Blog
+          <span aria-hidden className="ml-1 transition-transform group-hover:translate-x-1">
+            →
+          </span>
+        </span>
+      </Link>
+
       <ul className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
         {articles.map((a) => (
           <li key={a.id} className="h-full">
-            <Link
-              href={a.route}
-              className="group flex h-full flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition duration-200 hover:-translate-y-1 hover:border-green-300 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-green-600"
-            >
-              {a.featuredImage ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={assetPath(a.featuredImage)}
-                  alt=""
-                  className="h-44 w-full object-cover"
-                  loading="lazy"
-                />
-              ) : (
-                <div
-                  aria-hidden
-                  className="h-2 w-full bg-gradient-to-r from-green-500 to-green-700"
-                />
-              )}
-
-              <div className="flex flex-1 flex-col p-5">
-                <div className="mb-3 flex flex-wrap items-center gap-2">
-                  {a.date && (
-                    <time
-                      dateTime={a.date}
-                      className="rounded-full bg-green-50 px-2.5 py-0.5 text-xs font-medium text-green-800"
-                    >
-                      {formatDate(a.date)}
-                    </time>
-                  )}
-                  {a.categories.slice(0, 2).map((c) => (
-                    <span
-                      key={c}
-                      className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-600"
-                    >
-                      {c}
-                    </span>
-                  ))}
-                </div>
-
-                <h2 className="text-lg font-semibold leading-snug text-gray-900 group-hover:text-green-700">
-                  {a.title}
-                </h2>
-
-                {a.excerpt && (
-                  <p className="mt-2 line-clamp-3 text-sm text-gray-600">{a.excerpt}</p>
-                )}
-
-                <span className="mt-4 inline-flex items-center text-sm font-semibold text-green-700">
-                  Read more
-                  <span aria-hidden className="ml-1 transition-transform group-hover:translate-x-1">
-                    →
-                  </span>
-                </span>
-              </div>
-            </Link>
+            <ArticleCard article={a} />
           </li>
         ))}
       </ul>
