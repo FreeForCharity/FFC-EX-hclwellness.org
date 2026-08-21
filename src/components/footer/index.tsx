@@ -3,7 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { Mail, Link2 } from 'lucide-react'
-import { FaLinkedinIn } from 'react-icons/fa'
+import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
 import type { IconType } from 'react-icons'
 import type { LucideIcon } from 'lucide-react'
 
@@ -21,8 +21,23 @@ const QUICK_LINKS = [
   { label: 'Team', path: '/team' },
   { label: 'Volunteer', path: '/volunteer' },
   { label: 'Evidenced-based resources', path: '/evidenced-based-resources' },
+  { label: 'Documents', path: '/documents' },
   { label: 'Blog', path: '/blog' },
   { label: 'Contact Us', path: '/contact-us' },
+]
+
+/**
+ * Policy links. These are a compliance requirement, not a nicety: the site runs
+ * analytics and sets cookies, so the privacy and cookie policies must be
+ * reachable from every page. The post-deploy smoke check asserts that the
+ * footer links at least `/privacy-policy` and `/terms-of-service` — keep those
+ * two in this list.
+ */
+const LEGAL_LINKS = [
+  { label: 'Privacy Policy', path: '/privacy-policy' },
+  { label: 'Terms of Service', path: '/terms-of-service' },
+  { label: 'Cookie Policy', path: '/cookie-policy' },
+  { label: 'Donation Policy', path: '/donation-policy' },
 ]
 
 const Footer: React.FC = () => {
@@ -31,7 +46,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-gray-900 text-gray-200">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 py-12 md:grid-cols-3 md:px-6 lg:px-8">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 py-12 md:grid-cols-2 md:px-6 lg:grid-cols-4 lg:px-8">
         {/* Mission */}
         <div className="space-y-4">
           <h2 className="text-xl font-semibold text-white">Healthy Community Lifespaces</h2>
@@ -71,6 +86,20 @@ const Footer: React.FC = () => {
           </ul>
         </nav>
 
+        {/* Legal */}
+        <nav aria-label="Legal" className="space-y-4">
+          <h2 className="text-lg font-semibold text-white">Legal</h2>
+          <ul className="space-y-2 text-sm">
+            {LEGAL_LINKS.map((l) => (
+              <li key={l.path}>
+                <Link href={l.path} className="text-gray-200 hover:text-green-400">
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
         {/* Contact */}
         <div className="space-y-4">
           <h2 className="text-lg font-semibold text-white">Contact Us</h2>
@@ -85,6 +114,17 @@ const Footer: React.FC = () => {
             Healthy Community Lifespaces is a Pennsylvania-based nonprofit advancing community
             health, nutrition, and safe, walkable neighborhoods.
           </p>
+          {siteConfig.repoUrl && (
+            <a
+              href={`${siteConfig.repoUrl}/issues`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-gray-200 hover:text-green-400"
+            >
+              <FaGithub aria-hidden size={16} />
+              Request changes or features on GitHub
+            </a>
+          )}
         </div>
       </div>
 

@@ -90,6 +90,37 @@ function rewriteFileBlocks(html: string): string {
   })
 }
 
+/**
+ * Replace bare, empty PDF `<object>` embeds (outside File blocks) with the
+ * same callout. These appear where an editor embedded a PDF directly; like
+ * the File-block preview they render as a blank box on browsers without a
+ * built-in PDF viewer (issue #101). An `<object>` that already has fallback
+ * content is left alone — the browser will use it.
+ */
+function rewriteBareObjects(html: string): string {
+  return html.replace(/<object\b[^>]*\btype="application\/pdf"[^>]*>\s*<\/object>/g, (tag) => {
+    const pdf = tag.match(/\bdata="([^"]+\.pdf)"/i)?.[1]
+    if (!pdf) return tag
+    const label = tag.match(/\baria-label="([^"]*)"/)?.[1]
+    const title = (
+      label && label.length > 1
+        ? label.replace(/^Embed of\s*/i, '').replace(/\.$/, '')
+        : decodeURIComponent(pdf.split('/').pop() || 'document')
+    ).trim()
+    const slug = SLUG_BY_PDF.get(pdf)
+    const read = slug
+      ? `<a class="ffc-doc-read" href="/documents/${slug}">📄 Read online</a>`
+      : `<a class="ffc-doc-read" href="${pdf}" target="_blank" rel="noopener noreferrer">📄 Open PDF ↗</a>`
+    return (
+      `<div class="ffc-doc-callout">` +
+      `<span class="ffc-doc-title">${escapeHtml(title)}</span>` +
+      `<span class="ffc-doc-actions">${read}` +
+      `<a class="ffc-doc-download" href="${pdf}" download>⬇ Download PDF</a>` +
+      `</span></div>`
+    )
+  })
+}
+
 function withBasePath(html: string): string {
   if (!BASE) return html
   // src/href on anchors & images, and data= on <object> PDF embeds.
@@ -111,7 +142,9 @@ export default function SiteContent({
   return (
     <div
       className={`wp-content entry-content is-layout-constrained ${className}`.trim()}
-      dangerouslySetInnerHTML={{ __html: withBasePath(rewriteFileBlocks(html)) }}
+      dangerouslySetInnerHTML={{
+        __html: withBasePath(rewriteBareObjects(rewriteFileBlocks(html))),
+      }}
     />
   )
 }

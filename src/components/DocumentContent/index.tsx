@@ -8,8 +8,7 @@ import { assetPath } from '@/lib/assetPath'
  * /documents/<slug>/.
  */
 export type ContentBlock =
-  | { type: 'h2' | 'h3' | 'p' | 'li'; text: string }
-  | { type: 'img'; src: string }
+  { type: 'h2' | 'h3' | 'p' | 'li'; text: string } | { type: 'img'; src: string }
 
 /**
  * Renders a document's extracted blocks as real, reflowing HTML — headings,

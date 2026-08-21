@@ -40,11 +40,39 @@ describe('Footer component', () => {
     expect(screen.getByText(new RegExp(currentYear.toString()))).toBeInTheDocument()
   })
 
+  it('should link to the GitHub issues page for requesting changes', () => {
+    render(<Footer />)
+    const githubLink = screen.getByRole('link', {
+      name: /request changes or features on github/i,
+    })
+    expect(githubLink).toHaveAttribute('href', expect.stringMatching(/\/issues$/))
+    expect(githubLink).toHaveAttribute('target', '_blank')
+    expect(githubLink).toHaveAttribute('rel', expect.stringContaining('noopener'))
+    expect(githubLink).toHaveAttribute('rel', expect.stringContaining('noreferrer'))
+  })
+
   it('should have email contact link', () => {
     render(<Footer />)
     const links = screen.getAllByRole('link')
     const emailLink = links.find((link) => link.getAttribute('href')?.includes('mailto:'))
     expect(emailLink).toBeDefined()
+  })
+
+  it('should display Legal section', () => {
+    render(<Footer />)
+    expect(screen.getByText('Legal')).toBeInTheDocument()
+  })
+
+  // Compliance guard: the post-deploy smoke check fails the whole deploy when
+  // the rendered footer is missing these policy links (see issue #86).
+  it.each([
+    ['/privacy-policy', 'Privacy Policy'],
+    ['/terms-of-service', 'Terms of Service'],
+    ['/cookie-policy', 'Cookie Policy'],
+    ['/donation-policy', 'Donation Policy'],
+  ])('should link to %s in the footer', (path, label) => {
+    render(<Footer />)
+    expect(screen.getByRole('link', { name: label })).toHaveAttribute('href', path)
   })
 
   it('should not have accessibility violations', async () => {
