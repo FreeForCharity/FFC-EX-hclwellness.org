@@ -305,11 +305,66 @@ def rewrite_html(raw, route_map, unresolved):
     return h.strip()
 
 
+def rewrite_home_hero(h):
+    """Front-page only: replace the migrated 4-bullet hero with a single
+    headline + supporting line (over the existing cover photo/scrim) and one
+    primary CTA. "Programs-forward" direction — see #64.
+
+    The cover wrapper is preserved so the home-hero scrim + mobile rules in
+    globals.css (added in #53) still apply, and everything below the hero
+    (About us, media sections) is left untouched.
+    """
+    # 1. Swap the cover's inner content (empty + bullet paragraphs) for an h1
+    #    headline + one supporting line, and append a single primary CTA
+    #    ("Explore our work") with a secondary Donate pill right after the
+    #    cover so the headline leads.
+    new_block = (
+        '<div class="wp-block-cover__inner-container is-layout-flow '
+        'wp-block-cover-is-layout-flow">\n'
+        '<h1 class="wp-block-heading">Gardens, safe streets, and healthier '
+        "kids.</h1>\n\n\n\n"
+        '<p class="wp-block-paragraph">Healthy Community Lifespaces builds '
+        "greener neighborhoods and safer walkways across Pennsylvania.</p>\n"
+        "</div></div>\n\n\n\n"
+        '<h5 class="wp-block-heading">'
+        '<a href="/about-us/"><strong>Explore our work</strong></a> '
+        f'<a href="{ZEFFY_DONATE}">Donate</a></h5>'
+    )
+    h = re.sub(
+        r'<div class="wp-block-cover__inner-container[^"]*">.*?</div></div>',
+        lambda m: new_block,
+        h,
+        count=1,
+        flags=re.S,
+    )
+    # 2. Drop the original multi-link hero row (Donate / Contact Us / annual
+    #    summary) that sat above the cover — replaced by the CTA above.
+    h = re.sub(
+        r'<h5 class="wp-block-heading"><a href="https://www\.zeffy\.com[^"]*">.*?</h5>\s*',
+        "",
+        h,
+        count=1,
+        flags=re.S,
+    )
+    # 3. Drop the leading logo wordmark figure (uploads/2026/04/image.png) — it
+    #    duplicates the logo already shown in the site header (see #62).
+    h = re.sub(
+        r'^\s*<figure class="wp-block-image[^"]*"><img[^>]*/wp-content/uploads/2026/04/image\.png[^>]*/?></figure>\s*',
+        "",
+        h,
+        count=1,
+        flags=re.S,
+    )
+    return h.lstrip()
+
+
 def convert(item, typ, route_map, unresolved):
     override = PAGE_HTML_OVERRIDES.get(item["slug"]) if typ == "page" else None
     html_body = override or rewrite_html(
         item.get("content", {}).get("rendered", ""), route_map, unresolved
     )
+    if typ == "page" and item["id"] == FRONT_PAGE_ID:
+        html_body = rewrite_home_hero(html_body)
     return {
         "type": typ,
         "id": item["id"],
