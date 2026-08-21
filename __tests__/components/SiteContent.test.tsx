@@ -3,8 +3,11 @@ import { render } from '@testing-library/react'
 import SiteContent from '../../src/components/SiteContent'
 
 /**
- * Guards the PDF handling in migrated WordPress File blocks (issue #101).
- * A regression here means visitors — especially on phones — see a blank gap
+ * Guards the PDF handling in migrated WordPress content (issues #59 and #101).
+ * File blocks and bare PDF <object> embeds render as a blank gap on browsers
+ * without a built-in PDF viewer (every iOS browser, Android Chrome), so
+ * SiteContent replaces them with a "Read online / Download" callout. A
+ * regression here means visitors — especially on phones — see a blank gap
  * where a document should be.
  */
 
@@ -25,40 +28,48 @@ function html(markup: string): string {
   return container.innerHTML
 }
 
-describe('SiteContent PDF embeds', () => {
-  it('reveals the embed by stripping hidden and the WP directive', () => {
+describe('SiteContent PDF handling', () => {
+  it('replaces a File block with a document callout (no blank <object> embed)', () => {
     const out = html(FILE_BLOCK)
-    expect(out).not.toContain('data-wp-bind--hidden')
-    const objectTag = out.match(/<object[^>]*>/)?.[0] ?? ''
-    expect(objectTag).not.toMatch(/\shidden(?=[\s>])/)
+    expect(out).toContain('ffc-doc-callout')
+    expect(out).not.toContain('<object')
+    expect(out).toContain('vegetable contest')
   })
 
-  it('gives the empty <object> a fallback so phones do not see a blank gap', () => {
-    const out = html(FILE_BLOCK)
-    expect(out).toContain('pdf-embed-fallback')
-    expect(out).toContain('Open it in a new tab')
-    expect(out).toContain('download it')
-  })
-
-  it('adds a View button beside the Download button', () => {
+  it('links "Read online" to the document content page when the PDF has one', () => {
     const { container } = render(<SiteContent html={FILE_BLOCK} />)
-    const view = container.querySelector('a[target="_blank"].wp-block-file__button')
-    expect(view).not.toBeNull()
-    expect(view?.textContent).toBe('View')
-    expect(view?.getAttribute('href')).toBe(
+    const read = container.querySelector('a.ffc-doc-read')
+    expect(read).not.toBeNull()
+    expect(read?.getAttribute('href')).toBe('/documents/vegetable-contest-2026-27')
+  })
+
+  it('keeps a working Download link', () => {
+    const { container } = render(<SiteContent html={FILE_BLOCK} />)
+    const download = container.querySelector('a.ffc-doc-download[download]')
+    expect(download).not.toBeNull()
+    expect(download?.getAttribute('href')).toBe(
       '/wp-content/uploads/2026/03/vegetable-contest-2026-27.pdf'
     )
-    expect(view?.getAttribute('rel')).toContain('noopener')
-    // The original Download button survives.
-    expect(container.querySelector('a[download]')).not.toBeNull()
   })
 
-  it('handles a bare <object> embed that is not inside a File block', () => {
+  it('rewrites a bare empty <object> embed that is not inside a File block', () => {
     const out = html(
       '<object style="width: 100%; height: 600px;" data="/wp-content/uploads/2025/02/UMASD-State-fruit-essay.pdf" type="application/pdf"></object>'
     )
-    expect(out).toContain('pdf-embed-fallback')
+    expect(out).toContain('ffc-doc-callout')
+    expect(out).not.toContain('<object')
+    // This PDF has a content page, so the reader link goes there.
+    expect(out).toContain('/documents/umasd-state-fruit-essay')
     expect(out).toContain('/wp-content/uploads/2025/02/UMASD-State-fruit-essay.pdf')
+  })
+
+  it('offers Open PDF for a bare embed whose PDF has no content page', () => {
+    const out = html(
+      '<object data="/wp-content/uploads/2020/01/some-unlisted-file.pdf" type="application/pdf"></object>'
+    )
+    expect(out).toContain('ffc-doc-callout')
+    expect(out).toContain('Open PDF')
+    expect(out).toContain('/wp-content/uploads/2020/01/some-unlisted-file.pdf')
   })
 
   it('leaves an <object> that already has fallback content alone', () => {
@@ -66,12 +77,12 @@ describe('SiteContent PDF embeds', () => {
       '<object data="/a.pdf" type="application/pdf"><p>existing fallback</p></object>'
     )
     expect(out).toContain('existing fallback')
-    expect(out).not.toContain('pdf-embed-fallback')
+    expect(out).not.toContain('ffc-doc-callout')
   })
 
   it('leaves content without PDFs untouched', () => {
     const out = html('<p class="wp-block-paragraph">Just text.</p>')
     expect(out).toContain('Just text.')
-    expect(out).not.toContain('pdf-embed-fallback')
+    expect(out).not.toContain('ffc-doc-callout')
   })
 })

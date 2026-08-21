@@ -1,4 +1,5 @@
 import React from 'react'
+import { ALL_DOCUMENTS } from '@/data/documents'
 
 /**
  * Renders the site's page/post content.
@@ -18,8 +19,11 @@ import React from 'react'
  */
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
-/** Escape a string for safe interpolation into an HTML attribute or text node. */
-function esc(s: string): string {
+// Map mirrored PDF path → document content-page slug, for File blocks whose PDF
+// has a web-readable content page at /documents/<slug>/ (issue #59).
+const SLUG_BY_PDF = new Map(ALL_DOCUMENTS.map((d) => [d.file, d.slug]))
+
+function escapeHtml(s: string): string {
   return s
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
@@ -28,60 +32,93 @@ function esc(s: string): string {
 }
 
 /**
- * Make the PDFs embedded in migrated WordPress content actually readable
- * online, on every device (issue #101).
- *
- * Three separate problems are fixed here:
- *
- * 1. **The embed was hidden.** WordPress renders the `<object>` preview inside
- *    a File block with `hidden` plus a `data-wp-bind--hidden` directive; its
- *    Interactivity API script clears `hidden` at runtime. That script is not
- *    part of this static export, so the preview stayed hidden forever. We strip
- *    the directive and the attribute (the CSP allows the embed via
- *    `object-src 'self'`).
- *
- * 2. **The embed had no fallback.** WordPress emits `<object ...></object>`
- *    with an *empty* body, and `<object>` only falls back to its inner content.
- *    Browsers that refuse to render PDFs inline — every iOS browser and Android
- *    Chrome among them — therefore showed a 600px-tall blank gap. We inject a
- *    real fallback with working "open" and "download" links, so a phone shows
- *    an action instead of a void.
- *
- * 3. **There was no way to view without downloading.** The File block ships a
- *    lone "Download" button. We add a "View" button beside it that opens the
- *    PDF in a new tab, which works even where inline embedding does not.
+ * Strip HTML tags, applied repeatedly until the string stops changing, so
+ * overlapping/malformed fragments (e.g. `<scr<x>ipt>`) cannot leave a live tag
+ * behind after a single pass (CodeQL: incomplete multi-character sanitization).
+ * The result is additionally HTML-escaped by the caller before re-insertion.
  */
-function enhancePdfEmbeds(html: string): string {
-  const PDF_OBJECT = /<object\b[^>]*\btype="application\/pdf"[^>]*>/g
-
-  // 1. Reveal the embed.
-  let out = html.replace(PDF_OBJECT, (tag) =>
-    tag.replace(/\s*data-wp-bind--hidden="[^"]*"/g, '').replace(/\s+hidden(?=[\s>])/g, '')
-  )
-
-  // 2. Give every empty PDF <object> a usable fallback.
-  out = out.replace(
-    /(<object\b[^>]*\btype="application\/pdf"[^>]*>)(\s*)(<\/object>)/g,
-    (match, open: string, _ws: string, close: string) => {
-      const file = (open.match(/\bdata="([^"]*)"/) || [])[1]
-      if (!file) return match
-      const href = esc(file)
-      return `${open}<p class="pdf-embed-fallback">This browser can’t display the PDF here. <a href="${href}" target="_blank" rel="noopener noreferrer">Open it in a new tab</a> or <a href="${href}" download>download it</a>.</p>${close}`
-    }
-  )
-
-  // 3. Add a "View" button next to each File block's "Download" button.
-  out = out.replace(
-    /<a\b[^>]*\bclass="wp-block-file__button[^"]*"[^>]*\bdownload\b[^>]*>[\s\S]*?<\/a>/g,
-    (anchor) => {
-      const file = (anchor.match(/\bhref="([^"]*)"/) || [])[1]
-      if (!file) return anchor
-      const href = esc(file)
-      return `<a href="${href}" class="wp-block-file__button wp-element-button" target="_blank" rel="noopener noreferrer">View</a>${anchor}`
-    }
-  )
-
+function stripTags(s: string): string {
+  let prev: string
+  let out = s
+  do {
+    prev = out
+    out = out.replace(/<[^>]*>/g, '')
+  } while (out !== prev)
   return out
+}
+
+/**
+ * Replace migrated WordPress "File" blocks with a web-friendly callout.
+ *
+ * WordPress renders each File block as a `<object type="application/pdf">`
+ * preview plus download links. That inline `<object>` viewer renders as a
+ * **blank box** on browsers without a built-in PDF viewer (notably Android
+ * Chrome), and depends on a WordPress Interactivity API script we don't ship.
+ * So instead of embedding the PDF, we replace the whole block with a callout:
+ *
+ *  - If the PDF has a web-readable content page (/documents/<slug>/), link
+ *    "Read online" to it plus a Download link.
+ *  - Otherwise, offer Download + Open-in-new-tab.
+ *
+ * The block's structure is `<div class="wp-block-file"> <object…></object>
+ * <a href=PDF>title</a> <a class="wp-block-file__button" download>Download</a>
+ * </div>` with no nested divs, so a non-greedy match to the next `</div>` is
+ * safe.
+ */
+function rewriteFileBlocks(html: string): string {
+  return html.replace(/<div[^>]*\bclass="wp-block-file"[^>]*>([\s\S]*?)<\/div>/g, (block) => {
+    const pdf = block.match(/data="([^"]+\.pdf)"/i)?.[1] ?? block.match(/href="([^"]+\.pdf)"/i)?.[1]
+    if (!pdf) return block
+    // Title = text of the first non-button anchor (WordPress's filename link);
+    // fall back to the PDF's file name.
+    const labelHtml = block.match(/<a(?![^>]*wp-block-file__button)[^>]*>([\s\S]*?)<\/a>/)?.[1]
+    const label = labelHtml ? stripTags(labelHtml).trim() : undefined
+    const title = (
+      label && label.length > 1 ? label : decodeURIComponent(pdf.split('/').pop() || 'document')
+    ).trim()
+    const slug = SLUG_BY_PDF.get(pdf)
+    const read = slug
+      ? `<a class="ffc-doc-read" href="/documents/${slug}">📄 Read online</a>`
+      : `<a class="ffc-doc-read" href="${pdf}" target="_blank" rel="noopener noreferrer">📄 Open PDF ↗</a>`
+    return (
+      `<div class="ffc-doc-callout">` +
+      `<span class="ffc-doc-title">${escapeHtml(title)}</span>` +
+      `<span class="ffc-doc-actions">${read}` +
+      `<a class="ffc-doc-download" href="${pdf}" download>⬇ Download PDF</a>` +
+      `</span></div>`
+    )
+  })
+}
+
+/**
+ * Replace bare, empty PDF `<object>` embeds (outside File blocks) with the
+ * same callout. These appear where an editor embedded a PDF directly; like
+ * the File-block preview they render as a blank box on browsers without a
+ * built-in PDF viewer (issue #101). An `<object>` that already has fallback
+ * content is left alone — the browser will use it.
+ */
+function rewriteBareObjects(html: string): string {
+  return html.replace(/<object\b[^>]*\btype="application\/pdf"[^>]*>\s*<\/object>/g, (tag) => {
+    const pdf = tag.match(/\bdata="([^"]+\.pdf)"/i)?.[1]
+    if (!pdf) return tag
+    const label = tag.match(/\baria-label="([^"]*)"/)?.[1]
+    const title = (
+      label && label.length > 1
+        ? label.replace(/^Embed of\s*/i, '').replace(/\.$/, '')
+        : decodeURIComponent(pdf.split('/').pop() || 'document')
+    ).trim()
+    const slug = SLUG_BY_PDF.get(pdf)
+    const read = slug
+      ? `<a class="ffc-doc-read" href="/documents/${slug}">📄 Read online</a>`
+      : `<a class="ffc-doc-read" href="${pdf}" target="_blank" rel="noopener noreferrer">📄 Open PDF ↗</a>`
+    return (
+      `<div class="ffc-doc-callout">` +
+      `<span class="ffc-doc-title">${escapeHtml(title)}</span>` +
+      `<span class="ffc-doc-actions">${read}` +
+      `<a class="ffc-doc-download" href="${pdf}" download>⬇ Download PDF</a>` +
+      `</span></div>`
+    )
+  })
 }
 
 function withBasePath(html: string): string {
@@ -105,7 +142,9 @@ export default function SiteContent({
   return (
     <div
       className={`wp-content entry-content is-layout-constrained ${className}`.trim()}
-      dangerouslySetInnerHTML={{ __html: withBasePath(enhancePdfEmbeds(html)) }}
+      dangerouslySetInnerHTML={{
+        __html: withBasePath(rewriteBareObjects(rewriteFileBlocks(html))),
+      }}
     />
   )
 }

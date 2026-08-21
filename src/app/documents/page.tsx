@@ -20,9 +20,9 @@ export default function DocumentsPage() {
     <article className="mx-auto w-full max-w-5xl px-4 py-10">
       <h1 className="mb-3 text-3xl font-bold text-gray-900">Documents Library</h1>
       <p className="mb-8 max-w-3xl text-gray-700">
-        Browse the documents shared by Healthy Community Lifespaces. You can read each one right
-        here without downloading, open it in a new tab, or download a copy. Each document also links
-        back to the page where it appears in context.
+        Browse the documents shared by Healthy Community Lifespaces. Read each one online as a web
+        page — no download or PDF viewer needed — or download the original PDF. Each document also
+        links back to the page where it appears in context.
       </p>
 
       {DOCUMENT_GROUPS.map((group) => (
@@ -31,7 +31,7 @@ export default function DocumentsPage() {
           {group.description && <p className="mb-4 max-w-3xl text-gray-600">{group.description}</p>}
           <div className="space-y-5">
             {group.docs.map((doc) => (
-              <PdfDocument key={doc.file} doc={doc} />
+              <PdfDocument key={doc.slug} doc={doc} />
             ))}
           </div>
         </section>

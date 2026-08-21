@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { siteUrl } from '@/lib/site.config'
 import { getPages, getPosts, DEDICATED_ROUTE_SLUGS } from '@/lib/content'
+import { ALL_DOCUMENTS } from '@/data/documents'
 
 export const dynamic = 'force-static'
 
@@ -62,5 +63,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: p.type === 'post' ? 0.5 : 0.6,
     }))
 
-  return [...staticEntries, ...wpEntries]
+  // Document content pages served by the dynamic `src/app/documents/[slug]`
+  // route (issue #59) — enumerated here from the same data the route renders.
+  const docEntries: MetadataRoute.Sitemap = ALL_DOCUMENTS.map((d) => ({
+    url: siteUrl(`/documents/${d.slug}/`),
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.5,
+  }))
+
+  return [...staticEntries, ...wpEntries, ...docEntries]
 }
