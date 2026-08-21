@@ -40,6 +40,17 @@ describe('Footer component', () => {
     expect(screen.getByText(new RegExp(currentYear.toString()))).toBeInTheDocument()
   })
 
+  it('should link to the GitHub issues page for requesting changes', () => {
+    render(<Footer />)
+    const githubLink = screen.getByRole('link', {
+      name: /request changes or features on github/i,
+    })
+    expect(githubLink).toHaveAttribute('href', expect.stringMatching(/\/issues$/))
+    expect(githubLink).toHaveAttribute('target', '_blank')
+    expect(githubLink).toHaveAttribute('rel', expect.stringContaining('noopener'))
+    expect(githubLink).toHaveAttribute('rel', expect.stringContaining('noreferrer'))
+  })
+
   it('should have email contact link', () => {
     render(<Footer />)
     const links = screen.getAllByRole('link')

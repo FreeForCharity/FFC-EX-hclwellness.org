@@ -3,7 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { Mail, Link2 } from 'lucide-react'
-import { FaLinkedinIn } from 'react-icons/fa'
+import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
 import type { IconType } from 'react-icons'
 import type { LucideIcon } from 'lucide-react'
 
@@ -114,6 +114,17 @@ const Footer: React.FC = () => {
             Healthy Community Lifespaces is a Pennsylvania-based nonprofit advancing community
             health, nutrition, and safe, walkable neighborhoods.
           </p>
+          {siteConfig.repoUrl && (
+            <a
+              href={`${siteConfig.repoUrl}/issues`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-gray-200 hover:text-green-400"
+            >
+              <FaGithub aria-hidden size={16} />
+              Request changes or features on GitHub
+            </a>
+          )}
         </div>
       </div>
 

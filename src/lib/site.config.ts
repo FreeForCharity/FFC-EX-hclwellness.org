@@ -54,6 +54,12 @@ export type SiteConfig = {
   themeColor: string
   /** Where the vulnerability disclosure policy lives on this site. */
   vulnerabilityDisclosurePath: string
+  /**
+   * Public GitHub repository URL (no trailing slash). Used in the footer to
+   * link visitors to the issue tracker so they can request changes or
+   * features. Empty string omits the link.
+   */
+  repoUrl: string
   /** Social links displayed in the footer. */
   social: readonly SiteSocialLink[]
 }
@@ -83,6 +89,7 @@ export const siteConfig: SiteConfig = {
   ],
   themeColor: '#68bb6c',
   vulnerabilityDisclosurePath: '/vulnerability-disclosure-policy',
+  repoUrl: 'https://github.com/freeforcharity/ffc-ex-hclwellness.org',
   social: [
     {
       label: 'LinkedIn',
