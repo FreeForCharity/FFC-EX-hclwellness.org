@@ -80,6 +80,7 @@ export const DOCUMENT_GROUPS: DocumentGroup[] = [
         sourceLabel: 'Contest',
       },
       {
+        slug: 'twin-valley-winning-entry-2024-25',
         title: 'Twin Valley Middle School — Winning Entry (2024–25)',
         file: '/wp-content/uploads/2025/02/2024-25-TEMS-1.pdf',
         description: 'Student contest entry from Twin Valley Middle School, 2024–25.',
@@ -87,6 +88,7 @@ export const DOCUMENT_GROUPS: DocumentGroup[] = [
         sourceLabel: 'Contest',
       },
       {
+        slug: 'umasd-state-fruit-essay',
         title: 'UMASD State Fruit Essay',
         file: '/wp-content/uploads/2025/02/UMASD-State-fruit-essay.pdf',
         description: 'Student essay entry supporting the state fruit campaign.',

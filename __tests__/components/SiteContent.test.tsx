@@ -58,9 +58,18 @@ describe('SiteContent PDF handling', () => {
     )
     expect(out).toContain('ffc-doc-callout')
     expect(out).not.toContain('<object')
-    // No content page for this PDF, so the reader link opens the PDF itself.
-    expect(out).toContain('Open PDF')
+    // This PDF has a content page, so the reader link goes there.
+    expect(out).toContain('/documents/umasd-state-fruit-essay')
     expect(out).toContain('/wp-content/uploads/2025/02/UMASD-State-fruit-essay.pdf')
+  })
+
+  it('offers Open PDF for a bare embed whose PDF has no content page', () => {
+    const out = html(
+      '<object data="/wp-content/uploads/2020/01/some-unlisted-file.pdf" type="application/pdf"></object>'
+    )
+    expect(out).toContain('ffc-doc-callout')
+    expect(out).toContain('Open PDF')
+    expect(out).toContain('/wp-content/uploads/2020/01/some-unlisted-file.pdf')
   })
 
   it('leaves an <object> that already has fallback content alone', () => {

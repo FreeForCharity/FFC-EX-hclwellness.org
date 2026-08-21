@@ -338,13 +338,15 @@ function run() {
     let blocks = buildBlocks(elements, fontSizes, doc.slug, imgRename)
     let source = 'text'
 
-    // If the text layer is corrupted (unmapped ligature/hyphen glyphs), re-read
-    // the document with OCR, which transcribes the rendered glyphs correctly.
+    // If the text layer is corrupted (unmapped ligature/hyphen glyphs) or the
+    // PDF is a pure scan with no text layer at all (its "images" are then just
+    // horizontal strips of the scanned page, useless as content), re-read the
+    // document with OCR, which transcribes the rendered glyphs correctly.
     const xmlPlain = blocks
       .filter((b) => b.type !== 'img')
       .map((b) => b.text)
       .join(' ')
-    if (looksCorrupted(xmlPlain)) {
+    if (looksCorrupted(xmlPlain) || xmlPlain.trim() === '') {
       if (hasTesseract()) {
         const ocrBlocks = ocrToBlocks(pdfPath, tmp)
         if (ocrBlocks.length && !looksCorrupted(ocrBlocks.map((b) => b.text).join(' '))) {

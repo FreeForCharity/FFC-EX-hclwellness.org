@@ -10,7 +10,9 @@ import doc5 from './powered-personal-transportation-devices.json'
 import doc6 from './ride-smart-stay-safe.json'
 import doc7 from './safe-kids-helmet-fit-test.json'
 import doc8 from './summary-2024-25-plan-2025-2026.json'
-import doc9 from './vegetable-contest-2026-27.json'
+import doc9 from './twin-valley-winning-entry-2024-25.json'
+import doc10 from './umasd-state-fruit-essay.json'
+import doc11 from './vegetable-contest-2026-27.json'
 
 export type DocumentContentJson = {
   slug: string
@@ -31,5 +33,7 @@ export const DOCUMENT_CONTENT: Record<string, DocumentContentJson> = {
   'ride-smart-stay-safe': doc6 as DocumentContentJson,
   'safe-kids-helmet-fit-test': doc7 as DocumentContentJson,
   'summary-2024-25-plan-2025-2026': doc8 as DocumentContentJson,
-  'vegetable-contest-2026-27': doc9 as DocumentContentJson,
+  'twin-valley-winning-entry-2024-25': doc9 as DocumentContentJson,
+  'umasd-state-fruit-essay': doc10 as DocumentContentJson,
+  'vegetable-contest-2026-27': doc11 as DocumentContentJson,
 }
