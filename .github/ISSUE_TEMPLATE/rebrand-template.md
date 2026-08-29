@@ -469,7 +469,7 @@ After Copilot completes the updates, you will need to manually:
 1. Replace logo and favicon files in `/public` directory with the assets attached to this issue
 2. Add team member photos to `/public/team/` directory with filenames matching the data files
 3. Review and adjust color scheme in `src/app/globals.css` with the hex codes provided above
-4. Test all changes locally with `npm run dev`
+4. Test all changes locally with `pnpm run dev`
 
 **Estimated time: 20-40 minutes**
 
