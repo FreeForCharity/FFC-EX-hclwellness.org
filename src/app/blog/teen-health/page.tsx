@@ -16,12 +16,15 @@ export const metadata: Metadata = {
  * The Teen Health Blog (issue #108): a dedicated home for articles written by
  * teen/student contributors. Articles are curated via TEEN_ARTICLE_SLUGS in
  * src/lib/content.ts. The site is a static export with no upload backend, so
- * submissions come in by email.
+ * submissions come in as GitHub issues (the org prefers no email), matching
+ * the footer's request-changes link.
  */
 export default function TeenHealthBlog() {
   const articles = getTeenArticles()
-  const submitHref = `mailto:${siteConfig.contactEmail}?subject=${encodeURIComponent(
+  const submitHref = `${siteConfig.repoUrl}/issues/new?title=${encodeURIComponent(
     'Teen Health Blog submission'
+  )}&body=${encodeURIComponent(
+    'Paste your article text below (or drag a document/photos into this box), and tell us the author name to credit.\n\n'
   )}`
 
   return (
@@ -56,11 +59,14 @@ export default function TeenHealthBlog() {
       <section className="mt-12 rounded-xl border border-green-200 bg-green-50 p-6">
         <h2 className="text-xl font-bold text-gray-900">Are you a teen with a story to tell?</h2>
         <p className="mt-2 max-w-2xl text-gray-700">
-          We publish health articles written by student contributors. Email us your article (a
-          document attachment or the text itself) and our team will review it for publication here.
+          We publish health articles written by student contributors. Share your article on our
+          GitHub page — paste the text or drag in a document, and our team will review it for
+          publication here. (A free GitHub account is all you need.)
         </p>
         <a
           href={submitHref}
+          target="_blank"
+          rel="noopener noreferrer"
           className="mt-4 inline-block rounded bg-green-700 px-5 py-2.5 font-semibold text-white hover:bg-green-800"
         >
           Submit your article
