@@ -17,6 +17,7 @@ import {
   montserrat,
   cinzel,
 } from '@/lib/fonts'
+import { CONSENT_MODE_BOOTSTRAP } from '@/lib/consent-mode'
 
 const defaultTitle = `${siteConfig.name} | ${siteConfig.tagline}`
 
@@ -113,6 +114,13 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.zeffy.com" />
 
+        {/* Google Consent Mode v2 defaults — MUST run before any Google tag
+            (i.e. before the GoogleTagManager component below) so the
+            region-scoped defaults are already on the dataLayer when GTM/GA4
+            initialise.
+            Granted worldwide, denied (cookieless pings) only where Google's
+            EU User Consent Policy requires opt-in. See src/lib/consent-mode.ts. */}
+        <script dangerouslySetInnerHTML={{ __html: CONSENT_MODE_BOOTSTRAP }} />
         <GoogleTagManager />
       </head>
       <body
