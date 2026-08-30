@@ -7,10 +7,23 @@ import { render, waitFor } from '@testing-library/react'
 // anything. Set a real-looking ID BEFORE the component module is evaluated so
 // the injection (and its ordering against the consent update) is observable.
 // require() (not a hoisted import) keeps the assignment ahead of evaluation.
+const ORIGINAL_GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
 process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID = 'G-TEST1234567'
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const CookieConsent = require('../../src/components/cookie-consent')
   .default as typeof import('../../src/components/cookie-consent').default
+
+afterAll(() => {
+  // Restore the real environment (delete if it was never set) and purge the
+  // module cache, so no later suite sees this component module bound to the
+  // test measurement ID.
+  if (ORIGINAL_GA_MEASUREMENT_ID === undefined) {
+    delete process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
+  } else {
+    process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID = ORIGINAL_GA_MEASUREMENT_ID
+  }
+  jest.resetModules()
+})
 
 const GA_SCRIPT_SELECTOR = 'script[src*="googletagmanager.com/gtag"]'
 

@@ -19,10 +19,17 @@ export const analyticsConfig = {
   clarityProjectId: 'XXXXXXXX',
 } as const
 
-// The placeholder values the FFC template ships. Loaders check against this
-// list so that "leave a value as its placeholder to keep that integration
-// effectively inert" is actually honored.
-const PLACEHOLDER_IDS: readonly string[] = ['G-XXXXXXXXXX', 'XXXXXXXXXXXXXXX', 'XXXXXXXXXX']
+// The placeholder values the FFC template ships (this fork's shipped Clarity
+// placeholder is the 8-X variant, included alongside the template's 10-X
+// one). Loaders check against this list so that "leave a value as its
+// placeholder to keep that integration effectively inert" is actually
+// honored.
+const PLACEHOLDER_IDS: readonly string[] = [
+  'G-XXXXXXXXXX',
+  'XXXXXXXXXXXXXXX',
+  'XXXXXXXXXX',
+  'XXXXXXXX',
+]
 
 /**
  * True when an analytics ID has been replaced with a real value. A falsy
