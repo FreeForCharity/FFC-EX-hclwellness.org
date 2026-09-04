@@ -152,7 +152,7 @@ The Lighthouse CI configuration is in `lighthouserc.json`:
 }
 ```
 
-**Important**: URLs must match what the export actually writes. This site sets `trailingSlash: true`, so a route is emitted as `out/<route>/index.html`. Both `/<route>/` and `/<route>/index.html` therefore resolve — the block above shows which form this repo uses — while `<route>.html` does **not** exist and will 404. Getting this wrong is not a partial failure: `lhci autorun` aborts the whole run on the first URL that 404s.
+**Important**: the URLs must match what the export writes. This site sets `trailingSlash: true`, so each route is written as `out/<route>/index.html` — audited above as `/cookie-policy/index.html`, and a flat `<route>.html` does not exist. The home page is `out/index.html` either way. Getting this wrong is not a partial failure: `lhci autorun` aborts the entire run on the first URL that 404s.
 
 You can add more pages to audit by adding URLs to the `url` array. To see which pages are generated, check the `out/` directory after running `pnpm run build`.
 
