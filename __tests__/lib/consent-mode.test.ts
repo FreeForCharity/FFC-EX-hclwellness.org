@@ -50,9 +50,9 @@ describe('CONSENT_MODE_BOOTSTRAP', () => {
 
 describe('root layout consent bootstrap ordering', () => {
   // The layout is a server component excluded from jest rendering (font
-  // imports), so assert on its source: the consent-mode bootstrap <script>
-  // must be emitted in <head> BEFORE <GoogleTagManager />, or the regional
-  // defaults would arrive after the Google tags initialise.
+  // imports), so assert on its source: the consent-mode bootstrap <script> must
+  // be emitted in <head> BEFORE <GoogleTagManager />, or the consent defaults
+  // would arrive after the Google tags initialise.
   const layoutSource = readFileSync(join(process.cwd(), 'src/app/layout.tsx'), 'utf8')
 
   // Whitespace/quote-tolerant patterns: quote style, spacing, or import

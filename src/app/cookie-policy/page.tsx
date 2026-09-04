@@ -218,7 +218,7 @@ export default function CookiePolicy() {
               We apply the strictest setting to everyone: no matter where in the world you are,
               Google Analytics sets{' '}
               <strong>
-                no analytics or advertising cookies and collects no measurement identifiers
+                no analytics or advertising cookies and collects no identifiers from your device
               </strong>{' '}
               until you accept. It still counts your visit in an aggregate, cookie-free way so we
               know how many people used the site — that measurement cannot be tied back to you or to

@@ -359,7 +359,7 @@ export default function PrivacyPolicy() {
           <ul className="list-inside list-disc space-y-[4px] pb-[1em]">
             <li className="text-[14px] text-[#666] leading-[24px] font-[500]">
               <strong>Consent:</strong> Google&apos;s tags set no analytics or advertising cookies
-              and read no measurement identifiers until you accept through the cookie consent
+              and read no identifiers from your device until you accept through the cookie consent
               banner, wherever in the world you are — until then only aggregate, cookieless
               measurement takes place. Session recording (Microsoft Clarity) and marketing (Meta
               Pixel) load only after you opt in. You can withdraw consent at any time via the Cookie
