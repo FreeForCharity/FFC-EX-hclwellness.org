@@ -340,9 +340,8 @@ export default function PrivacyPolicy() {
             handling of your personal data, and this section supplements the rest of this policy.
           </p>
           <p className="text-[14px] text-[#666] pb-[10px] leading-[24px] font-[500]">
-            <strong>How consent works regionally.</strong> We use Google Consent Mode. Whether the
-            permissive or the opt-in default applies to Google&apos;s tags is determined by Google
-            from your IP address at the time of your visit; IP geolocation is approximate. Google
+            <strong>How consent works, in plain language.</strong> We use Google Consent Mode. The
+            same rule applies to every visitor, so nothing depends on where you are. Google
             Analytics runs cookie-free until you accept, wherever in the world you are. (Switzerland
             is included because Google&apos;s consent defaults cover it; the data of visitors in
             Switzerland is protected by Switzerland&apos;s Federal Act on Data Protection (FADP)
