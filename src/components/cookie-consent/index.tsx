@@ -187,9 +187,9 @@ export default function CookieConsent() {
   //
   // Keyed on the RESULTING preference state rather than on what changed:
   // withdrawing marketing alone must not wipe GA4/Clarity cookies while
-  // analytics consent still stands, and a first-time decline must still
-  // clear cookies that the granted-by-default regional bootstrap allowed
-  // to be set before any choice was stored.
+  // analytics consent still stands, and a first-time decline must still clear
+  // cookies that this site's earlier permissive bootstrap allowed to be set
+  // before any choice was stored.
   //
   // Only cookies scoped to THIS site's domain can be expired here — that
   // is all document.cookie can reach. A genuinely third-party cookie (the
@@ -231,18 +231,18 @@ export default function CookieConsent() {
       document.cookie = `cookie-consent=${encodeURIComponent(cookieValue)}; path=/; max-age=31536000; SameSite=Lax${secureFlag}`
 
       // Expire each non-granted category's cookies on EVERY apply — not only
-      // when a stored grant is withdrawn. Under the regional Consent Mode
-      // defaults storage is GRANTED outside the EEA/UK/CH before any choice
-      // is made, so cookies can already exist the first time a visitor
-      // declines, and a restore from storage carries no `previousPrefs` at all.
+      // when a stored grant is withdrawn. Storage was GRANTED outside the
+      // EEA/UK/CH under this site's earlier defaults, so cookies can already
+      // exist the first time a visitor declines, and a restore from storage
+      // carries no `previousPrefs` at all.
       if (!prefs.analytics || !prefs.marketing) {
         deleteTrackingCookies(prefs)
       }
 
-      // Push the Google Consent Mode `update` mirroring this choice. For an
-      // EEA/UK/CH visitor this is what lifts the regional denied default to
-      // granted; for everyone else it matters when they decline (storage
-      // flips to denied and GA4 falls back to cookieless pings).
+      // Push the Google Consent Mode `update` mirroring this choice. This is
+      // what lifts the denied-by-default state to granted for any visitor who
+      // accepts; for one who declines it pins storage to denied and GA4 stays
+      // on cookieless pings.
       //
       // Queued BEFORE the custom `consent_update` event pushed below: both
       // writes land in the same dataLayer queue and GTM processes it in order,
@@ -286,8 +286,8 @@ export default function CookieConsent() {
         const consent = localStorage.getItem('cookie-consent')
         if (!consent) {
           // No stored choice: the Consent Mode defaults set in the layout
-          // <head> govern, so the Google tag loads now (a first-time EEA
-          // visitor is measured cookielessly until they accept) and we ask.
+          // <head> govern, so the Google tag loads now (a first-time visitor
+          // anywhere is measured cookielessly until they accept) and we ask.
           // Ordering matters — when a stored choice DOES exist, applyConsent
           // below pushes the consent update BEFORE loading GA, so a stored
           // denial is on the queue ahead of the tag's first hit.
