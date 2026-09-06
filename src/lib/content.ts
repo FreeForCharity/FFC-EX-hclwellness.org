@@ -95,6 +95,7 @@ export const DEDICATED_ROUTE_SLUGS = new Set<string>(['blog'])
  */
 export const TEEN_ARTICLE_SLUGS = new Set<string>([
   '17087-2', // The Impact of Anxiety on Our Lives
+  'hidden-dangers-of-e-bikes', // One Letter. Infinite Consequences: Hidden Dangers of E-bikes
 ])
 
 /** Teen-authored articles, newest first — the content surfaced on /blog/teen-health. */
