@@ -340,7 +340,7 @@ pnpm run test:ui       # Interactive Playwright UI
 Tests run automatically in GitHub Actions with the following configuration:
 
 - **Trigger**: Every push to main branch
-- **Environment**: Ubuntu latest with Node.js 22
+- **Environment**: Ubuntu latest with Node.js 22 (latest 22.x; 22.12+ required)
 - **Browser Setup**: `pnpm exec playwright install --with-deps chromium`
 - **Build**: Built with `NEXT_PUBLIC_BASE_PATH=/FFC_Single_Page_Template`
 - **Retry Logic**: Failed tests retry 2 times

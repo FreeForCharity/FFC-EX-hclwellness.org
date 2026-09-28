@@ -132,7 +132,7 @@ While automated deployment is recommended, you can also deploy manually if neede
 
 ### Prerequisites
 
-- Node.js 22.x installed
+- Node.js 22.12 or newer installed
 - GitHub CLI (`gh`) or GitHub Personal Access Token
 - Write access to the repository
 

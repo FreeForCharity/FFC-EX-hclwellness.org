@@ -29,7 +29,7 @@ This document provides solutions to common issues, troubleshooting steps, and fr
 # Check your Node.js version
 node --version
 
-# Should be 22.x or higher
+# Should be 22.12 or higher
 # Install Node 22 if needed
 # Using nvm (recommended):
 nvm install 22
