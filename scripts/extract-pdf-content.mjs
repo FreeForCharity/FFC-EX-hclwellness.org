@@ -216,10 +216,24 @@ function buildBlocks(elements, fontSizes, slug, imgRename) {
   }
   flushPara()
 
-  // Collapse runs of identical-type empties; drop blocks that are just page numbers.
+  // Collapse runs of identical-type empties; drop blocks that are just page
+  // numbers, and drop heading runs that are really wordmark fragments.
+  //
+  // A stacked logo (the HCL letterhead is "H ealthy / C ommunity / L ifespaces")
+  // sets its oversized initials and their remainders as separate, large text
+  // runs, so the size-based heading test above promotes all six to headings —
+  // splitting the surrounding prose around six lines of "ealthy / ommunity /
+  // ifespaces / H / C / L". Nothing is lost by dropping them: the logo is also
+  // extracted as the adjacent image block. A lone character is never a real
+  // heading, and neither is a single bare lowercase word — a genuine heading
+  // that starts lowercase (e.g. the Spanish "adecuadamente?") carries
+  // punctuation or further words, which the alphabetic-only test excludes.
+  const isWordmarkFragment = (text) => text.length <= 2 || /^[a-z]+$/.test(text)
   return blocks.filter((b) => {
     if (b.type === 'img') return true
-    return b.text && !/^\d{1,3}$/.test(b.text)
+    if (!b.text || /^\d{1,3}$/.test(b.text)) return false
+    if ((b.type === 'h2' || b.type === 'h3') && isWordmarkFragment(b.text.trim())) return false
+    return true
   })
 }
 
