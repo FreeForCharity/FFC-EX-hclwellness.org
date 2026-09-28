@@ -190,6 +190,30 @@ function buildBlocks(elements, fontSizes, slug, imgRename) {
     if (item) item.bulleted = true
   }
 
+  // Two-up print sheets (e.g. the back-to-school card) lay the same content out
+  // twice side by side. Sorting by `top` interleaves the copies line by line,
+  // so every sentence would appear twice; keep the first of any run whose exact
+  // text repeats on the same line of the same page in the other half of the
+  // sheet. The distance test spares genuine repeats close together, such as
+  // two "RIDE ON" column headers in a table.
+  const maxLeft = new Map()
+  for (const e of elements) {
+    if (e.kind === 'text') maxLeft.set(e.page, Math.max(maxLeft.get(e.page) ?? 0, e.left))
+  }
+  const kept = []
+  elements = elements.filter((e) => {
+    if (e.kind !== 'text' || e.text.length < 4 || !/\p{L}/u.test(e.text)) return true
+    const dup = kept.some(
+      (k) =>
+        k.page === e.page &&
+        k.text === e.text &&
+        Math.abs(k.top - e.top) <= lineH / 2 &&
+        Math.abs(k.left - e.left) >= maxLeft.get(e.page) / 2
+    )
+    if (!dup) kept.push(e)
+    return !dup
+  })
+
   // Large text that is really part of a sentence is not a heading: a run that
   // carries an email address or URL, or that ends on a connective and so
   // continues onto the next line ("…mailing) to" / "name@example.com").
