@@ -218,8 +218,7 @@ function buildBlocks(elements, fontSizes, slug, imgRename) {
   // carries an email address or URL, or that ends on a connective and so
   // continues onto the next line ("…mailing) to" / "name@example.com").
   const isSentenceFragment = (text) =>
-    /@|https?:\/\/|\bwww\./i.test(text) ||
-    /\b(to|and|or|of|the|for|with|by|at|in|a|an)$/i.test(text)
+    /@|https?:\/\/|\bwww\./i.test(text) || /\b(to|and|or|of|the|for|with|by|in|a|an)$/i.test(text)
 
   const blocks = []
   let para = null // accumulating paragraph: { lines: [{top,text}], lastBottom }
