@@ -17,7 +17,19 @@
     },
     {
       "type": "p",
-      "text": "Our Values: ● Empowerment : We believe in uplifting communities and individuals, providing them with the resources to create sustainable, healthy Lifespaces. Focusing on student on and community empowerment to provide innovation in promoting health. ● Diversity : We celebrate the unique talents and abilities of every individual, recognizing that diverse perspectives strengthen our communities. ● Health & Wellness : We are committed to creating environments that support holistic health including physical, mental, and emotional well-being for all."
+      "text": "Our Values:"
+    },
+    {
+      "type": "li",
+      "text": "Empowerment : We believe in uplifting communities and individuals, providing them with the resources to create sustainable, healthy Lifespaces. Focusing on student on and community empowerment to provide innovation in promoting health."
+    },
+    {
+      "type": "li",
+      "text": "Diversity : We celebrate the unique talents and abilities of every individual, recognizing that diverse perspectives strengthen our communities."
+    },
+    {
+      "type": "li",
+      "text": "Health & Wellness : We are committed to creating environments that support holistic health including physical, mental, and emotional well-being for all."
     },
     {
       "type": "p",
@@ -41,7 +53,23 @@
     },
     {
       "type": "p",
-      "text": "State-Level Engagement Current Work (2023–2024) Our Director actively participates in workgroups for the Pennsylvania State Health Improvement Plan (PA SHIP) and ENGAGE PEH, fostering community collaboration through both virtual and in-person meetings. Objective To align efforts across state agencies, local health departments, and community organizations in developing a unified, evidence-based approach to health improvement. Summary Healthy Community Lifespaces (HCL) contributes to ongoing dialogues with stakeholders, including the Pennsylvania Department of Health (PDH), Department of Education (PDE), healthcare providers, and other community organizations. These efforts have led to: ● Innovative strategies addressing critical health issues ● Enhanced access to care ● Advocacy for underserved populations ● Sharing of data-driven insights and resources"
+      "text": "State-Level Engagement Current Work (2023–2024) Our Director actively participates in workgroups for the Pennsylvania State Health Improvement Plan (PA SHIP) and ENGAGE PEH, fostering community collaboration through both virtual and in-person meetings. Objective To align efforts across state agencies, local health departments, and community organizations in developing a unified, evidence-based approach to health improvement. Summary Healthy Community Lifespaces (HCL) contributes to ongoing dialogues with stakeholders, including the Pennsylvania Department of Health (PDH), Department of Education (PDE), healthcare providers, and other community organizations. These efforts have led to:"
+    },
+    {
+      "type": "li",
+      "text": "Innovative strategies addressing critical health issues"
+    },
+    {
+      "type": "li",
+      "text": "Enhanced access to care"
+    },
+    {
+      "type": "li",
+      "text": "Advocacy for underserved populations"
+    },
+    {
+      "type": "li",
+      "text": "Sharing of data-driven insights and resources"
     },
     {
       "type": "p",
@@ -53,7 +81,43 @@
     },
     {
       "type": "p",
-      "text": "Caregiver & Recovery Home Initiatives Caregiver Training Program Objective Develop a comprehensive wellness training program to enhance caregiver skills and well-being. Focus Areas: ● Wellness Promotion: Understanding the holistic needs of caregivers and care recipients ● Confidence in Abilities: Encouraging physical activity and communication with healthcare providers ● Sensory Regulation: Activities supporting sensory needs and comfort ● Outdoor Mental Health Benefits: Integrating nature into daily routines ● Nutrition Awareness: Promoting balanced meals and healthy eating Summary (2024–2025) Webinar and virtual training materials are in development. Thistle Hills Program Objective Promote healthy cooking and gardening for residents of Thistle Hills recovery home. Current Work (2024–2025) ● Spring cooking session conducted ● Hosted a “Days for Girls” volunteer opportunity ● Scheduled summer and fall cooking classes ● Another partner nonprofit began regular gardening visit Goals (2025–2026) Increase seasonal cooking sessions."
+      "text": "Caregiver & Recovery Home Initiatives Caregiver Training Program Objective Develop a comprehensive wellness training program to enhance caregiver skills and well-being. Focus Areas:"
+    },
+    {
+      "type": "li",
+      "text": "Wellness Promotion: Understanding the holistic needs of caregivers and care recipients"
+    },
+    {
+      "type": "li",
+      "text": "Confidence in Abilities: Encouraging physical activity and communication with healthcare providers"
+    },
+    {
+      "type": "li",
+      "text": "Sensory Regulation: Activities supporting sensory needs and comfort"
+    },
+    {
+      "type": "li",
+      "text": "Outdoor Mental Health Benefits: Integrating nature into daily routines"
+    },
+    {
+      "type": "li",
+      "text": "Nutrition Awareness: Promoting balanced meals and healthy eating Summary (2024–2025) Webinar and virtual training materials are in development. Thistle Hills Program Objective Promote healthy cooking and gardening for residents of Thistle Hills recovery home. Current Work (2024–2025)"
+    },
+    {
+      "type": "li",
+      "text": "Spring cooking session conducted"
+    },
+    {
+      "type": "li",
+      "text": "Hosted a “Days for Girls” volunteer opportunity"
+    },
+    {
+      "type": "li",
+      "text": "Scheduled summer and fall cooking classes"
+    },
+    {
+      "type": "li",
+      "text": "Another partner nonprofit began regular gardening visit Goals (2025–2026) Increase seasonal cooking sessions."
     },
     {
       "type": "img",
@@ -61,15 +125,55 @@
     },
     {
       "type": "p",
-      "text": "Children’s Garden Program – Upper Merion Community Garden Objective Educate children (including charter, cyber, and homeschooled students) about nutrition . and nature Program Highlights: ● Introduce vegetable nutrition via hands-on gardening and “vegetable bingo” ● Encourage outdoor activity for mental wellness ● Build lifelong healthy habits through exposure to fresh produce"
+      "text": "Children’s Garden Program – Upper Merion Community Garden Objective Educate children (including charter, cyber, and homeschooled students) about nutrition . and nature Program Highlights:"
+    },
+    {
+      "type": "li",
+      "text": "Introduce vegetable nutrition via hands-on gardening and “vegetable bingo”"
+    },
+    {
+      "type": "li",
+      "text": "Encourage outdoor activity for mental wellness"
+    },
+    {
+      "type": "li",
+      "text": "Build lifelong healthy habits through exposure to fresh produce"
     },
     {
       "type": "p",
-      "text": "Summary (2024–2025) ● Fall harvest and tasting event held for 10 children ● Spring planting had low attendance due to sports conflicts; age limits adjusted ● Teen coordinator added ● Survey results showed positive feedback and learning"
+      "text": "Summary (2024–2025)"
+    },
+    {
+      "type": "li",
+      "text": "Fall harvest and tasting event held for 10 children"
+    },
+    {
+      "type": "li",
+      "text": "Spring planting had low attendance due to sports conflicts; age limits adjusted"
+    },
+    {
+      "type": "li",
+      "text": "Teen coordinator added"
+    },
+    {
+      "type": "li",
+      "text": "Survey results showed positive feedback and learning"
     },
     {
       "type": "p",
-      "text": "Goals (2025–2026) ● Host two sessions (spring and fall) ● Expand age range to include Pre-K ● Promote more actively in local schools Engage teens in promoting community health through creative leadership roles"
+      "text": "Goals (2025–2026)"
+    },
+    {
+      "type": "li",
+      "text": "Host two sessions (spring and fall)"
+    },
+    {
+      "type": "li",
+      "text": "Expand age range to include Pre-K"
+    },
+    {
+      "type": "li",
+      "text": "Promote more actively in local schools Engage teens in promoting community health through creative leadership roles"
     },
     {
       "type": "img",
@@ -81,15 +185,63 @@
     },
     {
       "type": "p",
-      "text": "Components: ● Teen Blog: Share research, experiences, and peer health articles ● Social Media Management: Operate HCL Instagram, promote student contests ● Teen-Led Initiatives: Health food drives and community outreach ● Design & pilot projects (e.g., alternative celebration kits, wellness education workshops, healthy vending reform"
+      "text": "Components:"
+    },
+    {
+      "type": "li",
+      "text": "Teen Blog: Share research, experiences, and peer health articles"
+    },
+    {
+      "type": "li",
+      "text": "Social Media Management: Operate HCL Instagram, promote student contests"
+    },
+    {
+      "type": "li",
+      "text": "Teen-Led Initiatives: Health food drives and community outreach"
+    },
+    {
+      "type": "li",
+      "text": "Design & pilot projects (e.g., alternative celebration kits, wellness education workshops, healthy vending reform"
     },
     {
       "type": "p",
-      "text": "Summary (2024–2025) ● new members in teen group ● Participated in international festival ● Launched healthy food donation project with local food bank ● Active Instagram account launched, articles written and posted"
+      "text": "Summary (2024–2025)"
+    },
+    {
+      "type": "li",
+      "text": "new members in teen group"
+    },
+    {
+      "type": "li",
+      "text": "Participated in international festival"
+    },
+    {
+      "type": "li",
+      "text": "Launched healthy food donation project with local food bank"
+    },
+    {
+      "type": "li",
+      "text": "Active Instagram account launched, articles written and posted"
     },
     {
       "type": "p",
-      "text": "Goals (2025–2026) ● Finalize and support teen-led project designs and goals ● Maintain and grow blog and Instagram presence ● Expand healthy food drive initiative ● Participate in International festival"
+      "text": "Goals (2025–2026)"
+    },
+    {
+      "type": "li",
+      "text": "Finalize and support teen-led project designs and goals"
+    },
+    {
+      "type": "li",
+      "text": "Maintain and grow blog and Instagram presence"
+    },
+    {
+      "type": "li",
+      "text": "Expand healthy food drive initiative"
+    },
+    {
+      "type": "li",
+      "text": "Participate in International festival"
     },
     {
       "type": "img",
@@ -97,15 +249,47 @@
     },
     {
       "type": "p",
-      "text": "Student Health Contests Objective Encourage student involvement in statewide health initiatives. Key Activities: ● Select PA’s official state fruit and vegetable ● Promote healthy eating at athletic events ● Support Farm to School and PA SHIP objectives"
+      "text": "Student Health Contests Objective Encourage student involvement in statewide health initiatives. Key Activities:"
+    },
+    {
+      "type": "li",
+      "text": "Select PA’s official state fruit and vegetable"
+    },
+    {
+      "type": "li",
+      "text": "Promote healthy eating at athletic events"
+    },
+    {
+      "type": "li",
+      "text": "Support Farm to School and PA SHIP objectives"
     },
     {
       "type": "p",
-      "text": "Summary (2024–2025) ● Partnered with HABI and Montgomery County Public Health to distribute helmets ● Provided funding for winners to engage in physical activity ● Senator Comitta introduced legislation to designate the apple as the state fruit"
+      "text": "Summary (2024–2025)"
+    },
+    {
+      "type": "li",
+      "text": "Partnered with HABI and Montgomery County Public Health to distribute helmets"
+    },
+    {
+      "type": "li",
+      "text": "Provided funding for winners to engage in physical activity"
+    },
+    {
+      "type": "li",
+      "text": "Senator Comitta introduced legislation to designate the apple as the state fruit"
     },
     {
       "type": "p",
-      "text": "Goals (2025–2026) ● Continue the contest until official vegetable is designated ● Promote state fruit legislation"
+      "text": "Goals (2025–2026)"
+    },
+    {
+      "type": "li",
+      "text": "Continue the contest until official vegetable is designated"
+    },
+    {
+      "type": "li",
+      "text": "Promote state fruit legislation"
     },
     {
       "type": "p",
@@ -121,15 +305,59 @@
     },
     {
       "type": "p",
-      "text": "Worked with Upper Merion Area School District to engage students in wellness planning ● Advocated for Safe Routes to School (SRTS) ● Conducted Ruby Bridges Walk to School Day (Nov. 14, 2024) ● Hosted National Walk to School Day in May ● Continued walking school bus with 4 students ● Advocated for improved safety measures around school grounds Worked with one youth group ● Youth program change from unhealthy foods to healthy food only on menu"
+      "text": "Worked with Upper Merion Area School District to engage students in wellness planning"
+    },
+    {
+      "type": "li",
+      "text": "Advocated for Safe Routes to School (SRTS)"
+    },
+    {
+      "type": "li",
+      "text": "Conducted Ruby Bridges Walk to School Day (Nov. 14, 2024)"
+    },
+    {
+      "type": "li",
+      "text": "Hosted National Walk to School Day in May"
+    },
+    {
+      "type": "li",
+      "text": "Continued walking school bus with 4 students"
+    },
+    {
+      "type": "li",
+      "text": "Advocated for improved safety measures around school grounds Worked with one youth group"
+    },
+    {
+      "type": "li",
+      "text": "Youth program change from unhealthy foods to healthy food only on menu"
     },
     {
       "type": "p",
-      "text": "Goals (2025–2026) ● Continue SRTS advocacy and wellness policy implementation ● Expand access to school facilities for public use"
+      "text": "Goals (2025–2026)"
+    },
+    {
+      "type": "li",
+      "text": "Continue SRTS advocacy and wellness policy implementation"
+    },
+    {
+      "type": "li",
+      "text": "Expand access to school facilities for public use"
     },
     {
       "type": "p",
-      "text": "Health Equity in Community Wellness Plans Objective Support agencies, athletic events, and community spaces in adopting health equity-focused wellness policies. Summary (2024–2025) ● Advocated with Easterseals to update preschool wellness policies and address choking hazards ● Promoted fruit over candy at major events like the International Festival ● Shared monthly evidence-based articles on health topics"
+      "text": "Health Equity in Community Wellness Plans Objective Support agencies, athletic events, and community spaces in adopting health equity-focused wellness policies. Summary (2024–2025)"
+    },
+    {
+      "type": "li",
+      "text": "Advocated with Easterseals to update preschool wellness policies and address choking hazards"
+    },
+    {
+      "type": "li",
+      "text": "Promoted fruit over candy at major events like the International Festival"
+    },
+    {
+      "type": "li",
+      "text": "Shared monthly evidence-based articles on health topics"
     },
     {
       "type": "p",
@@ -141,28 +369,96 @@
     },
     {
       "type": "p",
-      "text": "Summary (2024–2025) ● Created email list ● Sent newsletters quarterly beginning December Goals (2025–2026) ● Maintain quarterly newsletter distribution ● Grow audience through school and community outreach"
+      "text": "Summary (2024–2025)"
+    },
+    {
+      "type": "li",
+      "text": "Created email list"
+    },
+    {
+      "type": "li",
+      "text": "Sent newsletters quarterly beginning December Goals (2025–2026)"
+    },
+    {
+      "type": "li",
+      "text": "Maintain quarterly newsletter distribution"
+    },
+    {
+      "type": "li",
+      "text": "Grow audience through school and community outreach"
     },
     {
       "type": "p",
-      "text": "University & Library Partnerships University Partnerships: ● Summary (2024–2025): No university partnerships formed due to budget cuts ● Goals (2025–2026): Renew outreach and explore new collaborations focused on health equity Library Partnerships: ● Promoted “Let’s Move in the Library” and Storywalks ● Expanded outreach to Ephrata Library ● Whitpain and Wissahickon collaborations on hold"
+      "text": "University & Library Partnerships University Partnerships:"
+    },
+    {
+      "type": "li",
+      "text": "Summary (2024–2025): No university partnerships formed due to budget cuts"
+    },
+    {
+      "type": "li",
+      "text": "Goals (2025–2026): Renew outreach and explore new collaborations focused on health equity Library Partnerships:"
+    },
+    {
+      "type": "li",
+      "text": "Promoted “Let’s Move in the Library” and Storywalks"
+    },
+    {
+      "type": "li",
+      "text": "Expanded outreach to Ephrata Library"
+    },
+    {
+      "type": "li",
+      "text": "Whitpain and Wissahickon collaborations on hold"
     },
     {
       "type": "p",
-      "text": "Fundraising & Sponsorships Summary (2024–2025) ● Launched “Fruit Basket” initiative ● Three businesses replaced candy with fruit: ○ Experience Chiropractic ○ Lifesound Hearing ○ Citadel Credit Union (Trooper branch) ● Explored SPARK platform for sponsorships"
+      "text": "Fundraising & Sponsorships Summary (2024–2025)"
+    },
+    {
+      "type": "li",
+      "text": "Launched “Fruit Basket” initiative"
+    },
+    {
+      "type": "li",
+      "text": "Three businesses replaced candy with fruit: ○ Experience Chiropractic ○ Lifesound Hearing ○ Citadel Credit Union (Trooper branch)"
+    },
+    {
+      "type": "li",
+      "text": "Explored SPARK platform for sponsorships"
     },
     {
       "type": "img",
       "src": "/documents/summary-2024-25-plan-2025-2026/img-09.png"
     },
     {
-      "type": "p",
-      "text": "● Zeffy used for individual contributions Goals (2025–2026) ● Maintain and expand fruit basket initiative ● Continue pursuing grants and funding opportunities Future Project: Launch HCL Podcast Title Ideas: ● Nourish & Protect ● Protect & Nourish: Building Healthy Communities ● The Lifespace Podcast: Where Health Meets Community"
+      "type": "li",
+      "text": "Zeffy used for individual contributions Goals (2025–2026)"
+    },
+    {
+      "type": "li",
+      "text": "Maintain and expand fruit basket initiative"
+    },
+    {
+      "type": "li",
+      "text": "Continue pursuing grants and funding opportunities Future Project: Launch HCL Podcast Title Ideas:"
+    },
+    {
+      "type": "li",
+      "text": "Nourish & Protect"
+    },
+    {
+      "type": "li",
+      "text": "Protect & Nourish: Building Healthy Communities"
+    },
+    {
+      "type": "li",
+      "text": "The Lifespace Podcast: Where Health Meets Community"
     },
     {
       "type": "p",
       "text": "Join Us! We invite individuals, organizations, and communities to join us in our mission to create healthier Lifespaces. Together, we can build a more equitable future where everyone has the opportunity to thrive. Let’s empower each other and make a lasting difference!"
     }
   ],
-  "plain": "Executive Summary 2024-25 And Strategic Plan 2025-26 Exciting Vision for Healthy Community Lifespaces: Promoting Health and Equity Our Vision : At Healthy Community Lifespaces (HCL), we envision a world where every individual has the opportunity to thrive in a balanced, inclusive, and healthy environment. We believe that by empowering communities and fostering diverse talents, we can create sustainable Lifespaces that support holistic well-being for all.\n\nOur Mission : To promote equity and foster inclusive, healthy environments through innovative strategies and education, empowering individuals and communities to make evidence-based choices for healthier Lifespaces. Focus on student on and community empowerment\n\nOur Values: ● Empowerment : We believe in uplifting communities and individuals, providing them with the resources to create sustainable, healthy Lifespaces. Focusing on student on and community empowerment to provide innovation in promoting health. ● Diversity : We celebrate the unique talents and abilities of every individual, recognizing that diverse perspectives strengthen our communities. ● Health & Wellness : We are committed to creating environments that support holistic health including physical, mental, and emotional well-being for all.\n\nWhat Are Lifespaces? Lifespaces encompass the physical, social, and psychological environments of individuals. This includes their homes, communities, and the surrounding factors that influence their lives. By understanding the interplay of these elements, we aim to create supportive networks that enhance well-being and promote healthy behaviors.\n\nCurrent Partnerships:\n\nHealthy Community Lifespaces 2024–2025 Report &\n\n2025–2026 Goals\n\nState-Level Engagement Current Work (2023–2024) Our Director actively participates in workgroups for the Pennsylvania State Health Improvement Plan (PA SHIP) and ENGAGE PEH, fostering community collaboration through both virtual and in-person meetings. Objective To align efforts across state agencies, local health departments, and community organizations in developing a unified, evidence-based approach to health improvement. Summary Healthy Community Lifespaces (HCL) contributes to ongoing dialogues with stakeholders, including the Pennsylvania Department of Health (PDH), Department of Education (PDE), healthcare providers, and other community organizations. These efforts have led to: ● Innovative strategies addressing critical health issues ● Enhanced access to care ● Advocacy for underserved populations ● Sharing of data-driven insights and resources\n\nHCL shared PDE’s updated physical education and health standards with local school districts and organizations. We also helped circulate evidence-based articles to improve equity in youth programs. PDE has actively supported HCL’s student contests. Goal (2025–2026) Continue quarterly engagement in ENGAGE HPE and PA SHIP Goal 2.1 workgroups. Maintain communication with partners to promote HCL student contests and support community wellness.\n\nCaregiver & Recovery Home Initiatives Caregiver Training Program Objective Develop a comprehensive wellness training program to enhance caregiver skills and well-being. Focus Areas: ● Wellness Promotion: Understanding the holistic needs of caregivers and care recipients ● Confidence in Abilities: Encouraging physical activity and communication with healthcare providers ● Sensory Regulation: Activities supporting sensory needs and comfort ● Outdoor Mental Health Benefits: Integrating nature into daily routines ● Nutrition Awareness: Promoting balanced meals and healthy eating Summary (2024–2025) Webinar and virtual training materials are in development. Thistle Hills Program Objective Promote healthy cooking and gardening for residents of Thistle Hills recovery home. Current Work (2024–2025) ● Spring cooking session conducted ● Hosted a “Days for Girls” volunteer opportunity ● Scheduled summer and fall cooking classes ● Another partner nonprofit began regular gardening visit Goals (2025–2026) Increase seasonal cooking sessions.\n\nChildren’s Garden Program – Upper Merion Community Garden Objective Educate children (including charter, cyber, and homeschooled students) about nutrition . and nature Program Highlights: ● Introduce vegetable nutrition via hands-on gardening and “vegetable bingo” ● Encourage outdoor activity for mental wellness ● Build lifelong healthy habits through exposure to fresh produce\n\nSummary (2024–2025) ● Fall harvest and tasting event held for 10 children ● Spring planting had low attendance due to sports conflicts; age limits adjusted ● Teen coordinator added ● Survey results showed positive feedback and learning\n\nGoals (2025–2026) ● Host two sessions (spring and fall) ● Expand age range to include Pre-K ● Promote more actively in local schools Engage teens in promoting community health through creative leadership roles\n\nTeen Program Health Culture Catalysts (HCC) Objective Empowering Youth to Redefine Wellness in Schools, Communities, and Systems To equip and support teens in developing innovative, community-based health projects that challenge harmful cultural norms, promote equity, and inspire institutions to implement evidence-based wellness policies\n\nComponents: ● Teen Blog: Share research, experiences, and peer health articles ● Social Media Management: Operate HCL Instagram, promote student contests ● Teen-Led Initiatives: Health food drives and community outreach ● Design & pilot projects (e.g., alternative celebration kits, wellness education workshops, healthy vending reform\n\nSummary (2024–2025) ● new members in teen group ● Participated in international festival ● Launched healthy food donation project with local food bank ● Active Instagram account launched, articles written and posted\n\nGoals (2025–2026) ● Finalize and support teen-led project designs and goals ● Maintain and grow blog and Instagram presence ● Expand healthy food drive initiative ● Participate in International festival\n\nStudent Health Contests Objective Encourage student involvement in statewide health initiatives. Key Activities: ● Select PA’s official state fruit and vegetable ● Promote healthy eating at athletic events ● Support Farm to School and PA SHIP objectives\n\nSummary (2024–2025) ● Partnered with HABI and Montgomery County Public Health to distribute helmets ● Provided funding for winners to engage in physical activity ● Senator Comitta introduced legislation to designate the apple as the state fruit\n\nGoals (2025–2026) ● Continue the contest until official vegetable is designated ● Promote state fruit legislation\n\nStudent Contest Info\n\nSchool Wellness & Health Equity Objective Support schools in implementing wellness plans and promoting inclusive health environments. Summary (2024–2025)\n\nWorked with Upper Merion Area School District to engage students in wellness planning ● Advocated for Safe Routes to School (SRTS) ● Conducted Ruby Bridges Walk to School Day (Nov. 14, 2024) ● Hosted National Walk to School Day in May ● Continued walking school bus with 4 students ● Advocated for improved safety measures around school grounds Worked with one youth group ● Youth program change from unhealthy foods to healthy food only on menu\n\nGoals (2025–2026) ● Continue SRTS advocacy and wellness policy implementation ● Expand access to school facilities for public use\n\nHealth Equity in Community Wellness Plans Objective Support agencies, athletic events, and community spaces in adopting health equity-focused wellness policies. Summary (2024–2025) ● Advocated with Easterseals to update preschool wellness policies and address choking hazards ● Promoted fruit over candy at major events like the International Festival ● Shared monthly evidence-based articles on health topics\n\nNewsletter Initiative\n\nSummary (2024–2025) ● Created email list ● Sent newsletters quarterly beginning December Goals (2025–2026) ● Maintain quarterly newsletter distribution ● Grow audience through school and community outreach\n\nUniversity & Library Partnerships University Partnerships: ● Summary (2024–2025): No university partnerships formed due to budget cuts ● Goals (2025–2026): Renew outreach and explore new collaborations focused on health equity Library Partnerships: ● Promoted “Let’s Move in the Library” and Storywalks ● Expanded outreach to Ephrata Library ● Whitpain and Wissahickon collaborations on hold\n\nFundraising & Sponsorships Summary (2024–2025) ● Launched “Fruit Basket” initiative ● Three businesses replaced candy with fruit: ○ Experience Chiropractic ○ Lifesound Hearing ○ Citadel Credit Union (Trooper branch) ● Explored SPARK platform for sponsorships\n\n● Zeffy used for individual contributions Goals (2025–2026) ● Maintain and expand fruit basket initiative ● Continue pursuing grants and funding opportunities Future Project: Launch HCL Podcast Title Ideas: ● Nourish & Protect ● Protect & Nourish: Building Healthy Communities ● The Lifespace Podcast: Where Health Meets Community\n\nJoin Us! We invite individuals, organizations, and communities to join us in our mission to create healthier Lifespaces. Together, we can build a more equitable future where everyone has the opportunity to thrive. Let’s empower each other and make a lasting difference!"
+  "plain": "Executive Summary 2024-25 And Strategic Plan 2025-26 Exciting Vision for Healthy Community Lifespaces: Promoting Health and Equity Our Vision : At Healthy Community Lifespaces (HCL), we envision a world where every individual has the opportunity to thrive in a balanced, inclusive, and healthy environment. We believe that by empowering communities and fostering diverse talents, we can create sustainable Lifespaces that support holistic well-being for all.\n\nOur Mission : To promote equity and foster inclusive, healthy environments through innovative strategies and education, empowering individuals and communities to make evidence-based choices for healthier Lifespaces. Focus on student on and community empowerment\n\nOur Values:\n\nEmpowerment : We believe in uplifting communities and individuals, providing them with the resources to create sustainable, healthy Lifespaces. Focusing on student on and community empowerment to provide innovation in promoting health.\n\nDiversity : We celebrate the unique talents and abilities of every individual, recognizing that diverse perspectives strengthen our communities.\n\nHealth & Wellness : We are committed to creating environments that support holistic health including physical, mental, and emotional well-being for all.\n\nWhat Are Lifespaces? Lifespaces encompass the physical, social, and psychological environments of individuals. This includes their homes, communities, and the surrounding factors that influence their lives. By understanding the interplay of these elements, we aim to create supportive networks that enhance well-being and promote healthy behaviors.\n\nCurrent Partnerships:\n\nHealthy Community Lifespaces 2024–2025 Report &\n\n2025–2026 Goals\n\nState-Level Engagement Current Work (2023–2024) Our Director actively participates in workgroups for the Pennsylvania State Health Improvement Plan (PA SHIP) and ENGAGE PEH, fostering community collaboration through both virtual and in-person meetings. Objective To align efforts across state agencies, local health departments, and community organizations in developing a unified, evidence-based approach to health improvement. Summary Healthy Community Lifespaces (HCL) contributes to ongoing dialogues with stakeholders, including the Pennsylvania Department of Health (PDH), Department of Education (PDE), healthcare providers, and other community organizations. These efforts have led to:\n\nInnovative strategies addressing critical health issues\n\nEnhanced access to care\n\nAdvocacy for underserved populations\n\nSharing of data-driven insights and resources\n\nHCL shared PDE’s updated physical education and health standards with local school districts and organizations. We also helped circulate evidence-based articles to improve equity in youth programs. PDE has actively supported HCL’s student contests. Goal (2025–2026) Continue quarterly engagement in ENGAGE HPE and PA SHIP Goal 2.1 workgroups. Maintain communication with partners to promote HCL student contests and support community wellness.\n\nCaregiver & Recovery Home Initiatives Caregiver Training Program Objective Develop a comprehensive wellness training program to enhance caregiver skills and well-being. Focus Areas:\n\nWellness Promotion: Understanding the holistic needs of caregivers and care recipients\n\nConfidence in Abilities: Encouraging physical activity and communication with healthcare providers\n\nSensory Regulation: Activities supporting sensory needs and comfort\n\nOutdoor Mental Health Benefits: Integrating nature into daily routines\n\nNutrition Awareness: Promoting balanced meals and healthy eating Summary (2024–2025) Webinar and virtual training materials are in development. Thistle Hills Program Objective Promote healthy cooking and gardening for residents of Thistle Hills recovery home. Current Work (2024–2025)\n\nSpring cooking session conducted\n\nHosted a “Days for Girls” volunteer opportunity\n\nScheduled summer and fall cooking classes\n\nAnother partner nonprofit began regular gardening visit Goals (2025–2026) Increase seasonal cooking sessions.\n\nChildren’s Garden Program – Upper Merion Community Garden Objective Educate children (including charter, cyber, and homeschooled students) about nutrition . and nature Program Highlights:\n\nIntroduce vegetable nutrition via hands-on gardening and “vegetable bingo”\n\nEncourage outdoor activity for mental wellness\n\nBuild lifelong healthy habits through exposure to fresh produce\n\nSummary (2024–2025)\n\nFall harvest and tasting event held for 10 children\n\nSpring planting had low attendance due to sports conflicts; age limits adjusted\n\nTeen coordinator added\n\nSurvey results showed positive feedback and learning\n\nGoals (2025–2026)\n\nHost two sessions (spring and fall)\n\nExpand age range to include Pre-K\n\nPromote more actively in local schools Engage teens in promoting community health through creative leadership roles\n\nTeen Program Health Culture Catalysts (HCC) Objective Empowering Youth to Redefine Wellness in Schools, Communities, and Systems To equip and support teens in developing innovative, community-based health projects that challenge harmful cultural norms, promote equity, and inspire institutions to implement evidence-based wellness policies\n\nComponents:\n\nTeen Blog: Share research, experiences, and peer health articles\n\nSocial Media Management: Operate HCL Instagram, promote student contests\n\nTeen-Led Initiatives: Health food drives and community outreach\n\nDesign & pilot projects (e.g., alternative celebration kits, wellness education workshops, healthy vending reform\n\nSummary (2024–2025)\n\nnew members in teen group\n\nParticipated in international festival\n\nLaunched healthy food donation project with local food bank\n\nActive Instagram account launched, articles written and posted\n\nGoals (2025–2026)\n\nFinalize and support teen-led project designs and goals\n\nMaintain and grow blog and Instagram presence\n\nExpand healthy food drive initiative\n\nParticipate in International festival\n\nStudent Health Contests Objective Encourage student involvement in statewide health initiatives. Key Activities:\n\nSelect PA’s official state fruit and vegetable\n\nPromote healthy eating at athletic events\n\nSupport Farm to School and PA SHIP objectives\n\nSummary (2024–2025)\n\nPartnered with HABI and Montgomery County Public Health to distribute helmets\n\nProvided funding for winners to engage in physical activity\n\nSenator Comitta introduced legislation to designate the apple as the state fruit\n\nGoals (2025–2026)\n\nContinue the contest until official vegetable is designated\n\nPromote state fruit legislation\n\nStudent Contest Info\n\nSchool Wellness & Health Equity Objective Support schools in implementing wellness plans and promoting inclusive health environments. Summary (2024–2025)\n\nWorked with Upper Merion Area School District to engage students in wellness planning\n\nAdvocated for Safe Routes to School (SRTS)\n\nConducted Ruby Bridges Walk to School Day (Nov. 14, 2024)\n\nHosted National Walk to School Day in May\n\nContinued walking school bus with 4 students\n\nAdvocated for improved safety measures around school grounds Worked with one youth group\n\nYouth program change from unhealthy foods to healthy food only on menu\n\nGoals (2025–2026)\n\nContinue SRTS advocacy and wellness policy implementation\n\nExpand access to school facilities for public use\n\nHealth Equity in Community Wellness Plans Objective Support agencies, athletic events, and community spaces in adopting health equity-focused wellness policies. Summary (2024–2025)\n\nAdvocated with Easterseals to update preschool wellness policies and address choking hazards\n\nPromoted fruit over candy at major events like the International Festival\n\nShared monthly evidence-based articles on health topics\n\nNewsletter Initiative\n\nSummary (2024–2025)\n\nCreated email list\n\nSent newsletters quarterly beginning December Goals (2025–2026)\n\nMaintain quarterly newsletter distribution\n\nGrow audience through school and community outreach\n\nUniversity & Library Partnerships University Partnerships:\n\nSummary (2024–2025): No university partnerships formed due to budget cuts\n\nGoals (2025–2026): Renew outreach and explore new collaborations focused on health equity Library Partnerships:\n\nPromoted “Let’s Move in the Library” and Storywalks\n\nExpanded outreach to Ephrata Library\n\nWhitpain and Wissahickon collaborations on hold\n\nFundraising & Sponsorships Summary (2024–2025)\n\nLaunched “Fruit Basket” initiative\n\nThree businesses replaced candy with fruit: ○ Experience Chiropractic ○ Lifesound Hearing ○ Citadel Credit Union (Trooper branch)\n\nExplored SPARK platform for sponsorships\n\nZeffy used for individual contributions Goals (2025–2026)\n\nMaintain and expand fruit basket initiative\n\nContinue pursuing grants and funding opportunities Future Project: Launch HCL Podcast Title Ideas:\n\nNourish & Protect\n\nProtect & Nourish: Building Healthy Communities\n\nThe Lifespace Podcast: Where Health Meets Community\n\nJoin Us! We invite individuals, organizations, and communities to join us in our mission to create healthier Lifespaces. Together, we can build a more equitable future where everyone has the opportunity to thrive. Let’s empower each other and make a lasting difference!"
 }
