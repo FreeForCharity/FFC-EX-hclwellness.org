@@ -192,23 +192,48 @@ function buildBlocks(elements, fontSizes, slug, imgRename) {
 
   // Two-up print sheets (e.g. the back-to-school card) lay the same content out
   // twice side by side. Sorting by `top` interleaves the copies line by line,
-  // so every sentence would appear twice; keep the first of any run whose exact
-  // text repeats on the same line of the same page in the other half of the
-  // sheet. The distance test spares genuine repeats close together, such as
+  // so every sentence would appear twice.
+  //
+  // A page counts as two-up when at least three substantial runs (4+ chars,
+  // with a letter) repeat verbatim on the same line in the other half of the
+  // page; the copies' horizontal offset is the median of those pairs. Only on
+  // such a page is any run dropped that repeats at that offset — short ones
+  // ("aid", "~") included. Pages that aren't two-up are left alone, which
+  // spares genuine same-line repeats such as table cells ("No No Yes") and the
   // two "RIDE ON" column headers in a table.
-  const maxLeft = new Map()
-  for (const e of elements) {
-    if (e.kind === 'text') maxLeft.set(e.page, Math.max(maxLeft.get(e.page) ?? 0, e.left))
+  const TWO_UP_TOLERANCE = 30
+  const twoUpOffset = new Map()
+  const textEls = elements.filter((e) => e.kind === 'text')
+  for (const page of new Set(textEls.map((e) => e.page))) {
+    const onPage = textEls.filter((e) => e.page === page)
+    const halfWidth = Math.max(...onPage.map((e) => e.left)) / 2
+    const offsets = []
+    for (const a of onPage) {
+      if (a.text.length < 4 || !/\p{L}/u.test(a.text)) continue
+      const b = onPage.find(
+        (o) =>
+          o !== a &&
+          o.text === a.text &&
+          Math.abs(o.top - a.top) <= lineH / 2 &&
+          o.left - a.left >= halfWidth
+      )
+      if (b) offsets.push(b.left - a.left)
+    }
+    if (offsets.length >= 3) {
+      offsets.sort((x, y) => x - y)
+      twoUpOffset.set(page, offsets[Math.floor(offsets.length / 2)])
+    }
   }
   const kept = []
   elements = elements.filter((e) => {
-    if (e.kind !== 'text' || e.text.length < 4 || !/\p{L}/u.test(e.text)) return true
+    if (e.kind !== 'text' || !twoUpOffset.has(e.page)) return true
+    const offset = twoUpOffset.get(e.page)
     const dup = kept.some(
       (k) =>
         k.page === e.page &&
         k.text === e.text &&
         Math.abs(k.top - e.top) <= lineH / 2 &&
-        Math.abs(k.left - e.left) >= maxLeft.get(e.page) / 2
+        Math.abs(e.left - k.left - offset) <= TWO_UP_TOLERANCE
     )
     if (!dup) kept.push(e)
     return !dup
@@ -231,9 +256,13 @@ function buildBlocks(elements, fontSizes, slug, imgRename) {
 
   const flushPara = () => {
     if (para && para.lines.length) {
+      // A URL that wraps at a hyphen continues on the next line with no space
+      // ("…/d/1L-arckn4z-" + "B03OAY…"); joining with a space would break it.
       let text = para.lines
         .map((l) => l.text)
-        .join(' ')
+        .reduce((acc, line) =>
+          /\S*:\/\/\S*-$/.test(acc) ? acc + line.trimStart() : `${acc} ${line}`
+        )
         .replace(/\s+/g, ' ')
         .trim()
       if (para.list) text = text.replace(/^([•·▪◦‣●*-]|\d+[.)]|[a-z][.)])\s+/, '')
