@@ -177,7 +177,8 @@ function buildBlocks(elements, fontSizes, slug, imgRename) {
   // line is mistaken for a heading.
   const LONE_BULLET = /^[•·▪◦‣●]$/
   const loneBullets = elements.filter((e) => e.kind === 'text' && LONE_BULLET.test(e.text))
-  elements = elements.filter((e) => !loneBullets.includes(e))
+  const loneBulletSet = new Set(loneBullets)
+  elements = elements.filter((e) => !loneBulletSet.has(e))
   for (const b of loneBullets) {
     // Only the nearest run to the bullet's right starts the item; later runs on
     // the same line (e.g. a bold label's description) continue it.
