@@ -62,7 +62,15 @@ function loadDocs() {
     /slug:\s*'([^']+)',\s*\n\s*title:\s*(?:'((?:[^'\\]|\\.)*)'|"((?:[^"\\]|\\.)*)"),[\s\S]*?file:\s*'([^']+)'/g
   let m
   while ((m = re.exec(src))) {
-    docs.push({ slug: m[1], title: (m[2] ?? m[3]).replace(/\\'/g, "'"), file: m[4] })
+    // The rest of this document's object literal, up to its closing brace.
+    const end = src.indexOf('}', m.index + m[0].length)
+    const rest = src.slice(m.index + m[0].length, end === -1 ? undefined : end)
+    docs.push({
+      slug: m[1],
+      title: (m[2] ?? m[3]).replace(/\\'/g, "'"),
+      file: m[4],
+      ocr: /\bocr:\s*true\b/.test(rest),
+    })
   }
   return docs
 }
@@ -380,17 +388,26 @@ function ocrToBlocks(pdfPath, tmp) {
       encoding: 'utf8',
     })
     // Split on blank lines into paragraphs; join wrapped lines within a paragraph.
-    for (const chunk of txt.split(/\n\s*\n/)) {
-      let para = chunk
-        .replace(/\s*\n\s*/g, ' ')
-        .replace(/\s+/g, ' ')
-        .trim()
-      // Common OCR glyph confusions: a lone "|" (or "l") standing as a word is
-      // the pronoun "I"; tesseract frequently misreads it on these fonts.
-      para = para.replace(/(^|\s)[|l](\s|$)/g, '$1I$2')
-      // Drop OCR noise: empty, lone page numbers, or single stray characters.
-      if (para.length > 2 && !/^\d{1,3}$/.test(para)) blocks.push({ type: 'p', text: para })
-    }
+    const paras = txt
+      .split(/\n\s*\n/)
+      .map((chunk) =>
+        chunk
+          .replace(/\s*\n\s*/g, ' ')
+          .replace(/\s+/g, ' ')
+          .trim()
+          // Common OCR glyph confusions: a lone "|" (or "l") standing as a word
+          // is the pronoun "I"; tesseract frequently misreads it on these fonts.
+          .replace(/(^|\s)[|l](\s|$)/g, '$1I$2')
+      )
+      .filter((para) => para.length > 0)
+    paras.forEach((para, i) => {
+      // A lone 1–3 digit number is a page number only at the top or bottom of
+      // the page; elsewhere it is content (e.g. a policy's code, "223").
+      const atPageEdge = i === 0 || i === paras.length - 1
+      if (/^\d{1,3}$/.test(para) && atPageEdge) return
+      // Drop single stray characters and other two-character OCR noise.
+      if (para.length > 2) blocks.push({ type: 'p', text: para })
+    })
   }
   return blocks
 }
@@ -457,7 +474,9 @@ function run() {
       .filter((b) => b.type !== 'img')
       .map((b) => b.text)
       .join(' ')
-    if (looksCorrupted(xmlPlain) || xmlPlain.trim() === '') {
+    // `ocr: true` in documents.ts forces OCR for a PDF whose text layer drops
+    // glyphs too rarely for looksCorrupted() to notice.
+    if (doc.ocr || looksCorrupted(xmlPlain) || xmlPlain.trim() === '') {
       if (hasTesseract()) {
         const ocrBlocks = ocrToBlocks(pdfPath, tmp)
         if (ocrBlocks.length && !looksCorrupted(ocrBlocks.map((b) => b.text).join(' '))) {
