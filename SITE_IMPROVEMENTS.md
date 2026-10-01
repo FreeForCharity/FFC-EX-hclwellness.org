@@ -1641,7 +1641,7 @@ docker run -v $(pwd):/app -p 3000:3000 kccf-web pnpm run dev
 #### Technical Requirements
 
 1. Create `Dockerfile`:
-   - Base image: node:20-alpine
+   - Base image: node:22-alpine
    - Multi-stage build (dependencies, build, production)
    - Non-root user
    - Optimized layer caching

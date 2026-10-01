@@ -170,37 +170,134 @@ function buildBlocks(elements, fontSizes, slug, imgRename) {
     .sort((a, b) => a - b)
   const lineH = heights.length ? heights[Math.floor(heights.length / 2)] : 14
 
+  // A bullet glyph set as its own text run (Word's "●" list markers) carries no
+  // content: drop it, and mark the text run it sits beside on the same line as
+  // a list item. Otherwise the glyph sorts just after its (slightly higher)
+  // text and renders as a dangling "●" paragraph, and an emphasized bulleted
+  // line is mistaken for a heading.
+  const LONE_BULLET = /^[•·▪◦‣●]$/
+  const loneBullets = elements.filter((e) => e.kind === 'text' && LONE_BULLET.test(e.text))
+  const loneBulletSet = new Set(loneBullets)
+  elements = elements.filter((e) => !loneBulletSet.has(e))
+  for (const b of loneBullets) {
+    // Only the nearest run to the bullet's right starts the item; later runs on
+    // the same line (e.g. a bold label's description) continue it.
+    let item = null
+    for (const e of elements) {
+      if (e.kind !== 'text' || e.page !== b.page || e.left <= b.left) continue
+      if (Math.abs(e.top - b.top) > lineH) continue
+      if (!item || e.left < item.left) item = e
+    }
+    if (item) item.bulleted = true
+  }
+
+  // Two-up print sheets (e.g. the back-to-school card) lay the same content out
+  // twice side by side. Sorting by `top` interleaves the copies line by line,
+  // so every sentence would appear twice.
+  //
+  // A page counts as two-up when at least three substantial runs (4+ chars,
+  // with a letter) repeat verbatim on the same line in the other half of the
+  // page; the copies' horizontal offset is the median of those pairs. Only on
+  // such a page is any run dropped that repeats at that offset — short ones
+  // ("aid", "~") included. Pages that aren't two-up are left alone, which
+  // spares genuine same-line repeats such as table cells ("No No Yes") and the
+  // two "RIDE ON" column headers in a table.
+  const TWO_UP_TOLERANCE = 30
+  const twoUpOffset = new Map()
+  const textEls = elements.filter((e) => e.kind === 'text')
+  for (const page of new Set(textEls.map((e) => e.page))) {
+    const onPage = textEls.filter((e) => e.page === page)
+    const halfWidth = Math.max(...onPage.map((e) => e.left)) / 2
+    const offsets = []
+    for (const a of onPage) {
+      if (a.text.length < 4 || !/\p{L}/u.test(a.text)) continue
+      const b = onPage.find(
+        (o) =>
+          o !== a &&
+          o.text === a.text &&
+          Math.abs(o.top - a.top) <= lineH / 2 &&
+          o.left - a.left >= halfWidth
+      )
+      if (b) offsets.push(b.left - a.left)
+    }
+    if (offsets.length >= 3) {
+      offsets.sort((x, y) => x - y)
+      twoUpOffset.set(page, offsets[Math.floor(offsets.length / 2)])
+    }
+  }
+  const kept = []
+  elements = elements.filter((e) => {
+    if (e.kind !== 'text' || !twoUpOffset.has(e.page)) return true
+    const offset = twoUpOffset.get(e.page)
+    const dup = kept.some(
+      (k) =>
+        k.page === e.page &&
+        k.text === e.text &&
+        Math.abs(k.top - e.top) <= lineH / 2 &&
+        Math.abs(e.left - k.left - offset) <= TWO_UP_TOLERANCE
+    )
+    if (!dup) kept.push(e)
+    return !dup
+  })
+
+  // Large text that is really part of a sentence is not a heading: a run that
+  // carries an email address or URL, or that ends on a connective and so
+  // continues onto the next line ("…mailing) to" / "name@example.com").
+  const isSentenceFragment = (text) =>
+    /@|https?:\/\/|\bwww\./i.test(text) || /\b(to|and|or|of|the|for|with|by|in|a|an)$/i.test(text)
+
   const blocks = []
   let para = null // accumulating paragraph: { lines: [{top,text}], lastBottom }
+  // An image met while the open paragraph stops mid-sentence sits beside the
+  // text wrapping around it; emit it after that paragraph so it doesn't split
+  // the sentence ("…talk with State" / image / "legislators to pass…").
+  let pendingImages = []
+  const endsMidSentence = () =>
+    para && para.lines.length && /[\p{L},]$/u.test(para.lines[para.lines.length - 1].text)
 
   const flushPara = () => {
     if (para && para.lines.length) {
+      // A URL that wraps at a hyphen continues on the next line with no space
+      // ("…/d/1L-arckn4z-" + "B03OAY…"); joining with a space would break it.
       let text = para.lines
         .map((l) => l.text)
-        .join(' ')
+        .reduce((acc, line) =>
+          /\S*:\/\/\S*-$/.test(acc) ? acc + line.trimStart() : `${acc} ${line}`
+        )
         .replace(/\s+/g, ' ')
         .trim()
-      if (para.list) text = text.replace(/^([•·▪◦‣*-]|\d+[.)]|[a-z][.)])\s+/, '')
+      if (para.list) text = text.replace(/^([•·▪◦‣●*-]|\d+[.)]|[a-z][.)])\s+/, '')
       if (text) blocks.push({ type: para.list ? 'li' : 'p', text })
     }
     para = null
+    for (const src of pendingImages) blocks.push({ type: 'img', src })
+    pendingImages = []
   }
 
   for (const e of elements) {
     if (e.kind === 'image') {
-      flushPara()
-      blocks.push({ type: 'img', src: imgRename(e.src) })
+      if (endsMidSentence()) {
+        pendingImages.push(imgRename(e.src))
+      } else {
+        flushPara()
+        blocks.push({ type: 'img', src: imgRename(e.src) })
+      }
       continue
     }
     const sz = fontSizes.get(e.font) ?? bodySize
-    const isHeading = bodySize > 0 && sz >= bodySize * 1.18 && e.text.length <= 120
+    const isHeading =
+      bodySize > 0 &&
+      sz >= bodySize * 1.18 &&
+      e.text.length <= 120 &&
+      !e.bulleted &&
+      !isSentenceFragment(e.text)
     if (isHeading) {
       flushPara()
       blocks.push({ type: sz >= bodySize * 1.5 ? 'h2' : 'h3', text: e.text })
       continue
     }
     // A line that begins with a bullet/number marker starts a new list item.
-    const isBullet = /^([•·▪◦‣*-]|\d+[.)]|[a-z][.)])\s+/.test(e.text)
+    const isBullet = e.bulleted || /^([•·▪◦‣●*-]|\d+[.)]|[a-z][.)])\s+/.test(e.text)
     // Break the current paragraph when this line sits more than ~1.6 line
     // heights below the previous one (a blank-line gap), or a new page starts,
     // or a bullet marker begins a fresh item.
