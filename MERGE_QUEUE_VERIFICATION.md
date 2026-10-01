@@ -27,7 +27,7 @@ Based on the provided screenshots and GitHub API data, here's what happened when
 - **Workflow:** CI - Build and Test
 - **Steps Executed:**
   - Checkout repository
-  - Setup Node.js 20
+  - Setup Node.js 22
   - Install dependencies (`pnpm install --frozen-lockfile`)
   - Check formatting (`pnpm run format:check`)
   - Run linting (`pnpm run lint`)
