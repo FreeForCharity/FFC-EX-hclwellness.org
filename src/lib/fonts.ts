@@ -5,8 +5,16 @@ import localFont from 'next/font/local'
 // with `next/font/google`, which downloads them from Google during
 // `next build` -- so the build failed whenever that fetch did, and a
 // contributor without reliable internet could not build the site at all.
-// A build must never depend on Google. `scripts/check-drift.mjs` rejects any
-// import of that loader, or any Google Fonts URL, under src/.
+// A build must never depend on Google.
+//
+// NOTE: this repo has no `scripts/check-drift.mjs`, so nothing in CI
+// mechanically blocks a future `next/font/google` import here. (An earlier
+// version of this comment claimed such a guard existed -- it does not, and the
+// claim was copied from a newer template.) Where this repo ships
+// `__tests__/lib/fonts.test.ts`, that test asserts this file imports
+// next/font/local and contains no real next/font/google import. Adopting the
+// template's full drift check is tracked separately; it carries many unrelated
+// rules this repo may not pass yet.
 //
 // Where a variable build exists the family is ONE woff2 covering the whole
 // weight range -- the same single file per family the Google loader served.
