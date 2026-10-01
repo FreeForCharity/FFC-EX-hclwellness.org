@@ -9,7 +9,6 @@ import { render, waitFor } from '@testing-library/react'
 // require() (not a hoisted import) keeps the assignment ahead of evaluation.
 const ORIGINAL_GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
 process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID = 'G-TEST1234567'
-// eslint-disable-next-line @typescript-eslint/no-require-imports
 const CookieConsent = require('../../src/components/cookie-consent')
   .default as typeof import('../../src/components/cookie-consent').default
 
