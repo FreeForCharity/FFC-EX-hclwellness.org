@@ -27,6 +27,12 @@ export type PdfDoc = {
   sourceRoute?: string
   /** Label for the "view in context" link. */
   sourceLabel?: string
+  /**
+   * Transcribe this PDF with OCR instead of its text layer. For PDFs whose text
+   * layer silently drops glyphs (e.g. "Office" → "O ice" from an unmapped "ff"
+   * ligature) too rarely for the extractor's corruption check to notice.
+   */
+  ocr?: boolean
 }
 
 export type DocumentGroup = {
@@ -157,6 +163,17 @@ export const DOCUMENT_GROUPS: DocumentGroup[] = [
           'Overview of powered personal transportation devices, current as of June 2024.',
         sourceRoute: '/micromobility-information-and-resources',
         sourceLabel: 'Micromobility Information and Resources',
+      },
+      {
+        slug: 'wilson-school-district-policy-223',
+        title: 'Wilson School District Board Policy 223',
+        file: '/wp-content/uploads/2026/10/wilson-school-district-policy-223.pdf',
+        description:
+          'School-district policy on skateboards, bicycles, scooters, e-bikes and motor vehicles on school property.',
+        sourceRoute: '/micromobility-information-and-resources',
+        sourceLabel: 'Micromobility Information and Resources',
+        // Printed from Word: the text layer drops every "ff" ("O ice", "a ected").
+        ocr: true,
       },
     ],
   },
