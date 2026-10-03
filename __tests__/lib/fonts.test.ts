@@ -1,26 +1,19 @@
-// Mock next/font/google so it echoes the call's configuration back out.
-// next/jest's default mock returns literal "variable", which strips the
-// data we care about (the configured CSS variable name).
-jest.mock('next/font/google', () => {
-  const echo = (config: Record<string, unknown>) => ({
+import { existsSync, readFileSync } from 'node:fs'
+import { join, resolve } from 'node:path'
+
+// Mock next/font/local so it echoes the call's configuration back out.
+// next/jest's default mock returns the literal "variable", which strips the
+// data this test is about (the CSS variable name and the src file list).
+jest.mock('next/font/local', () => ({
+  __esModule: true,
+  default: (config: Record<string, unknown>) => ({
     className: 'mock-className',
     style: { fontFamily: 'mock-family' },
     variable: config.variable,
-    weight: config.weight,
-    subsets: config.subsets,
+    src: config.src,
     display: config.display,
-  })
-  return {
-    Open_Sans: echo,
-    Lato: echo,
-    Raleway: echo,
-    Faustina: echo,
-    Cantata_One: echo,
-    Fauna_One: echo,
-    Montserrat: echo,
-    Cinzel: echo,
-  }
-})
+  }),
+}))
 
 import {
   openSans,
@@ -33,83 +26,23 @@ import {
   cinzel,
 } from '../../src/lib/fonts'
 
+const ROOT = resolve(__dirname, '..', '..')
+const FONTS_MODULE_DIR = join(ROOT, 'src', 'lib')
+
+type Loaded = { variable?: string; display?: string; src?: { path: string; weight?: string }[] }
+
+const allFonts: Record<string, Loaded> = {
+  openSans,
+  lato,
+  raleway,
+  faustina,
+  cantataOne,
+  faunaOne,
+  montserrat,
+  cinzel,
+}
+
 describe('fonts module exports', () => {
-  const allFonts = {
-    openSans,
-    lato,
-    raleway,
-    faustina,
-    cantataOne,
-    faunaOne,
-    montserrat,
-    cinzel,
-  } as const
-
-  it('exports a defined font object for every named Google font', () => {
-    for (const [name, font] of Object.entries(allFonts)) {
-      expect(font).toBeDefined()
-      expect(typeof font).toBe('object')
-      expect(font).not.toBeNull()
-      expect({ name, hasKeys: Object.keys(font).length > 0 }).toEqual({
-        name,
-        hasKeys: true,
-      })
-    }
-  })
-
-  it('exposes a CSS variable name on every font matching --font-<kebab-name>', () => {
-    const expected: Record<keyof typeof allFonts, string> = {
-      openSans: '--font-open-sans',
-      lato: '--font-lato',
-      raleway: '--font-raleway',
-      faustina: '--font-faustina',
-      cantataOne: '--font-cantata-one',
-      faunaOne: '--font-fauna-one',
-      montserrat: '--font-montserrat',
-      cinzel: '--font-cinzel',
-    }
-
-    for (const [name, font] of Object.entries(allFonts)) {
-      const variable = (font as { variable?: string }).variable
-      expect({ name, variable }).toEqual({
-        name,
-        variable: expected[name as keyof typeof allFonts],
-      })
-    }
-  })
-
-  it('configures the latin subset and swap display for every font', () => {
-    for (const [name, font] of Object.entries(allFonts)) {
-      const cfg = font as { subsets?: string[]; display?: string }
-      expect({ name, subsets: cfg.subsets, display: cfg.display }).toEqual({
-        name,
-        subsets: ['latin'],
-        display: 'swap',
-      })
-    }
-  })
-
-  it('configures weight for each font matching the original definition', () => {
-    const expectedWeight: Record<keyof typeof allFonts, string | string[]> = {
-      openSans: ['400', '500', '600', '700', '800'],
-      lato: ['400', '700'],
-      raleway: ['400', '500', '600', '700'],
-      faustina: ['400', '500', '600', '700'],
-      cantataOne: '400',
-      faunaOne: '400',
-      montserrat: ['400', '500', '600', '700'],
-      cinzel: ['400', '500', '600', '700'],
-    }
-
-    for (const [name, font] of Object.entries(allFonts)) {
-      const weight = (font as { weight?: string | string[] }).weight
-      expect({ name, weight }).toEqual({
-        name,
-        weight: expectedWeight[name as keyof typeof allFonts],
-      })
-    }
-  })
-
   it('exports exactly the eight expected font instances', () => {
     expect(Object.keys(allFonts).sort()).toEqual(
       [
@@ -123,5 +56,77 @@ describe('fonts module exports', () => {
         'raleway',
       ].sort()
     )
+  })
+
+  it('exposes the CSS variable name each stylesheet already references', () => {
+    const expected: Record<string, string> = {
+      openSans: '--font-open-sans',
+      lato: '--font-lato',
+      raleway: '--font-raleway',
+      faustina: '--font-faustina',
+      cantataOne: '--font-cantata-one',
+      faunaOne: '--font-fauna-one',
+      montserrat: '--font-montserrat',
+      cinzel: '--font-cinzel',
+    }
+    for (const [name, font] of Object.entries(allFonts)) {
+      expect({ name, variable: font.variable }).toEqual({ name, variable: expected[name] })
+    }
+  })
+
+  it('uses display:swap for every font', () => {
+    for (const [name, font] of Object.entries(allFonts)) {
+      expect({ name, display: font.display }).toEqual({ name, display: 'swap' })
+    }
+  })
+})
+
+describe('self-hosted font files', () => {
+  // The point of this suite: the build must not depend on Google. A missing
+  // woff2 would fail `next build` loudly, but a MISSING LICENCE would not fail
+  // anything at all -- these fonts are OFL-licensed and the licence has to
+  // travel with the font, so it is asserted here rather than left to review.
+  it('every declared src path is a committed file', () => {
+    for (const [name, font] of Object.entries(allFonts)) {
+      for (const entry of font.src ?? []) {
+        const abs = resolve(FONTS_MODULE_DIR, entry.path)
+        expect({ name, path: entry.path, exists: existsSync(abs) }).toEqual({
+          name,
+          path: entry.path,
+          exists: true,
+        })
+      }
+    }
+  })
+
+  it('declares at least one src file for every font', () => {
+    for (const [name, font] of Object.entries(allFonts)) {
+      expect({ name, files: (font.src ?? []).length > 0 }).toEqual({ name, files: true })
+    }
+  })
+
+  it("ships each family's OFL licence alongside its woff2", () => {
+    const dirs = new Set<string>()
+    for (const font of Object.values(allFonts)) {
+      for (const entry of font.src ?? []) {
+        dirs.add(resolve(FONTS_MODULE_DIR, entry.path, '..'))
+      }
+    }
+    expect(dirs.size).toBe(8)
+    for (const dir of dirs) {
+      expect({ dir: dir.slice(ROOT.length + 1), ofl: existsSync(join(dir, 'OFL.txt')) }).toEqual({
+        dir: dir.slice(ROOT.length + 1),
+        ofl: true,
+      })
+    }
+  })
+
+  it('loads fonts through next/font/local, not next/font/google', () => {
+    const body = readFileSync(join(FONTS_MODULE_DIR, 'fonts.ts'), 'utf8')
+    expect(body).toMatch(/from\s+['"]next\/font\/local['"]/)
+    // Comments may legitimately name the banned loader to explain why it is
+    // banned, so only a real import statement counts.
+    const withoutComments = body.replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '')
+    expect(withoutComments).not.toMatch(/from\s+['"]next\/font\/google['"]/)
   })
 })
