@@ -63,7 +63,7 @@
     "jest-axe": "^11.0.0",
     "jest-environment-jsdom": "30.5.2",
     "linkinator": "^7.6.1",
-    "prettier": "^3.9.6",
+    "prettier": "^3.9.10",
     "serve": "^14.2.6",
     "tailwindcss": "^4.1.12",
     "typescript": "^6.0.3"
